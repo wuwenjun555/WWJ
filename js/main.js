@@ -1,26 +1,27 @@
 $(function () {
+  $.log('page init main');
   $$.btnOpenGridEditor.click(function () {
-    $('.toolPart').hide();
+    $('.mainer').hide();
     $$.gE.show();
   });
 
   $$.btnOpenDBEditor.click(function () {
-    $('.toolPart').hide();
+    $('.mainer').hide();
     $$.dbE.show();
   });
 
   $$.btnOpenExcelEditor.click(function () {
-    $('.toolPart').hide();
+    $('.mainer').hide();
     $$.xlsE.show();
   });
 
   $$.btnOpenWordEditor.click(function () {
-    $('.toolPart').hide();
+    $('.mainer').hide();
     $$.docE.show();
   });
 
   $$.btnOpenComIframe.click(function () {
-    $('.toolPart').hide();
+    $('.mainer').hide();
     $$.fsComIframe.show();
   });
 
@@ -32,52 +33,47 @@ $(function () {
       over: function (rV, tO, gO) {  },
       tq: [
         {
-          state: "1.open ie begin",
-          overState: "1.open ie end",
-          do: function (rV, tO, gO) {
-            //TODO: do something with file
+          state: "1.open url begin",
+          overState: "2.open url end",
+          do: function (rV, tO, gO) { //$$.ifrCom[0].onerror = function (e) { console.log('aa:' + e); }; $$.ifrCom[0].src = 'https://code.visualstudio.com/Download'; 
+            var ie = new ActiveXObject('InternetExplorer.Application');
+            gO.ie = ie;
+            ie.Visible = true;
+            ie.Navigate('https://code.visualstudio.com/Download');
           },
-          goon: function (rV, tO, gO) { window.ie=gO.ie; $.log(gO.ie.busy); return !gO.ie.busy; }
+          goon: function (rV, tO, gO) { //var isGoon = $$.ifrCom[0].contentDocument.getElementById('download-alt-winzip'); $.log(isGoon); return isGoon; 
+            $.log('' + gO.ie.busy + '|' + gO.ie.readyState)
+            return !gO.ie.busy && gO.ie.readyState == 4;
+          }
         },
         {
-          state: "2.login vpn begin",
-          overState: "2.login vpn end",
+          state: "3. begin",
+          overState: "4. end",
           do: function (rV, tO, gO) {
-            $.log(gO.ie);
-            window.ie=gO.ie;
-            gO.ie.visible = 1;
-            $.log(gO.ie.window);
-            try{
-            $.log(gO.ie.document);
-            $.log(gO.ie.document.getElementById);
-            } catch(e){
-              $.log(e.message);
-            }
+            // var
+            //   ifrDoc = $$.ifrCom[0].contentDocument,
+            //   btn = ifrDoc.getElementById('download-alt-winzip');
 
-            var ieDoc = gO.ie.document;
-            //gO.ie.visible = 1;
-            if (!ieDoc.getElementById('logout')) {
-              ieDoc.getElementById('default_focus').value = gO.uID;
-              ieDoc.getElementsByName("pwd")[0].value = gO.uPW;
-              ieDoc.getElementsByName("submitbutton")[0].click();
-            }
-          },
-          goon: function (rV, tO, gO) { return !gO.ie.busy && gO.ie.document.getElementById('logout'); }
-        },
-        {
-          state: "3.open mail url begin",
-          overState: "3.open mail url end",
-          do: function (rV, tO, gO) { $$.ifrCom[0].src = 'https://172.16.25.65/owa/'; },
-          goon: function (rV, tO, gO) { return $$.ifrCom[0].contentDocument.getElementById('username'); }
-        },
-        {
-          state: "4.mail login begin",
-          overState: "4.mail login end",
-          do: function (rV, tO, gO) {
-            var ifrDoc = $$.ifrCom[0].contentDocument;
-            ifrDoc.getElementById('username').value = gC.uID;
-            ifrDoc.getElementById('password').value = gC.uPW;
-            ifrDoc.querySelector('.signinbutton').click();
+            // $.log(btn.id);
+            // $.log(btn.name);
+            // $.log(btn.value);
+            $.log(gO.ie.window);
+            //$.log(gO.ie.document.getElementById('download-alt-winzip'));
+            //btn.click();
+            $.log('est over');
+            window.ie = gO.ie;
+
+            var ie = gO.ie;
+            ie.resizable = 0; // read true
+            ie.toolbar = 0;  // read 1
+            ie.top = 200;
+            ie.left = 170;
+            ie.height = 500;
+            ie.width = 1000;
+            ie.statusBar = 0; // read true
+            ie.addressbar = 0; // read true
+            ie.document.title;
+            ie.quit();
           },
           goon: function (rV, tO, gO) { return $$.ifrCom[0].contentDocument.getElementById('preloadDiv'); }
         }
@@ -86,4 +82,9 @@ $(function () {
   });
 
   $$.btnTryStopTQ.click($.TQ.stop);
+
+  $$.btnTryNVM.click(function(){
+    $('.mainer').hide();
+    $$.nvm.show();
+  });
 });

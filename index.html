@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <hta:application navigable="yes" />
   <title>WWJ</title>
 </head>
 
@@ -11,11 +10,10 @@
   <script>
     var
       url = window.location.href,
-      arr = url.split('.'),
-      isHTA = arr[arr.length - 1] === 'hta' ? 1 : 0,
+      isNW = (!window.nw || url.indexOf('chrome-extension://') < 0) ? 0 : 1,
       fileName = url.split('\/').pop(),
       baseURL = url.replace(fileName, '').replace('file:///', '').replace(/\//g, '\\');
-    window.location.href = 'html/main.html?isHTA=' + isHTA + '&baseURL=' + encodeURIComponent(baseURL);
+    window.location.href = 'html' + (isNW ? '5' : '') + '/main.html?isNW=' + isNW + '&baseURL=' + encodeURIComponent(baseURL);
   </script>
 </body>
 

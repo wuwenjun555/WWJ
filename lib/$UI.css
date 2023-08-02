@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   width: 100%;
@@ -5,7 +10,8 @@ body {
   border: none;
   margin: 0;
   padding: 0;
-  /* DEBUG: */
+  font-family: -apple-system, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* DEBUG:  */
   background: lightskyblue;
 }
 
@@ -15,12 +21,48 @@ body {
 }
 
 header {
-  height: 28px;
+  height: 40px;
+  display: flex;
   /* DEBUG: */
   background-color: lightslategray;
+  /* border-bottom: 1px solid #111; */
 }
 
-.toolPart {
+header.hat {
+  height: 22px;
+}
+
+header > .logobar {
+  min-width: 108px;
+}
+
+header > .logobar,
+header > .logobar > img {
+  height: 20px;  
+}
+
+header > .minibar {
+  flex-grow: 1;
+  text-align: center;
+}
+
+header > .winbar {
+  text-align: right;
+}
+
+header > .winbar button {
+  width: 20px;
+}
+
+header > .navbar {
+  flex-grow: 1;
+}
+
+header > .userbar {
+  text-align: right;
+}
+
+.mainer {
   display: none;
   flex: 1;
   /* DEBUG: */
@@ -29,8 +71,4 @@ header {
 
 .hide {
   display: none;
-}
-
-.show {
-  display: block;
 }

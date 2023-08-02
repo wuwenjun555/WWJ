@@ -1,0 +1,18 @@
+{
+  "oid": 0,
+  "onm": "demoDB",
+  "ocnnm": "",
+  "ojpnm": "",
+  "ot": "db",
+  "cmt" "Database",
+
+  "smids": [0],
+  "smnms": ["demoSchema"],
+  "smcnnms": [""],
+  "smjpnms": [""],
+
+  "tbids": [0],
+  "tbnms": ["demoTB"],
+  "smcnnms": [""],
+  "smjpnms": [""],
+}

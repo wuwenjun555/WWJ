@@ -1,0 +1,37 @@
+{
+  "name": "wwj",
+  "version": "0.0.1",
+  "main": "index.html",
+  "browser": "index.html",
+  "dependencies": {},
+  "devDependencies": {},
+  "description": "NW.js v0.78.0 (Chromium 115 + Node 20.2.0)",
+  "engines":{
+    "os": "Win11",
+    "cpu": "x64",
+    "NW.js": ">=0.78",
+    "Chromium": ">=115",
+    "node": ">=20.2"
+  },
+  "keywords":[
+    "NW.js",
+    "Node.js",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "HTML5",
+    "CSS3",
+    "ECMAScript",
+    "HTA",
+    "ActiveX"
+  ],
+  "repository": {
+    "type": "gitee",
+    "url": "https://gitee.com/wuwenjun55555/wwj.git",
+    "directory": "WWJ"
+  },
+  "homepage": "https://gitee.com/wuwenjun55555/wwj",
+  "bugs": "https://gitee.com/wuwenjun55555/wwj/issues",
+  "author": "wuwenjun555@gmail.com",
+  "license": "MIT"
+}
