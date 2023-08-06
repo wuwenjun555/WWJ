@@ -3,3 +3,21 @@
   width: 1200px;
   height: 720px;
 }
+
+.uiEditorArea {
+  display: flex;
+  flex-direction: row;
+}
+
+.uiEditorArea > nav {
+  width: 100px;
+  height: 100%;
+  overflow: auto;
+  background-color: chartreuse;
+}
+
+.uiEditorArea > main {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+}

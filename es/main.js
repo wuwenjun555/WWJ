@@ -1,18 +1,23 @@
 $(() => {
+  $$.btnUIEditor.click(() => {
+    $('.mainer').hide();
+    $$.fdsUIE.show();
+  });
+
   $$.btnWV.click(() => {
     $('.mainer').hide();
     $$.fsWV.show();
   });
 
   // TODO: common
-  $$.wv.on('loadstart', function(e) { $.log('loadstart'); });
-  $$.wv.on('loadcommit', function(e) { $.log('loadcommit'); });
-  $$.wv.on('contentload', function(e) { $.log('contentload'); });
-  $$.wv.on('loadstop', function(e) { $.log('loadstop'); });
-  $$.wv.on('loadredirect', function(e) { $.log('loadredirect'); });
-  $$.wv.on('loadabort', function(e) { $.log('loadabort'); });
+  $$.wv.on('loadstart', function (e) { $.log('loadstart'); });
+  $$.wv.on('loadcommit', function (e) { $.log('loadcommit'); });
+  $$.wv.on('contentload', function (e) { $.log('contentload'); });
+  $$.wv.on('loadstop', function (e) { $.log('loadstop'); });
+  $$.wv.on('loadredirect', function (e) { $.log('loadredirect'); });
+  $$.wv.on('loadabort', function (e) { $.log('loadabort'); });
 
-  $$.wv.on('consolemessage', function(e) {
+  $$.wv.on('consolemessage', function (e) {
     $.log('Guest page logged a message: ' + e.message);
   });
 
@@ -27,15 +32,15 @@ $(() => {
     const
       asvChar = ',\u0000',
       arrData = [
-        'nvm', 
-        'https://github.com/coreybutler/nvm-windows/releases', 
-        '1.1.11', 
+        'nvm',
+        'https://github.com/coreybutler/nvm-windows/releases',
+        '1.1.11',
         'https://github.com/coreybutler/nvm-windows/releases/download/{ver}/nvm-noinstall.zip'
       ],
       strData = arrData.join(asvChar),
       url = 'db/test.asv',
-      cbFn = function(err) {
-        if(err) { $.log(err); }
+      cbFn = function (err) {
+        if (err) { $.log(err); }
       },
       fs = require('fs');
     fs.writeFile(url, strData, cbFn);
