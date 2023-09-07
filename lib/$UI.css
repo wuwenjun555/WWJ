@@ -21,7 +21,7 @@ body {
   flex-direction: column;
 }
 
-header {
+body > header {
   height: 40px;
   display: flex;
   /* DEBUG: */
@@ -29,38 +29,42 @@ header {
   /* border-bottom: 1px solid #111; */
 }
 
-header.hat {
+body > header.hat {
   height: 22px;
 }
 
-header > .logobar {
+body > header > .logobar {
   min-width: 108px;
 }
 
-header > .logobar,
-header > .logobar > img {
+body > header > .logobar,
+body > header > .logobar > img {
   height: 20px;  
 }
 
-header > .minibar {
+body > header > .minibar {
   flex-grow: 1;
   text-align: center;
 }
 
-header > .winbar {
+body > header > .winbar {
   text-align: right;
 }
 
-header > .winbar button {
+body > header > .winbar button {
   width: 20px;
 }
 
-header > .navbar {
+body > header > .navbar {
   flex-grow: 1;
 }
 
-header > .userbar {
+body > header > .userbar {
   text-align: right;
+}
+
+body > footer {
+  text-align: center;
 }
 
 .mainer {

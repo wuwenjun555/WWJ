@@ -1,0 +1,390 @@
+{
+  "subA": [
+    {
+      "isCmt": 1,
+      "isSCmt": true,
+      "rnb": 1,
+      "cnb": 1,
+      "sss": " page com begin\n<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"utf-8\">\n  <title>{0}</title>\n  {comCSS}\n  <link rel=\"stylesheet\" href=\"../{0}.css\" />\n</head>\n\n<body>\n",
+      "rne": 13,
+      "cne": 4
+    },
+    {
+      "isTag": 1,
+      "rnb": 14,
+      "cnb": 1,
+      "attrA": [
+        {
+          "rnb": 14,
+          "cnb": 5,
+          "t": "t",
+          "v": "WWJ - demo - title",
+          "rne": 14,
+          "cne": 26
+        }
+      ],
+      "subA": [
+        {
+          "isTag": 1,
+          "rnb": 15,
+          "cnb": 3,
+          "attrA": [
+            {
+              "rnb": 15,
+              "cnb": 7,
+              "t": "img",
+              "v": "logo.png",
+              "rne": 15,
+              "cne": 20
+            },
+            {
+              "rnb": 15,
+              "cnb": 22,
+              "t": "t",
+              "v": "WWJ - demo",
+              "rne": 15,
+              "cne": 35
+            }
+          ],
+          "subA": [],
+          "t": "a1",
+          "rne": 15,
+          "cne": 41
+        },
+        {
+          "isTag": 1,
+          "rnb": 16,
+          "cnb": 3,
+          "attrA": [],
+          "subA": [
+            {
+              "isTag": 1,
+              "rnb": 17,
+              "cnb": 5,
+              "attrA": [
+                {
+                  "rnb": 17,
+                  "cnb": 10,
+                  "t": "id",
+                  "v": "btnRefresh",
+                  "rne": 17,
+                  "cne": 24
+                }
+              ],
+              "subA": [
+                {
+                  "isTxt": 1,
+                  "rnb": 17,
+                  "cnb": 26,
+                  "sss": "Refresh",
+                  "rne": 17,
+                  "cne": 32
+                }
+              ],
+              "t": "btn",
+              "rne": 17,
+              "cne": 38
+            }
+          ],
+          "t": "a2",
+          "rne": 18,
+          "cne": 7
+        },
+        {
+          "isTag": 1,
+          "rnb": 19,
+          "cnb": 3,
+          "attrA": [],
+          "subA": [
+            {
+              "isTag": 1,
+              "rnb": 20,
+              "cnb": 5,
+              "attrA": [
+                {
+                  "rnb": 20,
+                  "cnb": 10,
+                  "t": "id",
+                  "v": "btnQA",
+                  "rne": 20,
+                  "cne": 19
+                }
+              ],
+              "subA": [
+                {
+                  "isTxt": 1,
+                  "rnb": 20,
+                  "cnb": 21,
+                  "sss": "?",
+                  "rne": 20,
+                  "cne": 21
+                }
+              ],
+              "t": "btn",
+              "rne": 20,
+              "cne": 27
+            }
+          ],
+          "t": "a3",
+          "rne": 21,
+          "cne": 7
+        }
+      ],
+      "t": "a0",
+      "rne": 22,
+      "cne": 5
+    },
+    {
+      "isCmt": 1,
+      "isSCmt": true,
+      "rnb": 23,
+      "cnb": 1,
+      "sss": "\n  <header class=\"hat\">\n    <div class=\"logobar\">\n      <img src=\"../img/{img}\" alt=\"{t}\" title=\"{t}\" />\n      <label>{t}</label>\n    </div>\n    <div class=\"minibar\">\n      <a0-btn id=\"btnRefresh\" t=\"Refresh\" />\n    </div>\n    <div class=\"winbar\">\n      <a0-btn id=\"btnQA\" t=\"?\" />\n    </div>\n  </header>\n",
+      "rne": 36,
+      "cne": 4
+    },
+    {
+      "isTag": 1,
+      "rnb": 38,
+      "cnb": 1,
+      "attrA": [
+        {
+          "rnb": 38,
+          "cnb": 4,
+          "t": "ids",
+          "v": "DB,Soft",
+          "rne": 38,
+          "cne": 16
+        },
+        {
+          "rnb": 38,
+          "cnb": 18,
+          "t": "ts",
+          "v": "DB PF,Soft PF",
+          "rne": 38,
+          "cne": 35
+        }
+      ],
+      "subA": [],
+      "t": "b",
+      "rne": 38,
+      "cne": 40
+    },
+    {
+      "isTag": 1,
+      "rnb": 40,
+      "cnb": 1,
+      "attrA": [
+        {
+          "rnb": 40,
+          "cnb": 4,
+          "t": "id",
+          "v": "DB",
+          "rne": 40,
+          "cne": 10
+        }
+      ],
+      "subA": [
+        {
+          "isTag": 1,
+          "rnb": 41,
+          "cnb": 3,
+          "attrA": [
+            {
+              "rnb": 41,
+              "cnb": 8,
+              "t": "id",
+              "v": "DBState",
+              "rne": 41,
+              "cne": 19
+            },
+            {
+              "rnb": 41,
+              "cnb": 21,
+              "t": "t",
+              "v": "loading...",
+              "rne": 41,
+              "cne": 34
+            }
+          ],
+          "subA": [],
+          "t": "lbl",
+          "rne": 41,
+          "cne": 41
+        },
+        {
+          "isCmt": 1,
+          "isSCmt": false,
+          "rnb": 42,
+          "cnb": 3,
+          "sss": " Same: <lbl id=\"DBState\" t=\"loading...\"></lbl> ",
+          "rne": 42,
+          "cne": 56
+        },
+        {
+          "isTag": 1,
+          "rnb": 43,
+          "cnb": 3,
+          "attrA": [
+            {
+              "rnb": 43,
+              "cnb": 8,
+              "t": "id",
+              "v": "RefreshDBState",
+              "rne": 43,
+              "cne": 26
+            },
+            {
+              "rnb": 43,
+              "cnb": 28,
+              "t": "t",
+              "v": "Refresh DB State",
+              "rne": 43,
+              "cne": 47
+            }
+          ],
+          "subA": [],
+          "t": "btn",
+          "rne": 43,
+          "cne": 54
+        },
+        {
+          "isTag": 1,
+          "rnb": 44,
+          "cnb": 3,
+          "attrA": [
+            {
+              "rnb": 44,
+              "cnb": 8,
+              "t": "id",
+              "v": "StartDB",
+              "rne": 44,
+              "cne": 19
+            },
+            {
+              "rnb": 44,
+              "cnb": 21,
+              "t": "t",
+              "v": "Start DB",
+              "rne": 44,
+              "cne": 32
+            }
+          ],
+          "subA": [],
+          "t": "btn",
+          "rne": 44,
+          "cne": 39
+        },
+        {
+          "isTag": 1,
+          "rnb": 45,
+          "cnb": 3,
+          "attrA": [
+            {
+              "rnb": 45,
+              "cnb": 8,
+              "t": "id",
+              "v": "StopDB",
+              "rne": 45,
+              "cne": 18
+            },
+            {
+              "rnb": 45,
+              "cnb": 20,
+              "t": "t",
+              "v": "Stop DB",
+              "rne": 45,
+              "cne": 30
+            }
+          ],
+          "subA": [],
+          "t": "btn",
+          "rne": 45,
+          "cne": 37
+        }
+      ],
+      "t": "c",
+      "rne": 46,
+      "cne": 4
+    },
+    {
+      "isTag": 1,
+      "rnb": 48,
+      "cnb": 1,
+      "attrA": [
+        {
+          "rnb": 48,
+          "cnb": 4,
+          "t": "id",
+          "v": "Soft",
+          "rne": 48,
+          "cne": 12
+        }
+      ],
+      "subA": [],
+      "t": "c",
+      "rne": 48,
+      "cne": 17
+    },
+    {
+      "isCmt": 1,
+      "isSCmt": true,
+      "rnb": 49,
+      "cnb": 1,
+      "sss": "\n  <a0-nav ids=\"DB,Soft\" ts=\"DB PF,Soft PF\"></a0-nav>\n  !--\n  <header>\n    <nav class=\"navbar\">\n      <a0-btn id=\"btnDB\" t=\"DB PF\" />\n      <a0-btn id=\"btnSoft\" t=\"Soft PF\" />\n    </nav>\n  </header>\n  --\n\n  <a0-art id=\"artDB\">\n    <a0-lbl id=\"lblDBState\" t=\"loading...\"></a0-lbl>\n    <a0-btn id=\"btnRefreshDBState\" t=\"Refresh DB State\"></a0-btn>\n    <a0-btn id=\"btnStartDB\" t=\"Start DB\"></a0-btn>\n    <a0-btn id=\"btnStopDB\" t=\"Stop DB\"></a0-btn>\n  </a0-art>\n  !-- html5\n  <article id=\"artDB\" class=\"mainer\">\n    <lable id=\"lblDBState\">loading...</lable>\n    <button id=\"btnRefreshDBState\">Refresh DB State</button>\n    <button id=\"btnStartDB\">Start DB</button>\n    <button id=\"btnStopDB\">Stop DB</button>\n  </article>\n  --\n  !-- html\n  <fieldset id=\"artDB\" class=\"mainer\"></fieldset>\n  --\n  \n  <a0-art id=\"artSoft\"></a0-art>\n  !-- html5\n  <article id=\"artSoft\" class=\"mainer\"></article>\n  --\n  !-- html\n  <fieldset id=\"artSoft\" class=\"mainer\"></fieldset>\n  --\n",
+      "rne": 85,
+      "cne": 4
+    },
+    {
+      "isTag": 1,
+      "rnb": 87,
+      "cnb": 1,
+      "attrA": [
+        {
+          "rnb": 87,
+          "cnb": 4,
+          "t": "t",
+          "v": "Copyright © 2000 WWJ wuwenjun555. All rights reserved.",
+          "rne": 87,
+          "cne": 61
+        }
+      ],
+      "subA": [],
+      "t": "z",
+      "rne": 87,
+      "cne": 66
+    },
+    {
+      "isCmt": 1,
+      "isSCmt": true,
+      "rnb": 88,
+      "cnb": 1,
+      "sss": "\n  <footer>Copyright © 2000 WWJ wuwenjun555. All rights reserved.</footer>\n",
+      "rne": 90,
+      "cne": 4
+    },
+    {
+      "isCmt": 1,
+      "isSCmt": true,
+      "rnb": 91,
+      "cnb": 1,
+      "sss": " page com end\n\n{comJS}\n<script src=\"../{0}.js\"></script>\n</body>\n\n</html>\n",
+      "rne": 98,
+      "cne": 4
+    },
+    {
+      "isCmt": 1,
+      "isSCmt": true,
+      "rnb": 102,
+      "cnb": 1,
+      "sss": " TODO:DEL\n<hat txt=\"WWJ - demo - title\">\n  <logo img=\"logo.png\" txt=\"WWJ - demo\"></logo>\n  <mini>\n    <btn id=\"btnRefresh\">Refresh</btn>\n  </mini>\n  <win>\n    <btn id=\"btnQA\">?</btn>\n  </win>\n</hat>\n\n<nav>\n  TODO：\n  <btn id=\"btnDB\">DB</btn>\n  <btn id=\"btnSoft\">Soft</btn>\n</nav>\n\n<cup></cup>\n<cup></cup>\n\n<end></end>\n",
+      "rne": 123,
+      "cne": 4
+    }
+  ],
+  "rnb": 1,
+  "cnb": 1,
+  "rne": 123,
+  "cne": 4,
+  "rnc": 0
+}

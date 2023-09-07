@@ -1,0 +1,123 @@
+<!--- page com begin
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{0}</title>
+  {comCSS}
+  <link rel="stylesheet" href="../{0}.css" />
+</head>
+
+<body>
+--->
+<a0 t="WWJ - demo - title">
+  <a1 img="logo.png" t="WWJ - demo"></a1>
+  <a2>
+    <btn id="btnRefresh">Refresh</btn>
+  </a2>
+  <a3>
+    <btn id="btnQA">?</btn>
+  </a3>
+</a0>
+<!---
+  <header class="hat">
+    <div class="logobar">
+      <img src="../img/{img}" alt="{t}" title="{t}" />
+      <label>{t}</label>
+    </div>
+    <div class="minibar">
+      <a0-btn id="btnRefresh" t="Refresh" />
+    </div>
+    <div class="winbar">
+      <a0-btn id="btnQA" t="?" />
+    </div>
+  </header>
+--->
+
+<b ids="DB,Soft" ts="DB PF,Soft PF"></b>
+
+<c id="DB">
+  <lbl id="DBState" t="loading..."></lbl>
+  <!-- Same: <lbl id="DBState" t="loading..."></lbl> -->
+  <btn id="RefreshDBState" t="Refresh DB State"></btn>
+  <btn id="StartDB" t="Start DB"></btn>
+  <btn id="StopDB" t="Stop DB"></btn>
+</c>
+
+<c id="Soft"></c>
+<!---
+  <a0-nav ids="DB,Soft" ts="DB PF,Soft PF"></a0-nav>
+  !--
+  <header>
+    <nav class="navbar">
+      <a0-btn id="btnDB" t="DB PF" />
+      <a0-btn id="btnSoft" t="Soft PF" />
+    </nav>
+  </header>
+  --
+
+  <a0-art id="artDB">
+    <a0-lbl id="lblDBState" t="loading..."></a0-lbl>
+    <a0-btn id="btnRefreshDBState" t="Refresh DB State"></a0-btn>
+    <a0-btn id="btnStartDB" t="Start DB"></a0-btn>
+    <a0-btn id="btnStopDB" t="Stop DB"></a0-btn>
+  </a0-art>
+  !-- html5
+  <article id="artDB" class="mainer">
+    <lable id="lblDBState">loading...</lable>
+    <button id="btnRefreshDBState">Refresh DB State</button>
+    <button id="btnStartDB">Start DB</button>
+    <button id="btnStopDB">Stop DB</button>
+  </article>
+  --
+  !-- html
+  <fieldset id="artDB" class="mainer"></fieldset>
+  --
+  
+  <a0-art id="artSoft"></a0-art>
+  !-- html5
+  <article id="artSoft" class="mainer"></article>
+  --
+  !-- html
+  <fieldset id="artSoft" class="mainer"></fieldset>
+  --
+--->
+
+<z t="Copyright © 2000 WWJ wuwenjun555. All rights reserved."></z>
+<!---
+  <footer>Copyright © 2000 WWJ wuwenjun555. All rights reserved.</footer>
+--->
+<!--- page com end
+
+{comJS}
+<script src="../{0}.js"></script>
+</body>
+
+</html>
+--->
+
+
+
+<!--- TODO:DEL
+<hat txt="WWJ - demo - title">
+  <logo img="logo.png" txt="WWJ - demo"></logo>
+  <mini>
+    <btn id="btnRefresh">Refresh</btn>
+  </mini>
+  <win>
+    <btn id="btnQA">?</btn>
+  </win>
+</hat>
+
+<nav>
+  TODO：
+  <btn id="btnDB">DB</btn>
+  <btn id="btnSoft">Soft</btn>
+</nav>
+
+<cup></cup>
+<cup></cup>
+
+<end></end>
+--->
