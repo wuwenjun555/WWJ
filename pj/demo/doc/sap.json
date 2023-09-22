@@ -1,0 +1,286 @@
+{
+  "awsSAP": [
+    {
+      "no": 0,
+      "q": "",
+      "a": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "",
+      "qK": [],
+      "aK": []
+    },
+    {
+      "no": 0,
+      "q": "",
+      "a": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "",
+      "qK": [],
+      "aK": []
+    },
+    {
+      "no": 203,
+      "q": "A solutions architect needs to define a reference architectlure for a solution for three-tier applications with web, application, and NoSQL data layers. The reference architecture must meet the folowing reduirements:-  High availability within an AWS Region - Able to fail over in 1 minute to another AWS Region for disaster recovery - Provide the most efficient solution while minimizing the impact on the user experience Which combination of steps will meet these requirements? (Choose three.)",
+      "a": [
+        "A. Use an Amazon Route 53 weighted routing policy set to 100/0 across the two selected Regions. Set Time to Live (TTL) to 1 hour.",
+        "B. Use an Amazon Route 53 failover routing policy for failover from the primary Region to the disaster recovery Region. Set Time to Live (TTL) to 30 seconds.",
+        "C. Use a global table within Amazon DynamoDB so data can be accessed in the two selected Regions.",
+        "D. Back up data from an Amazon DynamoDB table in the primary Region every 60 minutes and then write the data to Amazon S3. Use S3 cross-Region replication to copy the data from the primary Region to the disaster recovery Region. Have a script import the data into DynamoDB in a disaster recovery scenario. ",
+        "E. Implement a hot standby model using Auto Scaling groups for the web and application layers across multiple Availability Zones in the Regions. Use zonal Reserved Instances for the minimum number of servers and On-Demand Instances for any additional resources.",
+        "F. Use Auto Scaling groups for the web and application layers across multiple Availability Zones in the Regions. Use Spot Instances for the required resources."
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "B,C,E",
+      "qK": [
+        "1 minute"
+      ],
+      "aK": [
+        "30 seconds",
+        "global table",
+        "hot standby model"
+      ]
+    },
+    {
+      "no": 209,
+      "q": "A company has a data lake in Amazon S3 that needs to be accessed by hundreds of applications across many AWS accounts. The company's information security policy states that the S3 bucket must not be accessed over the public internet and that each application should have the minimum permissions necessary to function.To meet these requirements, a solutions architect plans to use an S3 access point that is restricted to specific VPCs for each application.Which combination of steps should the solutions architect take to implement this solution? (Choose two.)",
+      "a": [
+        "A. Create an S3 access point for each application in the AWS account that owns the S3 bucket. Configure each access point to be accessible only from the application's VPC. Update the bucket policy to require access from an access point",
+        "B. Create an interface endpoint for Amazon S3 in each application's VPC. Configure the endpoint policy to allow access to an S3 access point. Create a VPC gateway attachment for the S3 endpoint",
+        "C. Create a gateway endpoint for Amazon S3 in each application's VPC. Configure the endpoint policy to allow access to an S3 access point. Specify the route table that is used to access the access point.",
+        "D. Create an S3 access point for each application in each AWS account and attach the access points to the S3 bucket. Configure each access point to be accessible only from the application's VPC. Update the bucket policy to require access from an access point.",
+        "E. Create a gateway endpoint for Amazon S3 in the data lake's VPC. Attach an endpoint policy to allow access to the S3 bucket. Specify the route table that is used to access the bucket"
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "A,C",
+      "qK": [
+        "data lake",
+        "specific VPCs"
+      ],
+      "aK": [
+        "owns",
+        "gateway endpoint|application's VPC"
+      ]
+    },
+    {
+      "no": 213,
+      "q": "A company has an application that runs on Amazon EC2 instances in an Amazon EC2 Auto Scaling group. The company uses AWS CodePipeline to deploy the application. The instances that run in the Auto Scaling group are constantly changing because of scaling events.When the company deploys new application code versions, the company installs the AWS CodeDeploy agent on any new target EC2 instances and associates the instances with the CodeDeploy deployment group. The application is set to go live within the next 24 hours.What should a solutions architect recommend to automate the application deployment process with the LEAST amount of operational overhead?",
+      "a": [
+        "A. Configure Amazon EventBridge (Amazon CloudWatch Events) to invoke an AWS Lambda function when a new EC2 instance is launched into the Auto Scaling group. Code the Lambda function to associate the EC2 instances with the CodeDeploy deployment group.",
+        "B. Write a script to suspend Amazon EC2 Auto Scaling operations before the deployment of new code. When the deployment is complete, create a new AMI and configure the Auto Scaling group's launch template to use the new AMI for new launches. Resume Amazon EC2 Auto Scaling operations.",
+        "C. Create a new AWS CodeBuild project that creates a new AMI that contains the new code. Configure CodeBuild to update the Auto Scaling group's launch template to the new AMI. Run an Amazon EC2 Auto Scaling instance refresh operation.",
+        "D. Create a new AMI that has the CodeDeploy agent installed. Configure the Auto Scaling group's launch template to use the new AMI. Associate the CodeDeploy deployment group with the Auto Scaling group instead of the EC2 instances."
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "D",
+      "qK": [
+        "CodePipeline",
+        "24 hours"
+      ],
+      "aK": [
+        "CodeDeploy agent"
+      ]
+    },
+    {
+      "no": 235,
+      "q": "An environmental company is deploying sensors in major cities throughout a country to measure air quality. The sensors connect to AWS IoT Core to ingest timeseries data readings. The company stores the data in Amazon DynamoDB.For business continuity, the company must have the ability to ingest and store data in two AWS Regions.Which solution will meet these requirements?",
+      "a": [
+        "A. Create an Amazon Route 53 alias failover routing policy with values for AWS IoT Core data endpoints in both Regions Migrate data to Amazon Aurora global tables.",
+        "B. Create a domain configuration for AWS IoT Core in each Region. Create an Amazon Route 53 latency-based routing policy. Use AWS IoT Core data endpoints in both Regions as values. Migrate the data to Amazon MemoryDB for Redis and configure cross-Region replication.",
+        "C. Create a domain configuration for AWS IoT Core in each Region. Create an Amazon Route 53 health check that evaluates domain configuration health. Create a failover routing policy with values for the domain name from the AWS IoT Core domain configurations. Update the DynamoDB table to a global table.",
+        "D. Create an Amazon Route 53 latency-based routing policy. Use AWS IoT Core data endpoints in both Regions as values. Configure DynamoDB streams and cross-Region data replication."
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "D",
+      "examtopics": "C",
+      "qK": [
+        "air quality",
+        "IoT Core",
+        "timeseries data"
+      ],
+      "aK": [
+        "streams"
+      ]
+    },
+    {
+      "no": 242,
+      "q": "A company is designing a new website that hosts static content. The website will give users the ability to upload and download large files. According to company requirements, all data must be encrypted in transit and at rest. A solutions architect is building the solution by using Amazon S3 and Amazon CloudFront.Which combination of steps will meet the encryption requirements? (Choose three.)",
+      "a": [
+        "A. Turn on S3 server-side encryption for the S3 bucket that the web application uses.",
+        "B. Add a policy attribute of \"aws:SecureTransport\": \"true\" for read and write operations in the S3 ACLs.",
+        "C. Create a bucket policy that denies any unencrypted operations in the S3 bucket that the web application uses.",
+        "D. Configure encryption at rest on CloudFront by using server-side encryption with AWS KMS keys (SSE-KMS).",
+        "E. Configure redirection of HTTP requests to HTTPS requests in CloudFront.",
+        "F. Use the RequireSSL option in the creation of presigned URLs for the S3 bucket that the web application uses."
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "A,D,E",
+      "qK": [
+        "upload and download",
+        "encrypted in transit and at rest"
+      ],
+      "aK": [
+        "server-side",
+        "server-side",
+        "HTTPS"
+      ]
+    },
+    {
+      "no": 243,
+      "q": "A company is running a critical stateful web application on two Linux Amazon EC2 instances behind an Application Load Balancer (ALB) with an Amazon RDS for MySQL database. The company hosts the DNS records for the application in Amazon Route 53. A solutions architect must recommend a solution to improve the resiliency of the application.The solution must meet the following objectives: • Application tier: RPO of 2 minutes. RTO of 30 minutes. • Database tier: RPO of 5 minutes. RTO of 30 minutes.The company does not want to make significant changes to the existing application architecture. The company must ensure optimal latency after a failover.Which solution will meet these requirements?",
+      "a": [
+        "A. Configure the EC2 instances to use AWS Elastic Disaster Recovery. Create a cross-Region read replica for the RDS DB instance. Create an ALB in a second AWS Region. Create an AWS Global Accelerator endpoint, and associate the endpoint with the ALBs. Update DNS records to point to the Global Accelerator endpoint.",
+        "B. Configure the EC2 instances to use Amazon Data Lifecycle Manager (Amazon DLM) to take snapshots of the EBS volumes. Configure RDS automated backups. Configure backup replication to a second AWS Region. Create an ALB in the second Region. Create an AWS Global Accelerator endpoint, and associate the endpoint with the ALBs. Update DNS records to point to the Global Accelerator endpoint.",
+        "C. Create a backup plan in AWS Backup for the EC2 instances and RDS DB instance. Configure backup replication to a second AWS Region. Create an ALB in the second Region. Configure an Amazon CloudFront distribution in front of the ALB. Update DNS records to point to CloudFront.",
+        "D. Configure the EC2 instances to use Amazon Data Lifecycle Manager (Amazon DLM) to take snapshots of the EBS volumes. Create a cross-Region read replica for the RDS DB instance. Create an ALB in a second AWS Region. Create an AWS Global Accelerator endpoint, and associate the endpoint with the ALBs."
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "D",
+      "qK": [
+        "RPO of 2 minutes",
+        "RTO of 30 minutes"
+      ],
+      "aK": [
+        "DLM",
+        "cross-Region"
+      ]
+    },
+    {
+      "no": 252,
+      "q": "A solutions architect has implemented a SAML 2.0 federated identity solution with their company’s on-premises identity provider (IdP) to authenticate users’ access to the AWS environment. When the solutions architect tests authentication through the federated identity web portal, access to the AWS environment is granted. However, when test users attempt to authenticate through the federated identity web portal, they are not able to access the AWS environment.Which items should the solutions architect check to ensure identity federation is properly configured? (Choose three.)",
+      "a": [
+        "A. The IAM user’s permissions policy has allowed the use of SAML federation for that user.",
+        "B. The IAM roles created for the federated users’ or federated groups’ trust policy have set the SAML provider as the principal.",
+        "C. Test users are not in the AWSFederatedUsers group in the company’s IdR.",
+        "D. The web portal calls the AWS STS AssumeRoleWithSAML API with the ARN of the SAML provider, the ARN of the IAM role, and the SAML assertion from IdR.",
+        "E. The on-premises IdP’s DNS hostname is reachable from the AWS environment VPCs.",
+        "F. The company’s IdP defines SAML assertions that properly map users or groups in the company to IAM roles with appropriate permissions."
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "B,D,F",
+      "qK": [
+        "SAML 2.0",
+        "(IdP)"
+      ],
+      "aK": [
+        "SAML principal",
+        "STS SAML",
+        "SAML map"
+      ]
+    },
+    {
+      "no": 257,
+      "q": "A solutions architect has an operational workload deployed on Amazon EC2 instances in an Auto Scaling group. The VPC architecture spans two Availability Zones (AZ) with a subnet in each that the Auto Scaling group is targeting. The VPC is connected to an on-premises environment and connectivity cannot be interrupted. The maximum size of the Auto Scaling group is 20 instances in service. The VPC IPv4 addressing is as follows: VPC CIDR: 10.0.0.0/23 - AZ1 subnet CIDR: 10.0.0.0/24 - AZ2 subnet CIDR: 10.0.1.0/24 - Since deployment, a third AZ has become available in the Region. The solutions architect wants to adopt the new AZ without adding additional IPv4 address space and without service downtime.Which solution will meet these requirements?",
+      "a": [
+        "A. Update the Auto Scaling group to use the AZ2 subnet only. Delete and re-create the AZ1 subnet using half the previous address space. Adjust the Auto Scaling group to also use the new AZ1 subnet. When the instances are healthy, adjust the Auto Scaling group to use the AZ1 subnet only. Remove the current AZ2 subnet. Create a new AZ2 subnet using the second half of the address space from the original AZ1 subnet. Create a new AZ3 subnet using half the original AZ2 subnet address space, then update the Auto Scaling group to target all three new subnets.",
+        "B. Terminate the EC2 instances in the AZ1 subnet. Delete and re-create the AZ1 subnet using half the address space. Update the Auto Scaling group to use this new subnet. Repeat this for the second AZ. Define a new subnet in AZ3, then update the Auto Scaling group to target all three new subnets.",
+        "C. Create a new VPC with the same IPv4 address space and define three subnets, with one for each AZ. Update the existing Auto Scaling group to target the new subnets in the new VPC.",
+        "D. Update the Auto Scaling group to use the AZ2 subnet only. Update the AZ1 subnet to have the previous address space. Adjust the Auto Scaling group to also use the AZ1 subnet again. When the instances are healthy, adjust the Auto Scaling group to use the AZ1 subnet only. Update the current AZ2 subnet and assign the second half of the address space from the original AZ1 subnet. Create a new AZ3 subnet using half the original AZ2 subnet address space, then update the Auto Scaling group to target all three new subnets."
+      ],
+      "q_cn": "",
+      "a_cn": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "aa": "A",
+      "qK": [
+        "10.0.0.0/23",
+        "AZ1 10.0.0.0/24",
+        "AZ2 10.0.1.0/24"
+      ],
+      "aK": [
+        "AZ2 subnet only",
+        "Delete and re-create the AZ1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  Loading......
+  <script>
+    var url = window.location.href,
+      fileName = url.split("\/").pop(),
+      baseURL = url
+        .replace(fileName, "")
+        .replace("file:///", "")
+        .replace(/\//g, "\\");
+    window.location.href =
+      "html/main.html?isHTA=1&baseURL=" + encodeURIComponent(baseURL);
+  </script>
+</body>
+
+</html>

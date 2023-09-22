@@ -1,0 +1,65 @@
+main {
+  display: block;
+  height: 100%;
+}
+
+td {
+  padding: 5px;
+}
+
+tbody td:hover {
+  background-color:sandybrown;
+}
+
+tfoot td {
+  text-align: center;
+}
+
+.uiListArea {
+  width: 100px;
+  float: left;
+  height: calc(100% - 22px - 40px);
+  display: block;
+  overflow: auto;
+}
+
+.gridOneArea {
+  float: left;
+  width: 1000px;
+  overflow: auto;
+}
+
+#fdsList > nav > ul > li > button {
+  padding: 10px;
+  width: 64px
+}
+
+.btn-clicked {
+  background-color: gold;
+}
+
+.rdochk-checked {
+  background-color: aqua ;
+}
+
+.ok {
+  background-color:green;
+}
+
+.ok-ng {
+  background-color: greenyellow;
+  font-weight: bolder;
+}
+
+.ng {
+  background-color: hotpink;
+}
+
+.hide {
+  display: none;
+}
+
+#btnOK {
+  width: 108px;
+  height: 36px;
+}

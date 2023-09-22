@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>demo2 - main</title>
+  <link rel="stylesheet" href="../../../lib/$UI.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+</head>
+
+<body>
+  <header class="hat">
+    <div class="logobar">
+      <label>SSS</label>
+    </div>
+
+    <div class="minibar">
+      <button id="btnRefresh">Refresh</button>
+    </div>
+
+    <div class="winbar">
+      <button id="btnQA">?</button>
+    </div>
+  </header>
+  <header>
+    <nav class="navbar">
+      <button id="btnList">List List List</button>
+      <button id="btnOne">One One One</button>
+      <input id="rdoEn" type="radio" name="lang"><label for="rdoEn">英文</label>
+      <input id="rdoCn" type="radio" name="lang" checked><label for="rdoCn">中文</label>
+    </nav>
+
+    <div class="userbar">
+      <button id="btn"></button>
+    </div>
+  </header>
+
+  <main>
+    <fieldset id="fdsList" class="uiListArea mainer">
+      <legend>List</legend>
+      <nav>
+        <ul>
+        </ul>
+      </nav>
+    </fieldset>
+
+    <fieldset id="fdsOne" class="gridOneArea mainer">
+      <legend>One</legend>
+      <table>
+        <thead>
+          <tr>
+            <td id="aFact"></td>
+            <td id="qEn" class="langEn"></td>
+            <td id="qCn" class="langCn"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr id="trQCn">
+            <td>
+              <input type="radio">
+              <input type="checkbox">
+            </td>
+            <td></td>
+            <td></td>
+          </tr> -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">
+              <button id="btnOK">OK</button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </fieldset>
+  </main>
+
+  <!-- <script src="../../../lib/js/_.js"></script>
+  <script src="../../../lib/_$.js"></script>
+  <script src="../../../lib/$.js"></script>
+  <script src="../../../lib/$Util.js"></script>
+  <script src="../../../lib/$UI.js"></script> -->
+
+  <script src="../lib/jquery-3.7.1.min.js"></script>
+  <script src="../js/db.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

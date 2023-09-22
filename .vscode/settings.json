@@ -3,7 +3,7 @@
   "editor.formatOnPaste": true,
   "editor.tabCompletion": "off",
   "editor.tabSize": 2,
-  "editor.wordWrap": "off",
+  "editor.wordWrap": "on",
   "editor.wordBreak": "keepAll",
   "files.eol": "\n",
   "[json]": {
