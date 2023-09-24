@@ -3,16 +3,23 @@ main {
   height: 100%;
 }
 
-td {
-  padding: 5px;
-}
-
 tbody td:hover {
   background-color:sandybrown;
 }
 
+tbody td label {
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
 tfoot td {
   text-align: center;
+}
+
+.td-rdo-chk {
+  padding: 5px;
 }
 
 .uiListArea {
@@ -59,7 +66,19 @@ tfoot td {
   display: none;
 }
 
+/*.key, /*debug*/
+.highlight {
+  color: red;
+  font-weight: bolder;
+  background-color: yellow;
+}
+
 #btnOK {
   width: 108px;
   height: 36px;
+}
+
+#btnShowKey {
+  padding-left: 10px;
+  padding-right: 10px;
 }
