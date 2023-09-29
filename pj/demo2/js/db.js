@@ -4,19 +4,19 @@ $.db =
 
     {
       "no": 28,
-      "q": "A company is using AWS Organizations to manage multiple AWS accounts. For security purposes, the company requires the creation of an Amazon Simple Notification Service(Amazon SNS) topic that enables integration with a third- party alerting system in all the Organizations member accounts.A solutions architect used an AWS CloudFormation template to create the SNS topic and stack sets to automate the deployment of CloudFormation stacks.Trusted access has been enabled in Organizations.What should the solutions architect do to deploy the CloudFormation StackSets in all AWS accounts?",
+      "q": "A company is using AWS Organizations to manage multiple AWS accounts. For security purposes, the company requires the creation of an Amazon Simple Notification Service(Amazon SNS) topic that enables integration with a third-party alerting system in all the Organizations member accounts.A solutions architect used an AWS CloudFormation template to create the SNS topic and stack sets to automate the deployment of CloudFormation stacks.Trusted access has been enabled in Organizations.What should the solutions architect do to deploy the CloudFormation StackSets in all AWS accounts?",
       "a": [
-        "A. Create a stack set in the Organizations member accounts. Use service-managed permissions. Set deployment options to deploy to an organization. Use CloudFormation StackSets drift detection.",
-        "B.Create stacks in the Organizations member accounts.Use self - service permissions.Set deployment options to deploy to an organization.Enable the CloudFormation StackSets automatic deployment.",
-        "C.Create a stack set in the Organizations master account.Use service - managed permissions.Set deployment options to deploy to the organization.Enable CloudFormation StackSets automatic deployment.",
-        "D.Create stacks in the Organizations master account.Use service - managed permissions.Set deployment options to deploy to the organization.Enable CloudFormation StackSets drift detection."
+        "A.Create a stack set in the Organizations member accounts. Use service-managed permissions. Set deployment options to deploy to an organization. Use CloudFormation StackSets drift detection.",
+        "B.Create stacks in the Organizations member accounts.Use self-service permissions.Set deployment options to deploy to an organization.Enable the CloudFormation StackSets automatic deployment.",
+        "C.Create a stack set in the Organizations master account.Use service-managed permissions.Set deployment options to deploy to the organization.Enable CloudFormation StackSets automatic deployment.",
+        "D.Create stacks in the Organizations master account.Use service-managed permissions.Set deployment options to deploy to the organization.Enable CloudFormation StackSets drift detection."
       ],
       "q_cn": "一家公司正在使用 AWS Organizations 来管理多个 AWS 账户。出于安全考虑，该公司要求创建一个 Amazon Simple Notification Service （Amazon SNS） 主题，该主题允许与所有组织成员账户中的第三方警报系统集成。解决方案架构师使用 AWS CloudFormation 模板创建 SNS 主题和堆栈集，以自动部署 CloudFormation 堆栈。已在组织中启用可信访问。解决方案架构师应如何在所有 AWS 账户中部署 CloudFormation StackSets？",
       "a_cn": [
-        "A. 在组织成员账户中创建堆栈集。使用服务托管权限。设置要部署到组织的部署选项。使用 CloudFormation StackSets 漂移检测。",
+        "A.在组织成员账户中创建堆栈集。使用服务托管权限。设置要部署到组织的部署选项。使用 CloudFormation StackSets 漂移检测。",
         "B.在组织成员账户中创建堆栈。使用自助服务权限。设置要部署到组织的部署选项。启用 CloudFormation StackSet 自动部署。",
-        "C.在组织主账户中创建堆栈集。使用服务 - 托管权限。设置要部署到组织的部署选项。启用 CloudFormation StackSet 自动部署。",
-        "D.在组织主账户中创建堆栈。使用服务 - 托管权限。设置要部署到组织的部署选项。启用 CloudFormation StackSet 偏移检测。"
+        "C.在组织主账户中创建堆栈集。使用服务-托管权限。设置要部署到组织的部署选项。启用 CloudFormation StackSet 自动部署。",
+        "D.在组织主账户中创建堆栈。使用服务-托管权限。设置要部署到组织的部署选项。启用 CloudFormation StackSet 偏移检测。"
       ],
       "aa": "C",
       "qK": "SNS,CloudFormation stacks,CloudFormation StackSets",
@@ -24,16 +24,16 @@ $.db =
     },
     {
       "no": 30,
-      "q": "An AWS customer has a web application that runs on premises. The web application fetches data from a third-party API that is behind a firewall. The third party accepts only one public CIDR block in each client's allow list.The customer wants to migrate their web application to the AWS Cloud.The application will be hosted on a set of Amazon EC2 instances behind an Application Load Balancer(ALB) in a VPC.The ALB is located in public subnets.The EC2 instances are located in private subnets.NAT gateways provide internet access to the private subnets.How should a solutions architect ensure that the web application can continue to call the third- party API after the migration ? ",
+      "q": "An AWS customer has a web application that runs on premises. The web application fetches data from a third-party API that is behind a firewall. The third party accepts only one public CIDR block in each client's allow list.The customer wants to migrate their web application to the AWS Cloud.The application will be hosted on a set of Amazon EC2 instances behind an Application Load Balancer(ALB) in a VPC.The ALB is located in public subnets.The EC2 instances are located in private subnets.NAT gateways provide internet access to the private subnets.How should a solutions architect ensure that the web application can continue to call the third-party API after the migration ? ",
       "a": [
-        "A. Associate a block of customer-owned public IP addresses to the VPC. Enable public IP addressing for public subnets in the VPC.",
-        "B.Register a block of customer - owned public IP addresses in the AWS account.Create Elastic IP addresses from the address block and assign them to the NAT gateways in the VPC.",
-        "C.Create Elastic IP addresses from the block of customer - owned IP addresses.Assign the static Elastic IP addresses to the ALB.",
-        "D.Register a block of customer - owned public IP addresses in the AWS account.Set up AWS Global Accelerator to use Elastic IP addresses from the address block.Set the ALB as the accelerator endpoint."
+        "A.Associate a block of customer-owned public IP addresses to the VPC. Enable public IP addressing for public subnets in the VPC.",
+        "B.Register a block of customer-owned public IP addresses in the AWS account.Create Elastic IP addresses from the address block and assign them to the NAT gateways in the VPC.",
+        "C.Create Elastic IP addresses from the block of customer-owned IP addresses.Assign the static Elastic IP addresses to the ALB.",
+        "D.Register a block of customer-owned public IP addresses in the AWS account.Set up AWS Global Accelerator to use Elastic IP addresses from the address block.Set the ALB as the accelerator endpoint."
       ],
       "q_cn": "AWS 客户有一个在本地运行的 Web 应用程序。Web 应用程序从防火墙后面的第三方 API 获取数据。第三方在每个客户端的允许列表中只接受一个公网网段。客户希望将其 Web 应用程序迁移到 AWS 云。应用程序将托管在应用程序后面的一组 Amazon EC2 实例上VPC 中的负载均衡器 （ALB）。ALB 位于公有子网中。EC2 实例位于私有子网中。NAT 网关提供对私有子网的互联网访问。解决方案架构师应如何确保 Web 应用程序在迁移后可以继续调用第三方 API？",
       "a_cn": [
-        "A. 将客户拥有的公有 IP 地址块关联到 VPC。为 VPC 中的公有子网启用公有 IP 寻址。",
+        "A.将客户拥有的公有 IP 地址块关联到 VPC。为 VPC 中的公有子网启用公有 IP 寻址。",
         "B.在 AWS 账户中注册客户拥有的公有 IP 地址块。从地址块创建弹性 IP 地址，并将其分配给 VPC 中的 NAT 网关。",
         "C.从客户拥有的 IP 地址块创建弹性 IP 地址。将静态弹性 IP 地址分配给 ALB。",
         "D.在 AWS 账户中注册客户拥有的公有 IP 地址块。设置 AWS 全球加速器以使用地址块中的弹性 IP 地址。将 ALB 设置为加速器终结点。"
@@ -44,16 +44,16 @@ $.db =
     },
     {
       "no": 31,
-      "q": "A company needs to architect a hybrid DNS solution. This solution will use an Amazon Route 53 private hosted zone for the domain cloud.example.com for the resources stored within VPCs. The company has the following DNS resolution requirements: On- premises systems should be able to resolve and connect to cloud.example.com.All VPCs should be able to resolve cloud.example.com.There is already an AWS Direct Connect connection between the on-premises corporate network and AWS Transit Gateway.Which architecture should the company use to meet these requirements with the HIGHEST performance?",
+      "q": "A company needs to architect a hybrid DNS solution. This solution will use an Amazon Route 53 private hosted zone for the domain cloud.example.com for the resources stored within VPCs. The company has the following DNS resolution requirements: on-premises systems should be able to resolve and connect to cloud.example.com.All VPCs should be able to resolve cloud.example.com.There is already an AWS Direct Connect connection between the on-premises corporate network and AWS Transit Gateway.Which architecture should the company use to meet these requirements with the HIGHEST performance?",
       "a": [
-        "A. Associate the private hosted zone to all the VPCs. Create a Route 53 inbound resolver in the shared services VPC. Attach all VPCs to the transit gateway and create forwarding rules in the on-premises DNS server for cloud.example.com that point to the inbound resolver.",
+        "A.Associate the private hosted zone to all the VPCs. Create a Route 53 inbound resolver in the shared services VPC. Attach all VPCs to the transit gateway and create forwarding rules in the on-premises DNS server for cloud.example.com that point to the inbound resolver.",
         "B.Associate the private hosted zone to all the VPCs.Deploy an Amazon EC2 conditional forwarder in the shared services VPC.Attach all VPCs to the transit gateway and create forwarding rules in the on-premises DNS server for cloud.example.com that point to the conditional forwarder.",
         "C.Associate the private hosted zone to the shared services VPC.Create a Route 53 outbound resolver in the shared services VPC.Attach all VPCs to the transit gateway and create forwarding rules in the on-premises DNS server for cloud.example.com that point to the outbound resolver.",
-        "D.Associate the private hosted zone to the shared services VPC.Create a Route 53 inbound resolver in the shared services VPC.Attach the shared services VPC to the transit gateway and create forwarding rules in the on- premises DNS server for cloud.example.com that point to the inbound resolver."
+        "D.Associate the private hosted zone to the shared services VPC.Create a Route 53 inbound resolver in the shared services VPC.Attach the shared services VPC to the transit gateway and create forwarding rules in the on-premises DNS server for cloud.example.com that point to the inbound resolver."
       ],
       "q_cn": "公司需要构建混合 DNS 解决方案。此解决方案将对 VPC 中存储的资源的域 cloud.example.com 使用 Amazon Route 53 私有托管区域。 该公司有以下 DNS 解析要求： 本地系统应该能够解析并连接到 cloud.example.com。所有 VPC 都应该能够解析 cloud.example.com。本地企业网络和 AWS Transit 网关之间已存在 AWS Direct Connect 连接。      公司应该使用哪种架构来满足这些要求，并具有最高的性能？",
       "a_cn": [
-        "A. 将私有托管区域关联到所有 VPC。 在共享服务 VPC 中创建 Route 53 入站解析程序。将所有 VPC 附加到中转网关，并在本地 DNS 服务器中为指向入站解析程序 cloud.example.com 创建转发规则。",
+        "A.将私有托管区域关联到所有 VPC。 在共享服务 VPC 中创建 Route 53 入站解析程序。将所有 VPC 附加到中转网关，并在本地 DNS 服务器中为指向入站解析程序 cloud.example.com 创建转发规则。",
         "B.将私有托管区域关联到所有 VPC。 在共享服务 VPC 中部署 Amazon EC2 条件转发器。将所有 VPC 附加到中转网关，并在本地 DNS 服务器中为指向条件转发器的 cloud.example.com 创建转发规则。",
         "C.将私有托管区域关联到共享服务 VPC。在共享服务 VPC 中创建 Route 53 出站解析程序。将所有 VPC 附加到中转网关，并在本地 DNS 服务器中为指向出站解析程序 cloud.example.com 创建转发规则。",
         "D.将私有托管区域关联到共享服务 VPC。在共享服务 VPC 中创建 Route 53 入站解析程序。将共享服务 VPC 附加到中转网关，并在本地 DNS 服务器中为指向入站解析程序 cloud.example.com 创建转发规则。"
@@ -64,49 +64,49 @@ $.db =
     },
     {
       "no": 32,
-      "q": "A startup company hosts a fleet of Amazon EC2 instances in private subnets using the latest Amazon Linux 2 AMI. The company's engineers rely heavily on SSH access to the instances for troubleshooting.\nThe company's existing architecture includes the following:\nA VPC with private and public subnets, and a NAT gateway\n Site- to - Site VPN for connectivity with the on- premises environment\n EC2 security groups with direct SSH access from the on-premises environment\nThe company needs to increase security controls around SSH access and provide auditing of commands run by the engineers.\nWhich strategy should a solutions architect use ? ",
+      "q": "A startup company hosts a fleet of Amazon EC2 instances in private subnets using the latest Amazon Linux 2 AMI. The company's engineers rely heavily on SSH access to the instances for troubleshooting.\nThe company's existing architecture includes the following:\nA VPC with private and public subnets, and a NAT gateway\n Site-to-Site VPN for connectivity with the on-premises environment\n EC2 security groups with direct SSH access from the on-premises environment\nThe company needs to increase security controls around SSH access and provide auditing of commands run by the engineers.\nWhich strategy should a solutions architect use ? ",
       "a": [
-        "A. Install and configure EC2 Instance Connect on the fleet of EC2 instances. Remove all security group rules attached to EC2 instances that allow inbound TCP on port 22. Advise the engineers to remotely access the instances by using the EC2 Instance Connect CLI.",
+        "A.Install and configure EC2 Instance Connect on the fleet of EC2 instances. Remove all security group rules attached to EC2 instances that allow inbound TCP on port 22. Advise the engineers to remotely access the instances by using the EC2 Instance Connect CLI.",
         "B.Update the EC2 security groups to only allow inbound TCP on port 22 to the IP addresses of the engineer's devices. Install the Amazon CloudWatch agent on all EC2 instances and send operating system audit logs to CloudWatch Logs.",
         "C.Update the EC2 security groups to only allow inbound TCP on port 22 to the IP addresses of the engineer's devices. Enable AWS Config for EC2 security group resource changes. Enable AWS Firewall Manager and apply a security group policy that automatically remediates changes to rules.",
-        "D.Create an IAM role with the Amazon SSM Managed InstanceCore managed policy attached.Attach the IAM role to all the EC2 instances.Remove all security group rules attached to the EC2 instances that allow inbound TCP on port 22. Have the engineers install the AWS Systems Manager Session Manager plugin for their devices and remotely access the instances by using the start- session API call from Systems Manager."
+        "D.Create an IAM role with the Amazon SSM Managed InstanceCore managed policy attached.Attach the IAM role to all the EC2 instances.Remove all security group rules attached to the EC2 instances that allow inbound TCP on port 22. Have the engineers install the AWS Systems Manager Session Manager plugin for their devices and remotely access the instances by using the start-session API call from Systems Manager."
       ],
       "q_cn": "一家初创公司使用最新的 Amazon Linux 2 AMI 在私有子网中托管一组 Amazon EC2 实例。\n该公司的工程师严重依赖对实例的 SSH 访问来进行故障排除。\n该公司的现有体系结构包括以下内容：\n具有私有和公有子网的 VPC 以及用于与本地环境连接的 NAT 网关\n站点到站点 VPN，用于与本地环境连接\n从本地环境直接通过 SSH 访问进行 SSH 访问的 EC2 安全组n公司需要加强对 SSH 访问的安全控制，并对工程师运行的命令进行审核。\n解决方案架构师应该使用哪种策略？",
       "a_cn": [
-        "A. 在 EC2 实例队列上安装和配置 EC2 实例连接。删除附加到允许端口 22 上入站 TCP 的 EC2 实例的所有安全组规则。建议工程师使用 EC2 实例连接 CLI 远程访问实例。",
+        "A.在 EC2 实例队列上安装和配置 EC2 实例连接。删除附加到允许端口 22 上入站 TCP 的 EC2 实例的所有安全组规则。建议工程师使用 EC2 实例连接 CLI 远程访问实例。",
         "B.更新 EC2 安全组，使其仅允许端口 22 上的入站 TCP 到工程师设备的 IP 地址。在所有 EC2 实例上安装 Amazon CloudWatch 代理，并将操作系统审核日志发送到 CloudWatch Logs。",
         "C.更新 EC2 安全组，使其仅允许端口 22 上的入站 TCP 到工程师设备的 IP 地址。为 EC2 安全组资源更改启用 AWS Config。启用 AWS 防火墙管理器并应用可自动修复规则更改的安全组策略。",
         "D.创建附加了 AmazonSSMM 实例核心托管策略的 IAM 角色。将 IAM 角色附加到所有 EC2 实例。删除附加到允许端口 22 上的入站 TCP 的 EC2 实例的所有安全组规则。让工程师为其设备安装 AWS 系统管理器会话管理器插件，并使用系统管理器中的启动会话 API 调用远程访问实例。"
       ],
       "aa": "D",
       "qK": "EC2,Linux 2 AMI,SSH",
-      "aK": ["IAM role"]
+      "aK": ["IAM role,SSM Managed,AWS Systems Manager Session Manager plugin"]
     },
     {
       "no": 33,
-      "q": "A company is storing data on premises on a Windows file server. The company produces 5 GB of new data daily.\nThe company migrated part of its Windows- based workload to AWS and needs the data to be available on a file system in the cloud.The company already has established an AWS Direct Connect connection between the on-premises network and AWS.\nWhich data migration strategy should the company use ? ",
+      "q": "A company is storing data on premises on a Windows file server. The company produces 5 GB of new data daily.\nThe company migrated part of its Windows-based workload to AWS and needs the data to be available on a file system in the cloud.The company already has established an AWS Direct Connect connection between the on-premises network and AWS.\nWhich data migration strategy should the company use ? ",
       "a": [
-        "A. Use the file gateway option in AWS Storage Gateway to replace the existing Windows file server, and point the existing file share to the new file gateway",
+        "A.Use the file gateway option in AWS Storage Gateway to replace the existing Windows file server, and point the existing file share to the new file gateway",
         "B.Use AWS DataSync to schedule a daily task to replicate data between the on-premises Windows file server and Amazon FSx Most Voted",
         "C.Use AWS Data Pipeline to schedule a daily task to replicate data between the on-premises Windows file server and Amazon Elastic File System(Amazon EFS)",
         "D.Use AWS DataSync to schedule a daily task to replicate data between the on-premises Windows file server and Amazon Elastic File System(Amazon EFS) "
       ],
       "q_cn": "一家公司正在将本地数据存储在 Windows 文件服务器上。该公司每天产生 5 GB 的新数据。\n该公司将其部分基于 Windows 的工作负载迁移到 AWS，并且需要数据在云中的文件系统上可用。该公司已经在本地网络和 AWS 之间建立了 AWS Direct Connect 连接。\n公司应使用哪种数据迁移策略？",
       "a_cn": [
-        "A. 使用 AWS Storage Gateway 中的文件网关选项替换现有的 Windows 文件服务器，并将现有文件共享指向新的文件网关",
+        "A.使用 AWS Storage Gateway 中的文件网关选项替换现有的 Windows 文件服务器，并将现有文件共享指向新的文件网关",
         "B.使用 AWS DataSync 计划每日任务，在本地 Windows 文件服务器和 Amazon FSx 投票最多",
         "C.使用 AWS Data Pipeline 计划每日任务，在本地 Windows 文件服务器和 Amazon Elastic File System （Amazon EFS） 之间复制数据",
         "D.使用 AWS DataSync 计划每日任务，以在本地 Windows 文件服务器和 Amazon Elastic File System （Amazon EFS） 之间复制数据"
       ],
       "aa": "B",
-      "qK": "Windows,5GB",
-      "aK": ["FSx"]
+      "qK": "Windows,5 GB",
+      "aK": ["FSx Most Voted"]
     },
     {
       "no": 34,
       "q": "A company is developing and hosting several projects in the AWS Cloud. The projects are developed across multiple AWS accounts under the same organization in AWS Organizations. The company requires the cost for cloud infrastructure to be allocated to the owning project. The team responsible for all of the AWS accounts has discovered that several Amazon EC2 instances are lacking the Project tag used for cost allocation.\nWhich actions should a solutions architect take to resolve the problem and prevent it from happening in the future?(Choose three.) ",
       "a": [
-        "A. Create an AWS Config rule in each account to find resources with missing tags.",
+        "A.Create an AWS Config rule in each account to find resources with missing tags.",
         "B.Create an SCP in the organization with a deny action for ec2: Runlnstances if the Project tag is missing.",
         "C.Use Amazon Inspector in the organization to find resources with missing tags.",
         "D.Create an IAM policy in each account with a deny action for ec2: Runlnstances if the Project tag is missing.",
@@ -125,16 +125,16 @@ $.db =
       "aa": "A,B,E",
       "qK": "EC2,lacking the Project tag,cost allocation",
       "aK": [
-        "AWS Config [rule]",
+        "AWS Config",
         "SCP",
-        "AWS Config [aggregator]"
+        "AWS Config"
       ]
     },
     {
       "no": 35,
       "q": "A company has many AWS accounts and uses AWS Organizations to manage all of them. A solutions architect must implement a solution that the company can use to share a common network across multiple accounts.\nThe company’s infrastructure team has a dedicated infrastructure account that has a VPC.The infrastructure team must use this account to manage the network.Individual accounts cannot have the ability to manage their own networks.However, individual accounts must be able to create AWS resources within subnets.\nWhich combination of actions should the solutions architect perform to meet these requirements?(Choose two.) ",
       "a": [
-        "A. Create a transit gateway in the infrastructure account.",
+        "A.Create a transit gateway in the infrastructure account.",
         "B.Enable resource sharing from the AWS Organizations management account.",
         "C.Create VPCs in each AWS account within the organization in AWS Organizations.Configure the VPCs to share the same CIDR range and subnets as the VPC in the infrastructure account.Peer the VPCs in each individual account with the VPC in the infrastructure account.",
         "D.Create a resource share in AWS Resource Access Manager in the infrastructure account.Select the specific AWS Organizations OU that will use the shared network.Select each subnet to associate with the resource share.",
@@ -142,7 +142,7 @@ $.db =
       ],
       "q_cn": "一家公司拥有许多 AWS 账户，并使用 AWS Organizations 来管理所有这些账户。解决方案架构师必须实现公司可用于跨多个帐户共享公共网络的解决方案。\n该公司的基础设施团队有一个具有 VPC 的专用基础设施账户。基础结构团队必须使用此帐户来管理网络。个人帐户无法管理自己的网络。但是，个人账户必须能够在子网中创建 AWS 资源。\n     解决方案架构师应执行哪些操作组合来满足这些要求？（选择两个。",
       "a_cn": [
-        "A. 在基础架构帐户中创建中转网关。",
+        "A.在基础架构帐户中创建中转网关。",
         "B.从 AWS Organizations 管理账户启用资源共享。",
         "C.在 AWS 组织的组织内的每个 AWS 账户中创建 VPC。将 VPC 配置为与基础设施账户中的 VPC 共享相同的 CIDR 范围和子网。将每个单独账户中的 VPC 与基础设施账户中的 VPC 对等。",
         "D.在基础设施账户的 AWS 资源访问管理器中创建资源共享。选择将使用共享网络的特定 AWS Organizations OU。选择要与资源共享关联的每个子网。",
@@ -159,14 +159,14 @@ $.db =
       "no": 36,
       "q": "A large company is running a popular web application. The application runs on several Amazon EC2 Linux instances in an Auto Scaling group in a private subnet.\nAn Application Load Balancer is targeting the instances in the Auto Scaling group in the private subnet.AWS Systems Manager Session Manager is configured, and AWS Systems Manager Agent is running on all the EC2 instances.\nThe company recently released a new version of the application.Some EC2 instances are now being marked as unhealthy and are being terminated.As a result, the application is running at reduced capacity.A solutions architect tries to determine the root cause by analyzing Amazon CloudWatch logs that are collected from the application, but the logs are inconclusive.\nHow should the solutions architect gain access to an EC2 instance to troubleshoot the issue?",
       "a": [
-        "A. Suspend the Auto Scaling group's HealthCheck scaling process. Use Session Manager to log in to an instance that is marked as unhealthy.",
+        "A.Suspend the Auto Scaling group's HealthCheck scaling process. Use Session Manager to log in to an instance that is marked as unhealthy.",
         "B.Enable EC2 instance termination protection.Use Session Manager to log in to an instance that is marked as unhealthy.",
         "C.Set the termination policy to OldestInstance on the Auto Scaling group.Use Session Manager to log in to an instance that is marked an unhealthy.",
         "D.Suspend the Auto Scaling group's Terminate process. Use Session Manager to log in to an instance that is marked as unhealthy."
       ],
       "q_cn": "一家大公司正在运行一个流行的 Web 应用程序。该应用程序在私有子网中的 Auto Scaling 组中的多个 Amazon EC2 Linux 实例上运行。\n应用程序负载均衡器以私有子网中 Auto Scaling 组中的实例为目标。AWS Systems Manager Session Manager 已配置，AWS Systems Manager Agent 正在所有 EC2 实例上运行。\n该公司最近发布了该应用程序的新版本。某些 EC2 实例现在被标记为运行状况不佳并正在终止。因此，应用程序以减少的容量运行。解决方案架构师尝试通过分析从应用程序收集的 Amazon CloudWatch 日志来确定根本原因，但这些日志尚无定论。\n解决方案架构师应如何访问 EC2 实例以排查问题？",
       "a_cn": [
-        "A. 暂停弹性伸缩组的运行状况检查扩展过程。使用会话管理器登录到标记为运行状况不佳的实例。",
+        "A.暂停弹性伸缩组的运行状况检查扩展过程。使用会话管理器登录到标记为运行状况不佳的实例。",
         "B.启用 EC2 实例终止保护。使用会话管理器登录到标记为运行状况不佳的实例。",
         "C.在弹性伸缩分组上，将终止策略设置为最旧的实例。使用会话管理器登录到标记为运行状况不佳的实例。",
         "D.暂停弹性伸缩组的终止进程。使用会话管理器登录到标记为运行状况不佳的实例。"
@@ -179,10 +179,10 @@ $.db =
       "no": 37,
       "q": "A company wants to migrate an application to Amazon EC2 from VMware Infrastructure that runs in an on-premises data center. A solutions architect must preserve the software and configuration settings during the migration.\nWhat should the solutions architect do to meet these requirements?",
       "a": [
-        "A. Configure the AWS DataSync agent to start replicating the data store to Amazon FSx for Windows File Server. Use the SMB share to host the VMware data store. Use VM Import/Export to move the VMs to Amazon EC2.",
+        "A.Configure the AWS DataSync agent to start replicating the data store to Amazon FSx for Windows File Server. Use the SMB share to host the VMware data store. Use VM Import/Export to move the VMs to Amazon EC2.",
         "B.Use the VMware vSphere client to export the application as an image in Open Virtualization Format(OVF) format.Create an Amazon S3 bucket to store the image in the destination AWS Region.Create and apply an IAM role for VM Import.Use the AWS CLI to run the EC2 import command.",
         "C.Configure AWS Storage Gateway for files service to export a Common Internet File System(CIFS) share.Create a backup copy to the shared folder.Sign in to the AWS Management Console and create an AMI from the backup copy.Launch an EC2 instance that is based on the AMI.",
-        "D.Create a managed- instance activation for a hybrid environment in AWS Systems Manager.Download and install Systems Manager Agent on the on- premises VM.Register the VM with Systems Manager to be a managed instance.Use AWS Backup to create a snapshot of the VM and create an AMI.Launch an EC2 instance that is based on the AMI."
+        "D.Create a managed-instance activation for a hybrid environment in AWS Systems Manager.Download and install Systems Manager Agent on the on-premises VM.Register the VM with Systems Manager to be a managed instance.Use AWS Backup to create a snapshot of the VM and create an AMI.Launch an EC2 instance that is based on the AMI."
       ],
       "q_cn": "一家公司希望将应用程序从在本地数据中心运行的 VMware Infrastructure 迁移到 Amazon EC2。解决方案架构师必须在迁移期间保留软件和配置设置。\n解决方案架构师应该做些什么来满足这些要求？",
       "a_cn": [
@@ -199,7 +199,7 @@ $.db =
       "no": 38,
       "q": "A software company hosts an application on AWS with resources in multiple AWS accounts and Regions. The application runs on a group of Amazon EC2 instances in an application VPC located in the us-east-1 Region with an IPv4 CIDR block of 10.10.0.0/16. In a different AWS account, a shared services VPC is located in the us-east-2 Region with an IPv4 CIDR block of 10.10.10.0/24. When a cloud engineer uses AWS CloudFormation to attempt to peer the application VPC with the shared services VPC, an error message indicates a peering failure.\nWhich factors could cause this error ? (Choose two.) ",
       "a": [
-        "A. The IPv4 CIDR ranges of the two VPCs overlap",
+        "A.The IPv4 CIDR ranges of the two VPCs overlap",
         "B.The VPCs are not in the same Region",
         "C.One or both accounts do not have access to an Internet gateway",
         "D.One of the VPCs was not shared through AWS Resource Access Manager",
@@ -224,14 +224,14 @@ $.db =
       "no": 43,
       "q": "A company is planning to host a web application on AWS and wants to load balance the traffic across a group of Amazon EC2 instances. One of the security requirements is to enable end-to-end encryption in transit between the client and the web server.\nWhich solution will meet this requirement ? ",
       "a": [
-        "A. Place the EC2 instances behind an Application Load Balancer (ALB). Provision an SSL certificate using AWS Certificate Manager (ACM), and associate the SSL certificate with the ALB. Export the SSL certificate and install it on each EC2 instance. Configure the ALB to listen on port 443 and to forward traffic to port 443 on the instances.",
+        "A.Place the EC2 instances behind an Application Load Balancer (ALB). Provision an SSL certificate using AWS Certificate Manager (ACM), and associate the SSL certificate with the ALB. Export the SSL certificate and install it on each EC2 instance. Configure the ALB to listen on port 443 and to forward traffic to port 443 on the instances.",
         "B.Associate the EC2 instances with a target group.Provision an SSL certificate using AWS Certificate Manager(ACM).Create an Amazon CloudFront distribution and configure it to use the SSL certificate.Set CloudFront to use the target group as the origin server.",
-        "C.Place the EC2 instances behind an Application Load Balancer(ALB) Provision an SSL certificate using AWS Certificate Manager(ACM), and associate the SSL certificate with the ALB.Provision a third- party SSL certificate and install it on each EC2 instance.Configure the ALB to listen on port 443 and to forward traffic to port 443 on the instances.",
-        "D.Place the EC2 instances behind a Network Load Balancer(NLB).Provision a third - party SSL certificate and install it on the NLB and on each EC2 instance.Configure the NLB to listen on port 443 and to forward traffic to port 443 on the instances."
+        "C.Place the EC2 instances behind an Application Load Balancer(ALB) Provision an SSL certificate using AWS Certificate Manager(ACM), and associate the SSL certificate with the ALB.Provision a third-party SSL certificate and install it on each EC2 instance.Configure the ALB to listen on port 443 and to forward traffic to port 443 on the instances.",
+        "D.Place the EC2 instances behind a Network Load Balancer(NLB).Provision a third-party SSL certificate and install it on the NLB and on each EC2 instance.Configure the NLB to listen on port 443 and to forward traffic to port 443 on the instances."
       ],
       "q_cn": "一家公司计划在 AWS 上托管一个 Web 应用程序，并希望在一组 Amazon EC2 实例之间对流量进行负载均衡。安全要求之一是在客户端和 Web 服务器之间启用传输中的端到端加密。\n哪种解决方案可以满足此要求？",
       "a_cn": [
-        "A. 将 EC2 实例放在应用程序负载均衡器 （ALB） 后面。使用 AWS 证书管理器 （ACM） 预置 SSL 证书，并将 SSL 证书与 ALB 关联。导出 SSL 证书并将其安装在每个 EC2 实例上。将 ALB 配置为侦听端口 443，并将流量转发到实例上的端口 443。",
+        "A.将 EC2 实例放在应用程序负载均衡器 （ALB） 后面。使用 AWS 证书管理器 （ACM） 预置 SSL 证书，并将 SSL 证书与 ALB 关联。导出 SSL 证书并将其安装在每个 EC2 实例上。将 ALB 配置为侦听端口 443，并将流量转发到实例上的端口 443。",
         "B.将 EC2 实例与目标组关联。使用 AWS 证书管理器 （ACM） 预置 SSL 证书。创建 Amazon CloudFront 分配并将其配置为使用 SSL 证书。设置 CloudFront 以使用目标组作为源服务器。",
         "C.将 EC2 实例放在应用程序负载均衡器 （ALB） 后面 使用 AWS 证书管理器 （ACM） 预置 SSL 证书，并将 SSL 证书与 ALB 关联。预置第三方 SSL 证书并将其安装在每个 EC2 实例上。将 ALB 配置为侦听端口 443，并将流量转发到实例上的端口 443。",
         "D.将 EC2 实例放在网络负载均衡器 （NLB） 后面。预置第三方 SSL 证书并将其安装在 NLB 和每个 EC2 实例上。将 NLB 配置为侦听端口 443，并将流量转发到实例上的端口 443。"
@@ -244,34 +244,34 @@ $.db =
       "no": 44,
       "q": "A company is running several workloads in a single AWS account. A new company policy states that engineers can provision only approved resources and that engineers must use AWS CloudFormation to provision these resources. A solutions architect needs to create a solution to enforce the new restriction on the IAM role that the engineers use for access.\nWhat should the solutions architect do to create the solution?",
       "a": [
-        "A. Upload AWS CloudFormation templates that contain approved resources to an Amazon S3 bucket. Update the IAM policy for the engineers’ IAM role to only allow access to Amazon S3 and AWS CloudFormation. Use AWS CloudFormation templates to provision resources.",
+        "A.Upload AWS CloudFormation templates that contain approved resources to an Amazon S3 bucket. Update the IAM policy for the engineers’ IAM role to only allow access to Amazon S3 and AWS CloudFormation. Use AWS CloudFormation templates to provision resources.",
         "B.Update the IAM policy for the engineers’ IAM role with permissions to only allow provisioning of approved resources and AWS CloudFormation.Use AWS CloudFormation templates to create stacks with approved resources.",
         "C.Update the IAM policy for the engineers’ IAM role with permissions to only allow AWS CloudFormation actions.Create a new IAM policy with permission to provision approved resources, and assign the policy to a new IAM service role.Assign the IAM service role to AWS CloudFormation during stack creation.",
         "D.Provision resources in AWS CloudFormation stacks.Update the IAM policy for the engineers’ IAM role to only allow access to their own AWS CloudFormation stack."
       ],
       "q_cn": "一家公司在单个 AWS 账户中运行多个工作负载。新的公司政策规定，工程师只能预置批准的资源，并且工程师必须使用 AWS CloudFormation 来预置这些资源。解决方案架构师需要创建一个解决方案，以对工程师用于访问的 IAM 角色强制实施新的限制。\n解决方案架构师应该做什么来创建解决方案？",
       "a_cn": [
-        "A. 将包含已批准资源的 AWS CloudFormation 模板上传到 Amazon S3 存储桶。更新工程师 IAM 角色的 IAM 策略，以仅允许访问 Amazon S3 和 AWS CloudFormation。使用 AWS CloudFormation 模板预置资源。",
+        "A.将包含已批准资源的 AWS CloudFormation 模板上传到 Amazon S3 存储桶。更新工程师 IAM 角色的 IAM 策略，以仅允许访问 Amazon S3 和 AWS CloudFormation。使用 AWS CloudFormation 模板预置资源。",
         "B.更新工程师 IAM 角色的 IAM 策略，使其权限仅允许预置批准的资源和 AWS CloudFormation。使用 AWS CloudFormation 模板创建具有已批准资源的堆栈。",
         "C.更新工程师 IAM 角色的 IAM 策略，使其权限仅允许 AWS CloudFormation 操作。创建有权预置已批准资源的新 IAM 策略，并将该策略分配给新的 IAM 服务角色。在堆栈创建期间将 IAM 服务角色分配给 AWS CloudFormation。",
         "D.在 AWS CloudFormation 堆栈中预置资源。更新工程师 IAM 角色的 IAM 策略，以仅允许访问其自己的 AWS CloudFormation 堆栈。"
       ],
       "aa": "C",
       "qK": "approved resources,CloudFormation",
-      "aK": ["[Update,policy,new IAM policy,new IAM ]service role"]
+      "aK": ["CloudFormation actions,new IAM,service role"]
     },
     {
       "no": 45,
       "q": "A company with global offices has a single 1 Gbps AWS Direct Connect connection to a single AWS Region. The company's on-premises network uses the connection to communicate with the company's resources in the AWS Cloud. The connection has a single private virtual interface that connects to a single VPC.\nA solutions architect must implement a solution that adds a redundant Direct Connect connection in the same Region.The solution also must provide connectivity to other Regions through the same pair of Direct Connect connections as the company expands into other Regions.\nWhich solution meets these requirements?",
       "a": [
-        "A. Provision a Direct Connect gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the Direct Connect gateway. Connect the Direct Connect gateway to the single VPC.",
+        "A.Provision a Direct Connect gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the Direct Connect gateway. Connect the Direct Connect gateway to the single VPC.",
         "B.Keep the existing private virtual interface.Create the second Direct Connect connection.Create a new private virtual interface on the new connection, and connect the new private virtual interface to the single VPC.",
         "C.Keep the existing private virtual interface.Create the second Direct Connect connection.Create a new public virtual interface on the new connection and connect the new public virtual interface to the single VPC.",
         "D.Provision a transit gateway.Delete the existing private virtual interface from the existing connection.Create the second Direct Connect connection.Create a new private virtual interface on each connection, and connect both private virtual interfaces to the transit gateway.Associate the transit gateway with the single VPC."
       ],
       "q_cn": "拥有全球办事处的公司与单个 AWS 区域只有一条 1 Gbps 的 AWS Direct Connect 连接。公司的本地网络使用该连接与 AWS 云中的公司资源进行通信。该连接具有连接到单个 VPC 的单个私有虚拟接口。\n解决方案架构师必须实现在同一区域添加冗余专线连接的解决方案。当公司扩展到其他区域时，该解决方案还必须通过同一对直接连接提供与其他区域的连接。\n哪种解决方案满足这些要求",
       "a_cn": [
-        "A. 配置专线网关。从现有连接中删除现有私有虚拟接口。创建第二个直接连接。在每个连接上创建新的私有虚拟接口，并将两个私有虚拟接口连接到专线网关。将专线网关连接到单个VPC。",
+        "A.配置专线网关。从现有连接中删除现有私有虚拟接口。创建第二个直接连接。在每个连接上创建新的私有虚拟接口，并将两个私有虚拟接口连接到专线网关。将专线网关连接到单个VPC。",
         "B.保留现有的私有虚拟接口。创建第二个直接连接。在新连接上创建新的私有虚拟接口，并将新的私有虚拟接口连接到单个 VPC。",
         "C.保留现有的私有虚拟接口。创建第二个直接连接。在新连接上创建新的公有虚拟接口，并将新的公有虚拟接口连接到单个 VPC。",
         "D.配置中转网关。从现有连接中删除现有私有虚拟接口。创建第二个直接连接。在每个连接上创建一个新的私有虚拟接口，并将两个私有虚拟接口连接到中转网关。将中转网关与单个 VPC 关联。"
@@ -292,7 +292,7 @@ $.db =
       "q_cn": "一家公司使用应用程序负载均衡器 （ALB） 和托管在 Amazon ECS 集群中的 Docker 应用程序托管社区论坛站点。站点数据存储在适用于 MySQL 的 Amazon RDS 中，容器映像存储在 ECR 中。该公司需要为其客户提供 RTO 不超过 24 小时、RPO 不超过 8 小时的灾难恢复 SIA。以下哪种解决方案是满足要求的最具成本效益的方法？",
       "a_cn": [
         "A.使用 AWS CloudFormation 在两个资源中删除相同的 ALB、EC2、ECS 和 RDS 资源。每 8 小时安排一次 RDS 快照。使用 RDS 多区域复制更新次要区域的数据库副本。发生故障时，请从最新快照还原，并使用 Amazon Route 53 DNS 故障转移策略自动将客户重定向到次要区域中的 ALB。",
-        "B.在两个区域中 B.Store ECR 中的 Docker 映像。每 8 小时计划一次 RDS 快照，并将快照复制到次要区域。发生故障时，使用 AWS CloudFormation 在次要区域中部署 ALB、EC2、ECS 和 RDS 资源，从最新快照还原，并更新 DNS 记录以指向次要区域中的 ALB。",
+        "B.将 Docker 镜像存储在 ECR 中的两个区域中。每 8 小时计划一次 RDS 快照，并将快照复制到次要区域。发生故障时，使用 AWS CloudFormation 在次要区域中部署 ALB、EC2、ECS 和 RDS 资源，从最新快照还原，并更新 DNS 记录以指向次要区域中的 ALB。",
         "C.使用 AWS CloudFormation 在二级ARV区域中删除相同的ALB、EC2、ECS和RDS资源。计划每小时将 RDS MySOL 备份到 Amazon S3，并使用跨区域复制将数据复制到次要区域中的存储桶。如果发生故障，请将最新的 Docker 映像导入次要区域中的 Amazon ECR，部署到 EC2 实例。还原最新的 MySQL 备份，并更新 DNS 记录以指向次要区域中的 ALB。",
         "D.在具有 ALB 的次要区域中部署 Pilot Light 环境，并在具有扩展策略的 AWS Auto Scaling 组中为 Focker 部署最少资源 EC2，以增加实例大小和节点数 创建 RDS 数据的跨区域只读副本。发生故障时。将副本提升为主副本，并更新 DNS 记录以指向第二个区域中的 ALB。"
       ],
@@ -304,7 +304,7 @@ $.db =
       "no": 49,
       "q": "A company wants to migrate its data analytics environment from on premises to AWS. The environment consists of two simple Node.js applications. One of the applications collects sensor data and loads it into a MySQL database. The other application aggregates the data into reports. When the aggregation jobs run, some of the load jobs fail to run correctly.\nThe company must resolve the data loading issue.The company also needs the migration to occur without interruptions or changes for the company's customers.\nWhat should a solutions architect do to meet these requirements?",
       "a": [
-        "A. Set up an Amazon Aurora MySQL database as a replication target for the on-premises database. Create an Aurora Replica for the Aurora MySQL database, and move the aggregation jobs to run against the Aurora Replica. Set up collection endpoints as AWS Lambda functions behind a Network Load Balancer (NLB), and use Amazon RDS Proxy to write to the Aurora MySQL database. When the databases are synced, disable the replication job and restart the Aurora Replica as the primary instance. Point the collector DNS record to the NLB.",
+        "A.Set up an Amazon Aurora MySQL database as a replication target for the on-premises database. Create an Aurora Replica for the Aurora MySQL database, and move the aggregation jobs to run against the Aurora Replica. Set up collection endpoints as AWS Lambda functions behind a Network Load Balancer (NLB), and use Amazon RDS Proxy to write to the Aurora MySQL database. When the databases are synced, disable the replication job and restart the Aurora Replica as the primary instance. Point the collector DNS record to the NLB.",
         "B.Set up an Amazon Aurora MySQL database.Use AWS Database Migration Service(AWS DMS) to perform continuous data replication from the on-premises database to Aurora.Move the aggregation jobs to run against the Aurora MySQL database.Set up collection endpoints behind an Application Load Balancer(ALB) as Amazon EC2 instances in an Auto Scaling group.When the databases are synced, point the collector DNS record to the ALB.Disable the AWS DMS sync task after the cutover from on premises to AWS.",
         "C.Set up an Amazon Aurora MySQL database.Use AWS Database Migration Service(AWS DMS) to perform continuous data replication from the on-premises database to Aurora.Create an Aurora Replica for the Aurora MySQL database, and move the aggregation jobs to run against the Aurora Replica.Set up collection endpoints as AWS Lambda functions behind an Application Load Balancer(ALB), and use Amazon RDS Proxy to write to the Aurora MySQL database.When the databases are synced, point the collector DNS record to the ALB.Disable the AWS DMS sync task after the cutover from on premises to AWS.",
         "D.Set up an Amazon Aurora MySQL database.Create an Aurora Replica for the Aurora MySQL database, and move the aggregation jobs to run against the Aurora Replica.Set up collection endpoints as an Amazon Kinesis data stream.Use Amazon Kinesis Data Firehose to replicate the data to the Aurora MySQL database.When the databases are synced, disable the replication job and restart the Aurora Replica as the primary instance.Point the collector DNS record to the Kinesis data stream."
@@ -322,14 +322,14 @@ $.db =
     },
     {
       "no": 53,
-      "q": "A team collects and routes behavioral data for an entire company. The company runs a Multi-AZ VPC environment with public subnets, private subnets, and in internet gateway. Each public subnet also contains a NAT gateway. Most of the company's applications read from and write to Amazon Kinesis Data Streams.\nMost of the workloads run in private subnets.\nA solutions architect must review the infrastructure.The solution architect needs to reduce costs and maintain the function of the applications.The solutions architect uses Cost Explorer and notices that the cost in the EC2- Other category is consistently high.A further review shows that NatGateway - Bytes charges are increasing the cost in the EC2 - Other category.\nWhat should the solutions architect do to meet these requirements?",
+      "q": "A team collects and routes behavioral data for an entire company. The company runs a Multi-AZ VPC environment with public subnets, private subnets, and in internet gateway. Each public subnet also contains a NAT gateway. Most of the company's applications read from and write to Amazon Kinesis Data Streams.\nMost of the workloads run in private subnets.\nA solutions architect must review the infrastructure.The solution architect needs to reduce costs and maintain the function of the applications.The solutions architect uses Cost Explorer and notices that the cost in the EC2-Other category is consistently high.A further review shows that NatGateway-Bytes charges are increasing the cost in the EC2-Other category.\nWhat should the solutions architect do to meet these requirements?",
       "a": [
-        "A. Enable VPC Flow Logs. Use Amazon Athena to analyze the logs for traffic that can be removed. Ensure that security groups are blocking traffic that is responsible for high costs.",
+        "A.Enable VPC Flow Logs. Use Amazon Athena to analyze the logs for traffic that can be removed. Ensure that security groups are blocking traffic that is responsible for high costs.",
         "B.Add an interface VPC endpoint for Kinesis Data Streams to the VPC.Ensure that applications have the correct IAM permissions to use the interface VPC endpoint.",
         "C.Enable VPC Flow Logs and Amazon Detective.Review Detective findings for traffic that is not related to Kinesis Data Streams.Configure security groups to block that traffic.",
         "D.Add an interface VPC endpoint for Kinesis Data Streams to the VPC.Ensure that the VPC endpoint policy allows traffic from the applications."
       ],
-      "q_cn": "团队收集和路由整个公司的行为数据。该公司运行具有公有子网、私有子网和互联网网关的多可用区 VPC 环境。每个公有子网还包含一个 NAT 网关。该公司的大多数应用程序都读取和写入 Amazon Kinesis Data Streams。\n大多数工作负载都在私有子网中运行。\n解决方案架构师必须检查基础设施。解决方案架构师需要降低成本并维护应用程序的功能。解决方案架构师使用 成本管理器 并注意到 EC2 - 其他类别中的成本一直很高。进一步的审查表明，NatGateway - 字节费用正在增加 EC2 - 其他类别的成本。n解决方案架构师应采取哪些措施来满足这些要求？",
+      "q_cn": "团队收集和路由整个公司的行为数据。该公司运行具有公有子网、私有子网和互联网网关的多可用区 VPC 环境。每个公有子网还包含一个 NAT 网关。该公司的大多数应用程序都读取和写入 Amazon Kinesis Data Streams。\n大多数工作负载都在私有子网中运行。\n解决方案架构师必须检查基础设施。解决方案架构师需要降低成本并维护应用程序的功能。解决方案架构师使用 成本管理器 并注意到 EC2-其他类别中的成本一直很高。进一步的审查表明，NatGateway-字节费用正在增加 EC2-其他类别的成本。\n解决方案架构师应采取哪些措施来满足这些要求？",
       "a_cn": [
         "A.启用 VPC 流日志。使用 Amazon Athena 分析日志中可移除的流量。确保安全组阻止导致高成本的流量。",
         "B.将 Kinesis 数据流的接口 VPC 终端节点添加到该 VPC。确保应用程序具有正确的 IAM 权限以使用接口 VPC 终端节点。",
@@ -337,7 +337,7 @@ $.db =
         "D.将 Kinesis 数据流的接口 VPC 终端节点添加到 VPC。确保 VPC 终端节点策略允许来自应用程序的流量。"
       ],
       "aa": "D",
-      "qK": "NatGateway - Bytes",
+      "qK": "NatGateway-Bytes",
       "aK": ["[Add],endpoint policy"]
     },
     {
@@ -353,7 +353,7 @@ $.db =
       ],
       "q_cn": "公司的工厂和自动化应用程序在单个 VPC 中运行。超过 20 个应用程序在 Amazon EC2、Amazon Elastic 的组合上运行Container Service （Amazon ECS） 和 Amazon RDS。\n该公司的软件工程师分布在三个团队中。三个团队中的一个拥有每个应用程序，并且每次负责其所有应用程序的成本和性能。团队资源具有表示其应用程序和团队的标记。团队使用 IAM 访问权限进行日常活动。\n      公司需要确定每月 AWS 账单上的哪些成本可归因于每个应用程序或团队。公司还必须能够创建报告来比较过去 12 个月的成本，并帮助预测未来 12 个月的成本。解决方案架构师必须推荐 AWS 账单和提供这些成本报表的成本管理解决方案。\n哪些操作组合将满足这些要求？（选择三个。",
       "a_cn": [
-        "A. 激活代表应用程序和团队的用户定义成本分配标记。",
+        "A.激活代表应用程序和团队的用户定义成本分配标记。",
         "B.激活代表应用程序和团队的 AWS 生成的成本分配标签。",
         "C.在“计费和成本管理”中为每个应用程序创建成本类别。",
         "D.激活对账单和成本管理的 IAM 访问权限。",
@@ -372,9 +372,9 @@ $.db =
       "no": 57,
       "q": "A company wants to deploy an AWS WAF solution to manage AWS WAF rules across multiple AWS accounts. The accounts are managed under different OUs in AWS Organizations.\nAdministrators must be able to add or remove accounts or OUs from managed AWS WAF rule sets as needed.Administrators also must have the ability to automatically update and remediate noncompliant AWS WAF rules in all accounts.\nWhich solution meets these requirements with the LEAST amount of operational overhead?",
       "a": [
-        "A. Use AWS Firewall Manager to manage AWS WAF rules across accounts in the organization. Use an AWS Systems Manager Parameter Store parameter to store account numbers and OUs to manage. Update the parameter as needed to add or remove accounts or OUs. Use an Amazon EventBridge rule to identify any changes to the parameter and to invoke an AWS Lambda function to update the security policy in the Firewall Manager administrative account.",
-        "B.Deploy an organization - wide AWS Config rule that requires all resources in the selected OUs to associate the AWS WAF rules.Deploy automated remediation actions by using AWS Lambda to fix noncompliant resources.Deploy AWS WAF rules by using an AWS CloudFormation stack set to target the same OUs where the AWS Config rule is applied.",
-        "C.Create AWS WAF rules in the management account of the organization.Use AWS Lambda environment variables to store account numbers and OUs to manage.Update environment variables as needed to add or remove accounts or OUs.Create cross - account IAM roles in member accounts.Assume the roles by using AWS Security Token Service(AWS STS) in the Lambda function to create and update AWS WAF rules in the member accounts.",
+        "A.Use AWS Firewall Manager to manage AWS WAF rules across accounts in the organization. Use an AWS Systems Manager Parameter Store parameter to store account numbers and OUs to manage. Update the parameter as needed to add or remove accounts or OUs. Use an Amazon EventBridge rule to identify any changes to the parameter and to invoke an AWS Lambda function to update the security policy in the Firewall Manager administrative account.",
+        "B.Deploy an organization-wide AWS Config rule that requires all resources in the selected OUs to associate the AWS WAF rules.Deploy automated remediation actions by using AWS Lambda to fix noncompliant resources.Deploy AWS WAF rules by using an AWS CloudFormation stack set to target the same OUs where the AWS Config rule is applied.",
+        "C.Create AWS WAF rules in the management account of the organization.Use AWS Lambda environment variables to store account numbers and OUs to manage.Update environment variables as needed to add or remove accounts or OUs.Create cross-account IAM roles in member accounts.Assume the roles by using AWS Security Token Service(AWS STS) in the Lambda function to create and update AWS WAF rules in the member accounts.",
         "D.Use AWS Control Tower to manage AWS WAF rules across accounts in the organization.Use AWS Key Management Service(AWS KMS) to store account numbers and OUs to manage.Update AWS KMS as needed to add or remove accounts or OUs.Create IAM users in member accounts.Allow AWS Control Tower in the management account to use the access key and secret access key to create and update AWS WAF rules in the member accounts."
       ],
       "q_cn": "一家公司希望部署 AWS WAF 解决方案来管理跨多个 AWS 账户的 AWS WAF 规则。这些账户在 AWS 组织中的不同 OU 下进行管理。\n管理员必须能够根据需要在托管 AWS WAF 规则集中添加或删除账户或 OU。管理员还必须能够自动更新和修复所有账户中不合规的 AWS WAF 规则。\n哪种解决方案以最少的运营开销满足这些要求？",
@@ -386,11 +386,11 @@ $.db =
       ],
       "aa": "A",
       "qK": "WAF rules,all accounts",
-      "aK": ["[Use AWS ]Firewall Manager"]
+      "aK": ["Use AWS Firewall Manager"]
     },
     {
       "no": 58,
-      "q": "A solutions architect must analyze a company's Amazon EC2 instances and Amazon Elastic Block Store (Amazon EBS) volumes to determine whether the company is using resources efficiently. The company is running several large, high-memory EC2 instances to host database clusters that are deployed in active/ passive configurations. The utilization of these EC2 instances varies by the applications that use the databases, and the company has not identified a pattern.\nThe solutions architect must analyze the environment and take action based on the findings.\nWhich solution meets these requirements MOST cost- effectively ? ",
+      "q": "A solutions architect must analyze a company's Amazon EC2 instances and Amazon Elastic Block Store (Amazon EBS) volumes to determine whether the company is using resources efficiently. The company is running several large, high-memory EC2 instances to host database clusters that are deployed in active/ passive configurations. The utilization of these EC2 instances varies by the applications that use the databases, and the company has not identified a pattern.\nThe solutions architect must analyze the environment and take action based on the findings.\nWhich solution meets these requirements MOST cost-effectively ? ",
       "a": [
         "A.Create a dashboard by using AWS Systems Manager OpsCenter. Configure visualizations for Amazon CloudWatch metrics that are associated with the EC2 instances and their EBS volumes. Review the dashboard periodically, and identify usage patterns. Rightsize the EC2 instances based on the peaks in the metrics.",
         "B.Turn on Amazon CloudWatch detailed monitoring for the EC2 instances and their EBS volumes.Create and review a dashboard that is based on the metrics.Identify usage patterns.Rightsize the EC2 instances based on the peaks in the metrics.",
@@ -406,13 +406,13 @@ $.db =
       ],
       "aa": "C",
       "qK": "[EBS],high-memory EC2",
-      "aK": ["CloudWatch agent"]
+      "aK": ["CloudWatch agent,Compute Optimizer"]
     },
     {
       "no": 59,
-      "q": "A company runs a serverless application in a single AWS Region. The application accesses external URLs and extracts metadata from those sites. The company uses an Amazon Simple Notification Service (Amazon SNS) topic to publish URLs to an Amazon Simple Queue Service (Amazon SQS) queue. An AWS Lambda function uses the queue as an event source and processes the URLs from the queue. Results are saved to an Amazon S3 bucket.\nThe company wants to process each URL in other Regions to compare possible differences in site localization.URLs must be published from the existing Region.\nResults must be written to the existing S3 bucket in the current Region.\nWhich combination of changes will produce multi- Region deployment that meets these requirements ? (Choose two.) ",
+      "q": "A company runs a serverless application in a single AWS Region. The application accesses external URLs and extracts metadata from those sites. The company uses an Amazon Simple Notification Service (Amazon SNS) topic to publish URLs to an Amazon Simple Queue Service (Amazon SQS) queue. An AWS Lambda function uses the queue as an event source and processes the URLs from the queue. Results are saved to an Amazon S3 bucket.\nThe company wants to process each URL in other Regions to compare possible differences in site localization.URLs must be published from the existing Region.\nResults must be written to the existing S3 bucket in the current Region.\nWhich combination of changes will produce multi-Region deployment that meets these requirements ? (Choose two.) ",
       "a": [
-        "A. Deploy the SQS queue with the Lambda function to other Regions.",
+        "A.Deploy the SQS queue with the Lambda function to other Regions.",
         "B.Subscribe the SNS topic in each Region to the SQS queue.",
         "C.Subscribe the SQS queue in each Region to the SNS topic.",
         "D.Configure the SQS queue to publish URLs to SNS topics in each Region.",
@@ -420,14 +420,14 @@ $.db =
       ],
       "q_cn": "一家公司在单个 AWS 区域中运行无服务器应用程序。应用程序访问外部 URL 并从这些站点中提取元数据。该公司使用 Amazon Simple Notification Service （Amazon SNS） 主题将 URL 发布到 Amazon Simple Queue Service （Amazon SQS） 队列。AWS Lambda 函数使用队列作为事件源并处理队列中的 URL。结果将保存到 Amazon S3 存储桶中。\n该公司希望处理其他区域中的每个 URL，以比较网站本地化的可能差异。必须从现有区域发布 URL。\n结果必须写入当前区域中的现有 S3 存储桶。\n    哪些更改组合将产生满足这些要求的多区域部署？（选择两个。",
       "a_cn": [
-        "A. 将带有 Lambda 函数的 SQS 队列部署到其他区域。",
+        "A.将带有 Lambda 函数的 SQS 队列部署到其他区域。",
         "B.将每个区域中的 SNS 主题订阅到 SQS 队列。",
         "C.将每个区域中的 SQS 队列订阅到 SNS 主题。",
         "D.配置 SQS 队列以将 URL 发布到每个区域中的 SNS 主题。",
         "E.将 SNS 主题和 Lambda 函数部署到其他区域。"
       ],
       "aa": "A,C",
-      "qK": "SNS,SQS,Lambda,S3,URL,multi- Region",
+      "qK": "SNS,SQS,Lambda,S3,URL,multi-Region",
       "aK": [
         "SQS,other Regions",
         "Subscribe,SQS,SNS"
@@ -437,15 +437,15 @@ $.db =
       "no": 60,
       "q": "A video streaming company recently launched a mobile app for video sharing. The app uploads various files to an Amazon S3 bucket in the us-east-1 Region. The files range in size from 1 GB to 10 GB.\nUsers who access the app from Australia have experienced uploads that take long periods of time.Sometimes the files fail to completely upload for these users.A solutions architect must improve the app's performance for these uploads.\nWhich solutions will meet these requirements?(Choose two.) ",
       "a": [
-        "A. Enable S3 Transfer Acceleration on the S3 bucket. Configure the app to use the Transfer Acceleration endpoint for uploads.",
-        "B.Configure an S3 bucket in each Region to receive the uploads.Use S3 Cross - Region Replication to copy the files to the distribution S3 bucket.",
-        "C.Set up Amazon Route 53 with latency - based routing to route the uploads to the nearest S3 bucket Region.",
+        "A.Enable S3 Transfer Acceleration on the S3 bucket. Configure the app to use the Transfer Acceleration endpoint for uploads.",
+        "B.Configure an S3 bucket in each Region to receive the uploads.Use S3 Cross-Region Replication to copy the files to the distribution S3 bucket.",
+        "C.Set up Amazon Route 53 with latency-based routing to route the uploads to the nearest S3 bucket Region.",
         "D.Configure the app to break the video files into chunks.Use a multipart upload to transfer files to Amazon S3.",
         "E.Modify the app to add random prefixes to the files before uploading."
       ],
       "q_cn": "一家视频流媒体公司最近推出了一款用于视频共享的移动应用程序。该应用程序将各种文件上传到 us-east-1 区域中的 Amazon S3 存储桶。文件的大小范围从 1 GB 到 10 GB。\n从澳大利亚访问该应用程序的用户经历了需要很长时间的上传。有时，文件无法为这些用户完全上传。解决方案架构师必须提高这些上传的应用性能。\n哪些解决方案可以满足这些要求？（选择两个。",
       "a_cn": [
-        "A. 在 S3 存储桶上启用 S3 传输加速。将应用配置为使用传输加速终端节点进行上传。",
+        "A.在 S3 存储桶上启用 S3 传输加速。将应用配置为使用传输加速终端节点进行上传。",
         "B.在每个区域中配置一个 S3 存储桶以接收上传。使用 S3 跨区域复制将文件复制到分配 S3 存储桶。",
         "C.使用基于延迟的路由设置 Amazon Route 53，以将上传路由到最近的 S3 存储桶区域。",
         "D.配置应用程序以将视频文件分解为块。使用分段上传将文件传输到 Amazon S3。",
@@ -469,20 +469,20 @@ $.db =
       ],
       "q_cn": "一家软件公司部署了一个应用程序，该应用程序使用 Amazon API Gateway、AWS Lambda 函数和 Amazon 使用 REST API DynamoDB 表。应用程序显示 PUT 请求期间的错误数增加。大多数 PUT 调用来自少数使用特定 API 密钥进行身份验证的客户端。\n解决方案架构师已确定大量 PUT 请求源自一个客户端。API 是非关键性的，客户端可以容忍重试不成功的调用。但是，这些错误会显示给客户，并导致 API 的声誉受损。\n解决方案架构师应该推荐什么来改善客户体验？",
       "a_cn": [
-        "A. 在客户端应用程序中实现具有指数退避和不规则变化的重试逻辑。确保捕获错误并使用描述性错误消息进行处理。",
+        "A.在客户端应用程序中实现具有指数退避和不规则变化的重试逻辑。确保捕获错误并使用描述性错误消息进行处理。",
         "B.通过 API 网关级别的使用计划实现 API 限制。确保客户端应用程序处理代码 429 回复时没有错误。",
         "C.启用 API 缓存以增强生产阶段的响应能力。运行 10 分钟的负载测试。验证缓存容量是否适合工作负载。",
         "D.在 Lambda 函数级别实施预留并发，以提供流量突然增加时所需的资源。"
       ],
       "aa": "A",
       "qK": "PUT",
-      "aK": ["Implement retry logic"]
+      "aK": ["descriptive error messages"]
     },
     {
       "no": 64,
       "q": "A retail company needs to provide a series of data files to another company, which is its business partner. These files are saved in an Amazon S3 bucket under Account A, which belongs to the retail company.The business partner company wants one of its IAM users, User_DataProcessor, to access the files from its own AWS account(Account B).\nWhich combination of steps must the companies take so that User_DataProcessor can access the S3 bucket successfully?(Choose two.) ",
       "a": [
-        "A. Turn on the cross-origin resource sharing (CORS) feature for the S3 bucket in Account A.",
+        "A.Turn on the cross-origin resource sharing (CORS) feature for the S3 bucket in Account A.",
         `B.InAccountA, set the S3 bucket policy to the following:
         {
           "Effect": "Allow",
@@ -528,7 +528,7 @@ $.db =
       ],
       "q_cn": "零售公司需要向另一家公司（其业务合作伙伴）提供一系列数据文件。这些文件保存在 Amazon S3 存储桶中，位于帐户 A，属于零售公司。业务合作伙伴公司希望其 IAM 用户之一（User_DataProcessor）从自己的文件访问文件AWS 账户（账户 B）。\n公司必须采取哪些步骤组合才能User_DataProcessor成功访问 S3 存储桶？（选择两个。",
       "a_cn": [
-        "A. 为账户 A 中的 S3 存储桶启用跨源资源共享 （CORS） 功能。",
+        "A.为账户 A 中的 S3 存储桶启用跨源资源共享 （CORS） 功能。",
         `B.在账户 A 中，将 S3 存储桶策略设置为以下内容：
         {
           "Effect": "Allow",
@@ -584,33 +584,33 @@ $.db =
       "q": "A company has an organization that has many AWS accounts in AWS Organizations. A solutions architect must improve how the company manages common security group rules for the AWS accounts in the organization.\nThe company has a common set of IP CIDR ranges in an allow list in each AWS account to allow access to and from the company's on-premises network.\nDevelopers within each account are responsible for adding new IP CIDR ranges to their security groups.The security team has its own AWS account.Currently, the security team notifies the owners of the other AWS accounts when changes are made to the allow list.\nThe solutions architect must design a solution that distributes the common set of CIDR ranges across all accounts.\nWhich solution meets these requirements with the LEAST amount of operational overhead?",
       "a": [
         "A.Set up an Amazon Simple Notification Service (Amazon SNS) topic in the security team's AWS account. Deploy an AWS Lambda function in each AWS account. Configure the Lambda function to run every time an SNS topic receives a message. Configure the Lambda function to take an IP address as input and add it to a list of security groups in the account. Instruct the security team to distribute changes by publishing messages to its SNS topic.",
-        "B.Create new customer - managed prefix lists in each AWS account within the organization.Populate the prefix lists in each account with all internal CIDR ranges.Notify the owner of each AWS account to allow the new customer - managed prefix list IDs in their accounts in their security groups.Instruct the security team to share updates with each AWS account owner.",
-        "C.Create a new customer - managed prefix list in the security team's AWS account. Populate the customer-managed prefix list with all internal CIDR ranges. Share the customer-managed prefix list with the organization by using AWS Resource Access Manager. Notify the owner of each AWS account to allow the new customer-managed prefix list ID in their security groups.",
+        "B.Create new customer-managed prefix lists in each AWS account within the organization.Populate the prefix lists in each account with all internal CIDR ranges.Notify the owner of each AWS account to allow the new customer-managed prefix list IDs in their accounts in their security groups.Instruct the security team to share updates with each AWS account owner.",
+        "C.Create a new customer-managed prefix list in the security team's AWS account. Populate the customer-managed prefix list with all internal CIDR ranges. Share the customer-managed prefix list with the organization by using AWS Resource Access Manager. Notify the owner of each AWS account to allow the new customer-managed prefix list ID in their security groups.",
         "D.Create an IAM role in each account in the organization.Grant permissions to update security groups.Deploy an AWS Lambda function in the security team's AWS account. Configure the Lambda function to take a list of internal IP addresses as input, assume a role in each organization account, and add the list of IP addresses to the security groups in each account."
       ],
       "q_cn": "一家公司的组织在 AWS 组织中拥有许多 AWS 账户。解决方案架构师必须改进公司管理组织中 AWS 账户的常见安全组规则的方式。\n该公司在每个 AWS 账户的允许列表中都有一组通用的 IP CIDR 范围，以允许访问公司的本地网络。\n每个账户中的开发人员负责将新的 IP CIDR 范围添加到其安全组。安全团队拥有自己的 AWS 账户。目前，安全团队会在对允许列表进行更改时通知其他 AWS 账户的所有者。\n      解决方案架构师必须设计一个解决方案，在所有账户中分配一组通用的 CIDR 范围。\n哪种解决方案以最少的运营开销满足这些要求？",
       "a_cn": [
         "A.在安全团队的 AWS 账户中设置 Amazon Simple Notification Service （Amazon SNS） 主题。在每个 AWS 账户中部署一个 AWS Lambda 函数。将 Lambda 函数配置为在每次 SNS 主题收到消息时运行。将 Lambda 函数配置为将 IP 地址作为输入，并将其添加到账户中的安全组列表中。指示安全团队通过将消息发布到其 SNS 主题来分发更改。",
         "B.在组织内的每个 AWS 账户中创建新的客户管理的前缀列表。使用所有内部 CIDR 范围填充每个账户中的前缀列表。通知每个 AWS 账户的所有者允许其安全组中账户中的新客户管理的前缀列表 ID。指示安全团队与每个 AWS 账户所有者共享更新。",
-        "C.在安全团队的 AWS 账户中创建新的客户 - 托管前缀列表。使用所有内部 CIDR 范围填充客户管理的前缀列表。使用 AWS 资源访问管理器与组织共享客户管理的前缀列表。通知每个 AWS 账户的拥有者允许在其安全组中使用新的客户管理的前缀列表 ID。",
+        "C.在安全团队的 AWS 账户中创建新的客户-托管前缀列表。使用所有内部 CIDR 范围填充客户管理的前缀列表。使用 AWS 资源访问管理器与组织共享客户管理的前缀列表。通知每个 AWS 账户的拥有者允许在其安全组中使用新的客户管理的前缀列表 ID。",
         "D.在组织中的每个账户中创建一个 IAM 角色。授予更新安全组的权限。在安全团队的 AWS 账户中部署 AWS Lambda 函数。将 Lambda 函数配置为将内部 IP 地址列表作为输入，在每个组织账户中代入一个角色，并将 IP 地址列表添加到每个账户中的安全组。"
       ],
       "aa": "C",
-      "qK": "IP CIDR",
-      "aK": ["customer - managed,security team's[ AWS Account]"]
+      "qK": "IP CIDR,[security team]",
+      "aK": ["Resource Access Manager,[customer-managed,security team's]"]
     },
     {
       "no": 66,
       "q": "A company has developed a web application. The company is hosting the application on a group of Amazon EC2 instances behind an Application Load Balancer.\nThe company wants to improve the security posture of the application and plans to use AWS WAF web ACLs.The solution must not adversely affect legitimate traffic to the application.\nHow should a solutions architect configure the web ACLs to meet these requirements?",
       "a": [
         "A.Set the action of the web ACL rules to Count. Enable AWS WAF logging. Analyze the requests for false positives. Modify the rules to avoid any false positive. Over time, change the action of the web ACL rules from Count to Block.",
-        "B.Use only rate - based rules in the web ACLs, and set the throttle limit as high as possible.Temporarily block all requests that exceed the limit.Define nested rules to narrow the scope of the rate tracking.",
+        "B.Use only rate-based rules in the web ACLs, and set the throttle limit as high as possible.Temporarily block all requests that exceed the limit.Define nested rules to narrow the scope of the rate tracking.",
         "C.Set the action of the web ACL rules to Block.Use only AWS managed rule groups in the web ACLs.Evaluate the rule groups by using Amazon CloudWatch metrics with AWS WAF sampled requests or AWS WAF logs.",
         "D.Use only custom rule groups in the web ACLs, and set the action to Allow.Enable AWS WAF logging.Analyze the requests for false positives.Modify the rules to avoid any false positive.Over time, change the action of the web ACL rules from Allow to Block."
       ],
       "q_cn": "一家公司开发了一个 Web 应用程序。该公司在应用程序负载均衡器后面的一组 Amazon EC2 实例上托管应用程序。\n该公司希望改善应用程序的安全状况，并计划使用 AWS WAF Web ACL。解决方案不得对应用程序的合法流量产生负面影响。\n      解决方案架构师应如何配置 Web ACL 以满足这些要求？",
       "a_cn": [
-        "A. 将 Web ACL 规则的操作设置为计数。启用 AWS WAF 日志记录。分析误报请求。修改规则以避免任何误报。随着时间的推移，将 Web ACL 规则的操作从计数更改为阻止。",
+        "A.将 Web ACL 规则的操作设置为计数。启用 AWS WAF 日志记录。分析误报请求。修改规则以避免任何误报。随着时间的推移，将 Web ACL 规则的操作从计数更改为阻止。",
         "B.在 Web ACL 中仅使用基于速率的规则，并将限制设置得尽可能高。暂时阻止超出限制的所有请求。定义嵌套规则以缩小费率跟踪的范围。",
         "C.将 Web ACL 规则的操作设置为“阻止”。在 Web ACL 中仅使用 AWS 托管规则组。通过将 Amazon CloudWatch 指标与 AWS WAF 采样请求或 AWS WAF 日志结合使用来评估规则组。",
         "D.仅使用 Web ACL 中的自定义规则组，并将操作设置为允许。启用 AWS WAF 日志记录。分析误报请求。修改规则以避免任何误报。随着时间的推移，将 Web ACL 规则的操作从“允许”更改为“阻止”。"
@@ -625,7 +625,7 @@ $.db =
       "a": [
         "A.Enable S3 Transfer Acceleration on the S3 bucket. Ensure that the web application uses the Transfer Acceleration signed URLs.",
         "B.Create an accelerator in AWS Global Accelerator.Attach the accelerator to the CloudFront distribution.",
-        "C.Change the API Gateway Regional endpoints to edge - optimized endpoints.",
+        "C.Change the API Gateway Regional endpoints to edge-optimized endpoints.",
         "D.Provision the entire stack in two other locations that are spread across the world.Use global databases on the Aurora Serverless cluster.",
         "E.Add an Amazon RDS proxy between the Lambda functions and the Aurora Serverless database."
       ],
@@ -641,25 +641,25 @@ $.db =
       "qK": "upload their documents,improve latency outside of Europe",
       "aK": [
         "S3 Transfer Acceleration",
-        "[API Gateway],edge - optimized endpoints"
+        "[API Gateway],edge-optimized endpoints"
       ]
     },
     {
       "no": 72,
-      "q": "A company manages multiple AWS accounts by using AWS Organizations. Under the root OU, the company has two OUs: Research and DataOps.\nBecause of regulatory requirements, all resources that the company deploys in the organization must reside in the ap- northeast - 1 Region.Additionally, EC2 instances that the company deploys in the DataOps OU must use a predefined list of instance types.\nA solutions architect must implement a solution that applies these restrictions.The solution must maximize operational efficiency and must minimize ongoing maintenance.\nWhich combination of steps will meet these requirements ? (Choose two.) ",
+      "q": "A company manages multiple AWS accounts by using AWS Organizations. Under the root OU, the company has two OUs: Research and DataOps.\nBecause of regulatory requirements, all resources that the company deploys in the organization must reside in the ap-northeast-1 Region.Additionally, EC2 instances that the company deploys in the DataOps OU must use a predefined list of instance types.\nA solutions architect must implement a solution that applies these restrictions.The solution must maximize operational efficiency and must minimize ongoing maintenance.\nWhich combination of steps will meet these requirements ? (Choose two.) ",
       "a": [
         "A.Create an IAM role in one account under the DataOps OU. Use the ec2:InstanceType condition key in an inline policy on the role to restrict access to specific instance type.",
-        "B.Create an IAM user in all accounts under the root OU.Use the aws: RequestedRegion condition key in an inline policy on each user to restrict access to all AWS Regions except ap - northeast - 1.",
-        "C.Create an SCP.Use the aws: RequestedRegion condition key to restrict access to all AWS Regions except ap - northeast - 1. Apply the SCP to the root OU.",
-        "D.Create an SCP.Use the ec2: Region condition key to restrict access to all AWS Regions except ap - northeast - 1. Apply the SCP to the root OU, the DataOps OU, and the Research OU.",
+        "B.Create an IAM user in all accounts under the root OU.Use the aws: RequestedRegion condition key in an inline policy on each user to restrict access to all AWS Regions except ap-northeast-1.",
+        "C.Create an SCP.Use the aws: RequestedRegion condition key to restrict access to all AWS Regions except ap-northeast-1. Apply the SCP to the root OU.",
+        "D.Create an SCP.Use the ec2: Region condition key to restrict access to all AWS Regions except ap-northeast-1. Apply the SCP to the root OU, the DataOps OU, and the Research OU.",
         "E.Create an SCP.Use the ec2: InstanceType condition key to restrict access to specific instance types.Apply the SCP to the DataOps OU."
       ],
-      "q_cn": "一家公司使用 AWS 组织管理多个 AWS 账户。在根 OU 下，公司有两个 OU：研究和数据运营。\n由于法规要求，公司在组织中部署的所有资源都必须驻留在 ap - northeast - 1 区域中。此外，公司在 DataOps OU 中部署的 EC2 实例必须使用预定义的实例类型列表。\n解决方案架构师必须实现应用这些限制的解决方案。解决方案必须最大限度地提高运营效率，并且必须最大限度地减少日常维护。\n    哪些步骤组合将满足这些要求？（选择两个。",
+      "q_cn": "一家公司使用 AWS 组织管理多个 AWS 账户。在根 OU 下，公司有两个 OU：研究和数据运营。\n由于法规要求，公司在组织中部署的所有资源都必须驻留在 ap-northeast-1 区域中。此外，公司在 DataOps OU 中部署的 EC2 实例必须使用预定义的实例类型列表。\n解决方案架构师必须实现应用这些限制的解决方案。解决方案必须最大限度地提高运营效率，并且必须最大限度地减少日常维护。\n    哪些步骤组合将满足这些要求？（选择两个。",
       "a_cn": [
-        "A. 在数据运营 OU 下的一个账户中创建 IAM 角色。在角色的内联策略中使用 ec2：InstanceType 条件键来限制对特定实例类型的访问。",
-        "B.在根 OU 下的所有账户中创建 IAM 用户。在每个用户的内联策略中使用 aws：RequestRegion 条件键来限制对除 ap - northeast - 1 之外的所有 AWS 区域的访问。",
-        "C.创建 SCP。使用 aws：RequestRegion 条件键限制对除 ap - northeast - 1 之外的所有 AWS 区域的访问。将 SCP 应用于根 OU。",
-        "D.创建 SCP。使用 ec2：Region 条件键限制对除 ap - northeast - 1 之外的所有 AWS 区域的访问。将 SCP 应用于根 OU、DataOps OU 和 Research OU。",
+        "A.在数据运营 OU 下的一个账户中创建 IAM 角色。在角色的内联策略中使用 ec2：InstanceType 条件键来限制对特定实例类型的访问。",
+        "B.在根 OU 下的所有账户中创建 IAM 用户。在每个用户的内联策略中使用 aws：RequestRegion 条件键来限制对除 ap-northeast-1 之外的所有 AWS 区域的访问。",
+        "C.创建 SCP。使用 aws：RequestRegion 条件键限制对除 ap-northeast-1 之外的所有 AWS 区域的访问。将 SCP 应用于根 OU。",
+        "D.创建 SCP。使用 ec2：Region 条件键限制对除 ap-northeast-1 之外的所有 AWS 区域的访问。将 SCP 应用于根 OU、DataOps OU 和 Research OU。",
         "E.创建 SCP。使用 ec2：实例类型条件键限制对特定实例类型的访问。将 SCP 应用于数据操作 OU。"
       ],
       "aa": "C,E",
@@ -682,7 +682,7 @@ $.db =
       ],
       "q_cn": "一家数字营销公司拥有属于不同团队的多个 AWS 账户。创意团队在其 AWS 账户中使用 Amazon S3 存储桶安全地存储图像和媒体文件，这些文件用作公司营销活动的内容。创意团队希望与策略团队共享 S3 存储桶，以便策略团队可以查看对象。\n解决方案架构师在策略账户中创建了一个名为 strategy_reviewer 的 IAM 角色。解决方案架构师还设置了自定义 AWS 密钥管理服务 （AWS KMS） 密钥在创意账户中，并已将该密钥与 S3 存储桶关联。但是，当策略账户中的用户代入 IAM 角色并尝试访问 S3 存储桶中的对象时，他们会收到拒绝访问错误。\n解决方案架构师必须确保策略账户中的用户可以访问 S3 存储桶。解决方案必须仅向这些用户提供所需的最低权限。\n解决方案架构师应采取哪些步骤组合来满足这些要求？（选择三个。",
       "a_cn": [
-        "A. 创建包含 S3 存储桶读取权限的存储桶策略。将存储桶策略的委托人设置为策略账户的账户 ID。",
+        "A.创建包含 S3 存储桶读取权限的存储桶策略。将存储桶策略的委托人设置为策略账户的账户 ID。",
         "B.更新 strategy_reviewer IAM 角色以授予对 S3 存储桶的完全权限，并授予自定义 KMS 密钥的解密权限。",
         "C.更新创意账户中的自定义 KMS 密钥策略，以向strategy_reviewer IAM 角色授予解密权限。",
         "D.创建包含 S3 存储桶读取权限的存储桶策略。将存储桶策略的委托人设置为匿名用户。",
@@ -694,21 +694,21 @@ $.db =
       "aK": [
         "ID",
         "Creative,decrypt",
-        "strategy_reviewer,grant read permissions,[decrypt]"
+        "grant read permissions,[decrypt]"
       ]
     },
     {
       "no": 79,
-      "q": "A company has introduced a new policy that allows employees to work remotely from their homes if they connect by using a VPN. The company is hosting internal applications with VPCs in multiple AWS accounts. Currently, the applications are accessible from the company's on-premises office network through an AWS Site- to-Site VPN connection. The VPC in the company's main AWS account has peering connections established with VPCs in other AWS accounts.\nA solutions architect must design a scalable AWS Client VPN solution for employees to use while they work from home.\nWhat is the MOST cost- effective solution that meets these requirements ? ",
+      "q": "A company has introduced a new policy that allows employees to work remotely from their homes if they connect by using a VPN. The company is hosting internal applications with VPCs in multiple AWS accounts. Currently, the applications are accessible from the company's on-premises office network through an AWS Site-to-Site VPN connection. The VPC in the company's main AWS account has peering connections established with VPCs in other AWS accounts.\nA solutions architect must design a scalable AWS Client VPN solution for employees to use while they work from home.\nWhat is the MOST cost-effective solution that meets these requirements ? ",
       "a": [
         "A.Create a Client VPN endpoint in each AWS account. Configure required routing that allows access to internal applications.",
         "B.Create a Client VPN endpoint in the main AWS account.Configure required routing that allows access to internal applications.",
         "C.Create a Client VPN endpoint in the main AWS account.Provision a transit gateway that is connected to each AWS account.Configure required routing that allows access to internal applications.",
-        "D.Create a Client VPN endpoint in the main AWS account.Establish connectivity between the Client VPN endpoint and the AWS Site - to - Site VPN."
+        "D.Create a Client VPN endpoint in the main AWS account.Establish connectivity between the Client VPN endpoint and the AWS Site-to-Site VPN."
       ],
       "q_cn": "一家公司推出了一项新政策，允许员工在使用 VPN 进行连接时在家中远程工作。该公司在多个 AWS 账户中托管具有 VPC 的内部应用程序。目前，可以通过 AWS 站点到站点 VPN 连接从公司的本地办公网络访问这些应用程序。公司主 AWS 账户中的 VPC 与其他 AWS 账户中的 VPC 建立了对等连接。\n解决方案架构师必须设计可扩展的 AWS 客户端 VPN 解决方案，供员工在家工作时使用。\n满足这些要求的最具成本效益的解决方案是什么？",
       "a_cn": [
-        "A. 在每个 AWS 账户中创建一个客户端 VPN 终端节点。配置允许访问内部应用程序所需的路由。",
+        "A.在每个 AWS 账户中创建一个客户端 VPN 终端节点。配置允许访问内部应用程序所需的路由。",
         "B.在主 AWS 账户中创建客户端 VPN 终端节点。配置允许访问内部应用程序所需的路由。",
         "C.在主 AWS 账户中创建客户端 VPN 终端节点。预置连接到每个 AWS 账户的中转网关。配置允许访问内部应用程序所需的路由。",
         "D.在主 AWS 账户中创建客户端 VPN 终端节点。在客户端 VPN 终端节点和 AWS 站点到站点 VPN 之间建立连接。"
@@ -724,11 +724,11 @@ $.db =
         "A.Use AWS Application Auto Scaling to increase capacity during the peak period. Purchase reserved RCUs and WCUs to match the average load.",
         "B.Configure on-demand capacity mode for the table.",
         "C.Configure DynamoDB Accelerator(DAX) in front of the table.Reduce the provisioned read capacity to match the new peak load on the table.",
-        "D.Configure DynamoDB Accelerator(DAX) in front of the table.Configure on- demand capacity mode for the table."
+        "D.Configure DynamoDB Accelerator(DAX) in front of the table.Configure on-demand capacity mode for the table."
       ],
       "q_cn": "一家公司最近在 AWS 上部署了一个应用程序。该应用程序使用 Amazon DynamoDB。该公司测量了应用程序负载，并在 DynamoDB 表上配置 RCU 和 WCU，以匹配预期的峰值负载。峰值负载每周发生一次，持续 4 小时，是平均负载的两倍。应用程序负载接近一周剩余时间的平均负载。访问模式包括对表的写入比对表的读取多得多。\n解决方案架构师需要实现解决方案以最大程度地降低表的成本。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
-        "A. 使用 AWS 应用程序 Auto Scaling 在高峰期增加容量。购买预留的 RCU 和 WCU 以匹配平均负载。",
+        "A.使用 AWS 应用程序 Auto Scaling 在高峰期增加容量。购买预留的 RCU 和 WCU 以匹配平均负载。",
         "B.为表配置按需容量模式。",
         "C.在表前面配置 DynamoDB 加速器 （DAX）。减少预置的读取容量以匹配表上的新峰值负载。",
         "D.在表前面配置 DynamoDB 加速器 （DAX）。为表配置按需容量模式。"
@@ -759,11 +759,11 @@ $.db =
     },
     {
       "no": 88,
-      "q": "An application is using an Amazon RDS for MySQL Multi-AZ DB instance in the us-east-1 Region. After a failover test, the application lost the connections to the database and could not re-establish the connections. After a restart of the application, the application re-established the connections.\nA solutions architect must implement a solution so that the application can re- establish connections to the database without requiring a restart.\nWhich solution will meet these requirements ? ",
+      "q": "An application is using an Amazon RDS for MySQL Multi-AZ DB instance in the us-east-1 Region. After a failover test, the application lost the connections to the database and could not re-establish the connections. After a restart of the application, the application re-established the connections.\nA solutions architect must implement a solution so that the application can re-establish connections to the database without requiring a restart.\nWhich solution will meet these requirements ? ",
       "a": [
         "A.Create an Amazon Aurora MySQL Serverless v1 DB instance. Migrate the RDS DB instance to the Aurora Serverless v1 DB instance. Update the connection settings in the application to point to the Aurora reader endpoint.",
         "B.Create an RDS proxy.Configure the existing RDS endpoint as a target.Update the connection settings in the application to point to the RDS proxy endpoint.",
-        "C.Create a two - node Amazon Aurora MySQL DB cluster.Migrate the RDS DB instance to the Aurora DB cluster.Create an RDS proxy.Configure the existing RDS endpoint as a target.Update the connection settings in the application to point to the RDS proxy endpoint.",
+        "C.Create a two-node Amazon Aurora MySQL DB cluster.Migrate the RDS DB instance to the Aurora DB cluster.Create an RDS proxy.Configure the existing RDS endpoint as a target.Update the connection settings in the application to point to the RDS proxy endpoint.",
         "D.Create an Amazon S3 bucket.Export the database to Amazon S3 by using AWS Database Migration Service(AWS DMS).Configure Amazon Athena to use the S3 bucket as a data store.Install the latest Open Database Connectivity(ODBC) driver for the application.Update the connection settings in the application to point to the Athena endpoint"
       ],
       "q_cn": "应用程序正在使用 us-east-1 区域中的 Amazon RDS for MySQL 多可用区数据库实例。故障转移测试后，应用程序丢失了与数据库的连接，并且无法重新建立连接。重新启动应用程序后，应用程序将重新建立连接。\n解决方案架构师必须实现解决方案，以便应用程序可以重新建立与数据库的连接，而无需重新启动。\n哪种解决方案可以满足这些要求？",
@@ -798,22 +798,22 @@ $.db =
       "aa": "A,B",
       "qK": "automation framework for cloud governance and remediation processes",
       "aK": [
-        "[centralized account],IAM role that has the Lambda",
+        "[centralized account],IAM role that has the Lambda,inline policy",
         "[other AWS accounts],[minimal permissions],centralized account's Lambda IAM role"
       ]
     },
     {
       "no": 96,
-      "q": "A company is running an application in the AWS Cloud. The application collects and stores a large amount of unstructured data in an Amazon S3 bucket. The S3 bucket contains several terabytes of data and uses the S3 Standard storage class. The data increases in size by several gigabytes every day.\nThe company needs to query and analyze the data.The company does not access data that is more than 1 year old.However, the company must retain all the data indefinitely for compliance reasons.\nWhich solution will meet these requirements MOST cost- effectively ? ",
+      "q": "A company is running an application in the AWS Cloud. The application collects and stores a large amount of unstructured data in an Amazon S3 bucket. The S3 bucket contains several terabytes of data and uses the S3 Standard storage class. The data increases in size by several gigabytes every day.\nThe company needs to query and analyze the data.The company does not access data that is more than 1 year old.However, the company must retain all the data indefinitely for compliance reasons.\nWhich solution will meet these requirements MOST cost-effectively ? ",
       "a": [
         "A.Use S3 Select to query the data. Create an S3 Lifecycle policy to transition data that is more than 1 year old to S3 Glacier Deep Archive.",
         "B.Use Amazon Redshift Spectrum to query the data.Create an S3 Lifecycle policy to transition data that is more than 1 year old 10 S3 Glacier Deep Archive.",
         "C.Use an AWS Glue Data Catalog and Amazon Athena to query the data.Create an S3 Lifecycle policy to transition data that is more than 1 year old to S3 Glacier Deep Archive.",
-        "D.Use Amazon Redshift Spectrum to query the data.Create an S3 Lifecycle policy to transition data that is more than 1 year old to S3 Intelligent - Tiering."
+        "D.Use Amazon Redshift Spectrum to query the data.Create an S3 Lifecycle policy to transition data that is more than 1 year old to S3 Intelligent-Tiering."
       ],
       "q_cn": "一家公司在 AWS 云中运行应用程序。该应用程序在 Amazon S3 存储桶中收集和存储大量非结构化数据。S3 存储桶包含数 TB 的数据，并使用 S3 标准存储类。数据的大小每天增加几千兆字节。\n公司需要查询和分析数据。该公司不会访问超过 1 年的数据。但是，出于合规性原因，公司必须无限期保留所有数据。\n      哪种解决方案最经济高效地满足这些要求？",
       "a_cn": [
-        "A. 使用 S3 选择查询数据。创建 S3 生命周期策略，将超过 1 年的数据转换为 S3 Glacier Deep Archive。",
+        "A.使用 S3 选择查询数据。创建 S3 生命周期策略，将超过 1 年的数据转换为 S3 Glacier Deep Archive。",
         "B.使用 Amazon Redshift Spectrum 查询数据。创建 S3 生命周期策略以转换超过 1 年的数据 10 S3 冰川深度存档。",
         "C.使用 AWS Glue Data Catalog 和 Amazon Athena 查询数据。创建 S3 生命周期策略，将超过 1 年的数据转换为 S3 Glacier Deep Archive。",
         "D.使用 Amazon Redshift Spectrum 查询数据。创建 S3 生命周期策略，将超过 1 年的数据转换为 S3 智能分层。"
@@ -835,7 +835,7 @@ $.db =
       ],
       "q_cn": "使用 AWS Organizations 的公司允许开发人员在 AWS 上进行试验。作为公司已部署的登陆区域的一部分，开发人员使用其公司电子邮件地址请求帐户。该公司希望确保开发人员不会推出昂贵的服务或不必要地运行服务。该公司必须为开发人员提供固定的每月预算，以限制其AWS成本。\n哪些步骤组合将满足这些要求？（选择三个。",
       "a_cn": [
-        "A. 创建 SCP 以设置固定的每月帐户使用限制。将 SCP 应用于开发人员帐户。",
+        "A.创建 SCP 以设置固定的每月帐户使用限制。将 SCP 应用于开发人员帐户。",
         "B.在账户创建过程中，使用 AWS 预算为每个开发人员的账户创建固定的每月预算。",
         "C.创建 SCP 以拒绝访问昂贵的服务和组件。将 SCP 应用于开发人员帐户。",
         "D.创建 IAM 策略以拒绝对成本高昂的服务和组件的访问。将 IAM 策略应用于开发人员账户。",
@@ -852,14 +852,14 @@ $.db =
     },
     {
       "no": 103,
-      "q": "A company has a multi-tier web application that runs on a fleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The instances are in an Auto Scaling group. The ALB and the Auto Scaling group are replicated in a backup AWS Region. The minimum value and the maximum value for the Auto Scaling group are set to zero. An Amazon RDS Multi-AZ DB instance stores the application's data. The DB instance has a read replica in the backup Region. The application presents an endpoint to end users by using an Amazon Route 53 record.\nThe company needs to reduce its RTO to less than 15 minutes by giving the application the ability to automatically fail over to the backup Region.The company does not have a large enough budget for an active- active strategy.\nWhat should a solutions architect recommend to meet these requirements ? ",
+      "q": "A company has a multi-tier web application that runs on a fleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The instances are in an Auto Scaling group. The ALB and the Auto Scaling group are replicated in a backup AWS Region. The minimum value and the maximum value for the Auto Scaling group are set to zero. An Amazon RDS Multi-AZ DB instance stores the application's data. The DB instance has a read replica in the backup Region. The application presents an endpoint to end users by using an Amazon Route 53 record.\nThe company needs to reduce its RTO to less than 15 minutes by giving the application the ability to automatically fail over to the backup Region.The company does not have a large enough budget for an active-active strategy.\nWhat should a solutions architect recommend to meet these requirements ? ",
       "a": [
         "A.Reconfigure the application's Route 53 record with a latency-based routing policy that load balances traffic between the two ALBs. Create an AWS Lambda function in the backup Region to promote the read replica and modify the Auto Scaling group values. Create an Amazon CloudWatch alarm that is based on the HTTPCode_Target_5XX_Count metric for the ALB in the primary Region. Configure the CloudWatch alarm to invoke the Lambda function.",
         "B.Create an AWS Lambda function in the backup Region to promote the read replica and modify the Auto Scaling group values.Configure Route 53 with a health check that monitors the web application and sends an Amazon Simple Notification Service(Amazon SNS) notification to the Lambda function when the health check status is unhealthy.Update the application's Route 53 record with a failover policy that routes traffic to the ALB in the backup Region when a health check failure occurs.",
         "C.Configure the Auto Scaling group in the backup Region to have the same values as the Auto Scaling group in the primary Region.Reconfigure the application's Route 53 record with a latency-based routing policy that load balances traffic between the two ALBs. Remove the read replica. Replace the read replica with a standalone RDS DB instance. Configure Cross-Region Replication between the RDS DB instances by using snapshots and Amazon S3.",
         "D.Configure an endpoint in AWS Global Accelerator with the two ALBs as equal weighted targets.Create an AWS Lambda function in the backup Region to promote the read replica and modify the Auto Scaling group values.Create an Amazon CloudWatch alarm that is based on the HTTPCode_Target_5XX_Count metric for the ALB in the primary Region.Configure the CloudWatch alarm to invoke the Lambda function."
       ],
-      "q_cn": "一家公司有一个多层 Web 应用程序，该应用程序在应用程序负载均衡器 （ALB） 后面的 Amazon EC2 实例队列上运行。实例位于弹性伸缩组中。ALB 和弹性伸缩组在备份 AWS 区域中复制。弹性伸缩组的最小值和最大值设置为零。Amazon RDS 多可用区数据库实例存储应用程序的数据。数据库实例在备份区域中具有只读副本。应用程序使用 Amazon Route 53 记录向最终用户提供终端节点。\n该公司需要通过使应用程序能够自动故障转移到备份区域，将其 RTO 减少到 15 分钟以内。该公司没有足够大的预算来实施主动 - 主动战略。\n解决方案架构师应该建议什么来满足这些要求？",
+      "q_cn": "一家公司有一个多层 Web 应用程序，该应用程序在应用程序负载均衡器 （ALB） 后面的 Amazon EC2 实例队列上运行。实例位于弹性伸缩组中。ALB 和弹性伸缩组在备份 AWS 区域中复制。弹性伸缩组的最小值和最大值设置为零。Amazon RDS 多可用区数据库实例存储应用程序的数据。数据库实例在备份区域中具有只读副本。应用程序使用 Amazon Route 53 记录向最终用户提供终端节点。\n该公司需要通过使应用程序能够自动故障转移到备份区域，将其 RTO 减少到 15 分钟以内。该公司没有足够大的预算来实施主动-主动战略。\n解决方案架构师应该建议什么来满足这些要求？",
       "a_cn": [
         "A.使用基于延迟的路由策略重新配置应用程序的 Route 53 记录，该策略对两个 ALB 之间的流量进行负载均衡。在备份区域中创建一个 AWS Lambda 函数以提升只读副本并修改 Auto Scaling 组值。创建基于主要区域中 ALB 的HTTPCode_Target_5XX_Count指标的 Amazon CloudWatch 警报。配置 CloudWatch 警报以调用 Lambda 函数。",
         "B.在备份区域中创建 AWS Lambda 函数以提升只读副本并修改 Auto Scaling 组值。使用 Route 53 配置运行状况检查，以监控 Web 应用程序，并在运行状况检查状态为运行状况不佳时向 Lambda 函数发送 Amazon Simple Notification Service （Amazon SNS） 通知。使用故障转移策略更新应用程序的 Route 53 记录，该策略在发生运行状况检查失败时将流量路由到备份区域中的 ALB。",
@@ -867,7 +867,7 @@ $.db =
         "D.在 AWS 全球加速器中配置终端节点，并将两个 ALB 作为相等加权的目标。在备份区域中创建一个 AWS Lambda 函数以提升只读副本并修改 Auto Scaling 组值。创建基于主要区域中 ALB 的HTTPCode_Target_5XX_Count指标的 Amazon CloudWatch 警报。配置 CloudWatch 警报以调用 Lambda 函数。"
       ],
       "aa": "B",
-      "qK": "web,ALB,EC2,Auto Scaling,minimum value,maximum value,zero",
+      "qK": "Auto Scaling,minimum value,maximum value,zero",
       "aK": ["SNS"]
     },
     {
@@ -884,24 +884,24 @@ $.db =
         "A.创建新的安全组并将其附加到 CloudFront 分配。更新 ALB 安全组入口以仅允许从 CloudFront 安全组进行访问",
         "B.更新 ALB 安全组入口以仅允许从面向 com.amazonaws.global.cloudfront.origi-facing CloudFront 托管的 prefx 列表进行访问",
         "C.为弹性负载平衡创建 com.amazonaws.region.elasticload balancing VPC 接口终端节点。将 ALB 方案从面向互联网更新为内部",
-        "D.从 AWS 提供的 ip - range json 文档中提取 CloudFront IP。更新 ALB 安全组入口以仅允许从云前 IP 进行访问"
+        "D.从 AWS 提供的 ip-range json 文档中提取 CloudFront IP。更新 ALB 安全组入口以仅允许从云前 IP 进行访问"
       ],
       "aa": "C",
-      "qK": "ALB,CloudFront,ECS,must,only,CloudFront",
-      "aK": ["VPC[ interface endpoint]"]
+      "qK": "ALB,CloudFront,must,only,CloudFront",
+      "aK": ["VPC[ interface endpoint],internet-facing"]
     },
     {
       "no": 110,
       "q": "A company has its cloud infrastructure on AWS. A solutions architect needs to define the infrastructure as code. The infrastructure is currently deployed in one AWS Region.The company's business expansion plan includes deployments in multiple Regions across multiple AWS accounts.\nWhat should the solutions architect do to meet these requirements?",
       "a": [
-        "A. Use AWS CloudFormation templates. Add IAM policies to control the various accounts. Deploy the templates across the multiple Regions.",
+        "A.Use AWS CloudFormation templates. Add IAM policies to control the various accounts. Deploy the templates across the multiple Regions.",
         "B.Use AWS Organizations.Deploy AWS CloudFormation templates from the management account.Use AWS Control Tower to manage deployments across accounts.",
         "C.Use AWS Organizations and AWS CloudFormation StackSets.Deploy a CloudFormation template from an account that has the necessary IAM permissions.",
         "D.Use nested stacks with AWS CloudFormation templates.Change the Region by using nested stacks."
       ],
       "q_cn": "一家公司在 AWS 上拥有其云基础设施。解决方案架构师需要将基础结构定义为代码。基础设施目前部署在一个AWS 区域。该公司的业务扩展计划包括在多个 AWS 账户的多个区域中进行部署。\n解决方案架构师应该做些什么来满足这些要求？",
       "a_cn": [
-        "A. 使用 AWS CloudFormation 模板。添加 IAM 策略以控制各种账户。跨多个区域部署模板。",
+        "A.使用 AWS CloudFormation 模板。添加 IAM 策略以控制各种账户。跨多个区域部署模板。",
         "B.使用 AWS 组织。从管理账户部署 AWS CloudFormation 模板。使用 AWS 控制塔跨账户管理部署。",
         "C.使用 AWS Organizations 和 AWS CloudFormation StackSets。从具有必要 IAM 权限的账户部署 CloudFormation 模板。",
         "D.将嵌套堆栈与 AWS CloudFormation 模板结合使用。使用嵌套堆栈更改区域。"
@@ -912,14 +912,14 @@ $.db =
     },
     {
       "no": 112,
-      "q": "A company has an organization in AWS Organizations that includes multiple AWS accounts. Each account has a single VPC.In an account named Shared Services, there is a transit gateway that is connected to a Direct Connect gateway that provides access to the company's on-premises network.The company configured AWS Resource Access Manager (AWS RAM) to share the transit gateway to all the accounts that are in the organization.The company has attached all the VPCs to the transit gateway to facilitate routing between each other.The company uses a DNS server for on-premises servers.There are a pair of DNS servers on premises and in the Shared Services account VPC.The company discovers that Amazon EC2 instances that the company starts within the VPCs are not able to resolve addresses in the private on-premises domain. Which soluton will allow EC2 instances in all VPCs to resolve on-premises addresses",
+      "q": "A company has an organization in AWS Organizations that includes multiple AWS accounts. Each account has a single VPC. In an account named Shared Services, there is a transit gateway that is connected to a Direct Connect gateway that provides access to the company's on-premises network.The company configured AWS Resource Access Manager (AWS RAM) to share the transit gateway to all the accounts that are in the organization.The company has attached all the VPCs to the transit gateway to facilitate routing between each other.The company uses a DNS server for on-premises servers.There are a pair of DNS servers on premises and in the Shared Services account VPC.The company discovers that Amazon EC2 instances that the company starts within the VPCs are not able to resolve addresses in the private on-premises domain. Which soluton will allow EC2 instances in all VPCs to resolve on-premises addresses",
       "a": [
         "A.Define an Amazon Route 53 Resolver outbound endpoint for the on-premises domain in the Shared Services account VPC.Configure the outbound endpoint to use the IP addresses of the DNS servers for the on-premises domain.Configure a forwarder on the DNS servers to point to the internal DNS resolver of the VPC.",
         "B.Create an Amazon Route 53 private hosted zone for the on-premises domain in the Shared Services account VPC.Configure AWS Resource Access Manager (AWS RAM) to share the hosted zone to all accounts in the organization.Associate the Route 53 private hosted zone with each VPC.",
         "C.Define an Amazon Route 53 Resolver outbound endpoint for the on-premises domain in the Shared Services account VPC.Configure the outbound endpoint to use the IP addresses of the DNS servers for the on-premises domain.Configure AWS Resource Access Manager (AWS RAM) to share the Route 53 Resolver rule to all accounts in the organization.Associate the Route 53 Resolver rule with each VPC.",
         "D.Define an Amazon Route 53 Resolver inbound endpoint for the on-premises domain in the Shared Services account VPC.Configure the inbound endpoint to use the IP addresses of the DNS servers for the on-premises domain.Configure AWS Resource Access Manager (AWS RAM) to share the Route 53 Resolver rule to all accounts in the organization.Associate the Route 53 Resolver rule with each VPC."
       ],
-      "q_cn": "一家公司在 AWS 组织中拥有一个包含多个 AWS 账户的组织。每个帐户都有一个 VPC.In 一个名为共享服务的帐户，有一个连接到直接连接网关的中转网关，该网关提供对公司本地网络的访问权限。该公司将 AWS 资源访问管理器 （AWS RAM） 配置为与组织中的所有账户共享中转网关。该公司已将所有VPC连接到中转网关，以方便彼此之间的路由。该公司将 DNS 服务器用于本地服务器。本地和共享服务账户 VPC 中有一对 DNS 服务器。该公司发现，该公司在 VPC 内启动的 Amazon EC2 实例无法解析私有本地域中的地址。哪个解决方案将允许所有 VPC 中的 EC2 实例解析本地地址",
+      "q_cn": "一家公司在 AWS 组织中拥有一个包含多个 AWS 账户的组织。每个账户都有一个 VPC。在名为“共享服务”的帐户中，有一个中转网关连接到提供对公司本地网络的访问权限的专线网关。该公司将 AWS 资源访问管理器 （AWS RAM） 配置为与组织中的所有账户共享中转网关。该公司已将所有VPC连接到中转网关，以方便彼此之间的路由。该公司将 DNS 服务器用于本地服务器。本地和共享服务账户 VPC 中有一对 DNS 服务器。该公司发现，该公司在 VPC 内启动的 Amazon EC2 实例无法解析私有本地域中的地址。哪个解决方案将允许所有 VPC 中的 EC2 实例解析本地地址",
       "a_cn": [
         "A.在共享服务账户 VPC 中为本地域定义 Amazon Route 53 解析程序出站终端节点。将出站终结点配置为使用本地域的 DNS 服务器的 IP 地址。在 DNS 服务器上配置转发器以指向 VPC 的内部 DNS 解析器。",
         "B.为共享服务账户 VPC 中的本地域创建 Amazon Route 53 私有托管区域。配置 AWS 资源访问管理器 （AWS RAM） 以将托管区域共享给组织中的所有账户。将 Route 53 私有托管区域与每个 VPC 关联。",
@@ -934,7 +934,7 @@ $.db =
       "no": 113,
       "q": "A company is running an application in the AWS Cloud. The company's security team must approve the creation of all new IAM users. When a new IAM user is created, all access for the user must be removed automatically. The security team must then receive a notification to approve the user. The company has a multi-Region AWS CloudTrail trail in the AWS account.\nWhich combination of steps will meet these requirements?(Choose three.) ",
       "a": [
-        "A. Create an Amazon EventBridge (Amazon CloudWatch Events) rule. Define a pattern with the detail-type value set to AWS API Call via CloudTrail and an eventName of CreateUser.",
+        "A.Create an Amazon EventBridge (Amazon CloudWatch Events) rule. Define a pattern with the detail-type value set to AWS API Call via CloudTrail and an eventName of CreateUser.",
         "B.Configure CloudTrail to send a notification for the CreateUser event to an Amazon Simple Notification Service(Amazon SNS) topic.",
         "C.Invoke a container that runs in Amazon Elastic Container Service(Amazon ECS) with AWS Fargate technology to remove access.",
         "D.Invoke an AWS Step Functions state machine to remove access.",
@@ -943,7 +943,7 @@ $.db =
       ],
       "q_cn": "一家公司在 AWS 云中运行应用程序。公司的安全团队必须批准创建所有新的 IAM 用户。创建新的 IAM 用户时，必须自动删除该用户的所有访问权限。然后，安全团队必须收到批准用户的通知。该公司拥有多AWS 账户中的区域 AWS CloudTrail 跟踪。\n哪些步骤组合将满足这些要求？（选择三个。",
       "a_cn": [
-        "A. 创建 Amazon EventBridge （Amazon CloudWatch Events） 规则。定义一个模式，将详细信息类型值设置为 AWS API 通过 CloudTrail 调用，并将 eventName 设置为 CreateUser。",
+        "A.创建 Amazon EventBridge （Amazon CloudWatch Events） 规则。定义一个模式，将详细信息类型值设置为 AWS API 通过 CloudTrail 调用，并将 eventName 设置为 CreateUser。",
         "B.配置 CloudTrail 以将 CreateUser 事件的通知发送到 Amazon Simple Notification Service （Amazon SNS） 主题。",
         "C.调用在采用 AWS Fargate 技术的 Amazon Elastic Container Service （Amazon ECS） 中运行的容器以删除访问权限。",
         "D.调用 AWS Step Functions 状态机以删除访问权限。",
@@ -955,14 +955,14 @@ $.db =
       "aK": [
         "EventBridge",
         "Step Functions",
-        "SNS,[security team]"
+        "SNS,security team"
       ]
     },
     {
       "no": 115,
       "q": "A company is running a critical application that uses an Amazon RDS for MySQL database to store data. The RDS DB instance is deployed in Multi-AZ mode.\nA recent RDS database failover test caused a 40-second outage to the application.A solutions architect needs to design a solution to reduce the outage time to less than 20 seconds.\nWhich combination of steps should the solutions architect take to meet these requirements?(Choose three.) ",
       "a": [
-        "A. Use Amazon ElastiCache for Memcached in front of the database",
+        "A.Use Amazon ElastiCache for Memcached in front of the database",
         "B.Use Amazon ElastiCache for Redis in front of the database",
         "C.Use RDS Proxy in front of the database.",
         "D.Migrate the database to Amazon Aurora MySQL.",
@@ -971,7 +971,7 @@ $.db =
       ],
       "q_cn": "一家公司正在运行一个关键应用程序，该应用程序使用 Amazon RDS for MySQL 数据库来存储数据。RDS 实例以多可用区模式部署。\n最近的 RDS 数据库故障转移测试导致应用程序中断 40 秒。解决方案架构师需要设计一个解决方案，将中断时间缩短到不到 20 秒。\n解决方案架构师应采取哪些步骤组合来满足这些要求？（选择三个。",
       "a_cn": [
-        "A. 在数据库前面使用 Amazon ElastiCache for Memcached",
+        "A.在数据库前面使用 Amazon ElastiCache for Memcached",
         "B.在数据库前面使用 Amazon ElastiCache for Redis（适用于 Redis）",
         "C.在数据库前面使用 RDS 代理。",
         "D.将数据库迁移到 Amazon Aurora MySQL。",
@@ -990,21 +990,21 @@ $.db =
       "no": 116,
       "q": "A company uses AWS Organizations for a multi-account setup in the AWS Cloud. The company uses AWS Control Tower for governance and uses AWS Transit Gateway for VPC connectivity across accounts.\nIn an AWS application account, the company's application team has deployed a web application that uses AWS Lambda and Amazon RDS. The company's database administrators have a separate DBA account and use the account to centrally manage all the databases across the organization.The database administrators use an Amazon EC2 instance that is deployed in the DBA account to access an RDS database that is deployed in the application account.\nThe application team has stored the database credentials as secrets in AWS Secrets Manager in the application account.The application team is manually sharing the secrets with the database administrators.The secrets are encrypted by the default AWS managed key for Secrets Manager in the application account.A solutions architect needs to implement a solution that gives the database administrators access to the database and eliminates the need to manually share the secrets.\nWhich solution will meet these requirements?",
       "a": [
-        "A. Use AWS Resource Access Manager (AWS RAM) to share the secrets from the application account with the DBA account. In the DBA account, create an IAM role that is named DBA-Admin. Grant the role the required permissions to access the shared secrets. Attach the DBA-Admin role to the EC2 instance for access to the cross-account secrets.",
-        "B.In the application account, create an IAM role that is named DBA - Secret.Grant the role the required permissions to access the secrets.In the DBA account, create an IAM role that is named DBA - Admin.Grant the DBA - Admin role the required permissions to assume the DBA - Secret role in the application account.Attach the DBA - Admin role to the EC2 instance for access to the cross- account secrets.",
-        "C.In the DBA account, create an IAM role that is named DBA - Admin.Grant the role the required permissions to access the secrets and the default AWS managed key in the application account.In the application account, attach resource- based policies to the key to allow access from the DBA account.Attach the DBA - Admin role to the EC2 instance for access to the cross - account secrets.",
-        "D.In the DBA account, create an IAM role that is named DBA - Admin.Grant the role the required permissions to access the secrets in the application account.Attach an SCP to the application account to allow access to the secrets from the DBA account.Attach the DBA - Admin role to the EC2 instance for access to the cross - account secrets."
+        "A.Use AWS Resource Access Manager (AWS RAM) to share the secrets from the application account with the DBA account. In the DBA account, create an IAM role that is named DBA-Admin. Grant the role the required permissions to access the shared secrets. Attach the DBA-Admin role to the EC2 instance for access to the cross-account secrets.",
+        "B.In the application account, create an IAM role that is named DBA-Secret.Grant the role the required permissions to access the secrets.In the DBA account, create an IAM role that is named DBA-Admin.Grant the DBA-Admin role the required permissions to assume the DBA-Secret role in the application account.Attach the DBA-Admin role to the EC2 instance for access to the cross-account secrets.",
+        "C.In the DBA account, create an IAM role that is named DBA-Admin.Grant the role the required permissions to access the secrets and the default AWS managed key in the application account.In the application account, attach resource-based policies to the key to allow access from the DBA account.Attach the DBA-Admin role to the EC2 instance for access to the cross-account secrets.",
+        "D.In the DBA account, create an IAM role that is named DBA-Admin.Grant the role the required permissions to access the secrets in the application account.Attach an SCP to the application account to allow access to the secrets from the DBA account.Attach the DBA-Admin role to the EC2 instance for access to the cross-account secrets."
       ],
       "q_cn": "一家公司使用 AWS Organizations 在 AWS 云中进行多账户设置。该公司使用 AWS Control Tower 进行治理，并使用 AWS Transit Gateway 进行跨账户的 VPC 连接。\n在 AWS 应用程序账户中，该公司的应用程序团队部署了一个使用 AWS Lambda 和 Amazon RDS 的 Web 应用程序。公司的数据库管理员有一个单独的 DBA 帐户，并使用该帐户集中管理整个组织中的所有数据库。数据库管理员使用部署在 DBA 账户中的 Amazon EC2 实例来访问部署在应用程序账户中的 RDS 数据库。\n应用程序团队已将数据库凭证作为密钥存储在应用程序账户的 AWS 密钥管理器中。应用程序团队正在与数据库管理员手动共享机密。密钥由应用程序账户中密钥管理器的默认 AWS 托管式密钥加密。解决方案架构师需要实现一个解决方案，使数据库管理员能够访问数据库，并且无需手动共享机密。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
-        "A. 使用 AWS Resource Access Manager （AWS RAM） 与 DBA 账户共享应用程序账户中的密钥。在 DBA 账户中，创建名为 DBA-Admin 的 IAM 角色。向角色授予访问共享密钥所需的权限。将 DBA-Admin 角色附加到 EC2 实例以访问跨账户密钥。",
-        "B.在应用程序账户中，创建名为 DBA 密钥的 IAM 角色。向角色授予访问密钥所需的权限。在 DBA 账户中，创建名为 DBA - Admin 的 IAM 角色。授予 DBA 管理员角色在应用程序帐户中担任 DBA - Secret 角色所需的权限。将 DBA - Admin 角色附加到 EC2 实例以访问跨账户密钥。",
-        "C.In DBA 账户，创建名为 DBA - Admin.Admin 的 IAM 角色。向该角色授予访问应用程序账户中的密钥和默认 AWS 托管式密钥所需的权限。在应用程序帐户中，将基于资源的策略附加到密钥以允许从 DBA 帐户进行访问。将 DBA - 管理员角色附加到 EC2 实例，以访问跨账户密钥。",
-        "D.In DBA 账户，创建名为 DBA - Admin.Admin.授予该角色访问应用程序账户中密钥所需的权限。将 SCP 附加到应用程序帐户以允许从 DBA 帐户访问机密。将 DBA - 管理员角色附加到 EC2 实例，以访问跨账户密钥。"
+        "A.使用 AWS Resource Access Manager （AWS RAM） 与 DBA 账户共享应用程序账户中的密钥。在 DBA 账户中，创建名为 DBA-Admin 的 IAM 角色。向角色授予访问共享密钥所需的权限。将 DBA-Admin 角色附加到 EC2 实例以访问跨账户密钥。",
+        "B.在应用程序账户中，创建名为 DBA 密钥的 IAM 角色。向角色授予访问密钥所需的权限。在 DBA 账户中，创建名为 DBA-Admin 的 IAM 角色。授予 DBA 管理员角色在应用程序帐户中担任 DBA-Secret 角色所需的权限。将 DBA-Admin 角色附加到 EC2 实例以访问跨账户密钥。",
+        "C.In DBA 账户，创建名为 DBA-Admin.Admin 的 IAM 角色。向该角色授予访问应用程序账户中的密钥和默认 AWS 托管式密钥所需的权限。在应用程序帐户中，将基于资源的策略附加到密钥以允许从 DBA 帐户进行访问。将 DBA-管理员角色附加到 EC2 实例，以访问跨账户密钥。",
+        "D.In DBA 账户，创建名为 DBA-Admin.Admin.授予该角色访问应用程序账户中密钥所需的权限。将 SCP 附加到应用程序帐户以允许从 DBA 帐户访问机密。将 DBA-管理员角色附加到 EC2 实例，以访问跨账户密钥。"
       ],
       "aa": "B",
       "qK": "DBA,Secrets Manager",
-      "aK": ["DBA - Secret"]
+      "aK": ["DBA-Secret"]
     },
     {
       "no": 119,
@@ -1028,23 +1028,23 @@ $.db =
     },
     {
       "no": 120,
-      "q": "A company consists or two separate business units. Each business unit has its own AWS account within a single organization in AWS Organizations. The business units regularly share sensitive documents with each other. To facilitate sharing, the company created an Amazon S3 bucket in each account and configured low-way replication between the S3 buckets. The S3 buckets have millions of objects.\nRecently, a security audit identified that neither S3 bucket has encryption at rest enabled.Company policy requires that all documents must be stored with encryption at rest.The company wants to implement server- side encryption with Amazon S3 managed encryption keys(SSE- S3).\nWhat is the MOST operationally efficient solution that meets these requirements ? ",
+      "q": "A company consists or two separate business units. Each business unit has its own AWS account within a single organization in AWS Organizations. The business units regularly share sensitive documents with each other. To facilitate sharing, the company created an Amazon S3 bucket in each account and configured low-way replication between the S3 buckets. The S3 buckets have millions of objects.\nRecently, a security audit identified that neither S3 bucket has encryption at rest enabled.Company policy requires that all documents must be stored with encryption at rest.The company wants to implement server-side encryption with Amazon S3 managed encryption keys(SSE-S3).\nWhat is the MOST operationally efficient solution that meets these requirements ? ",
       "a": [
         "A.Turn on SSE-S3 on both S3 buckets. Use S3 Batch Operations to copy and encrypt the objects in the same location.",
-        "B.Create an AWS Key Management Service(AWS KMS) key in each account.Turn on server - side encryption with AWS KMS keys(SSE- KMS) on each S3 bucket by using the corresponding KMS key in that AWS account.Encrypt the existing objects by using an S3 copy command in the AWS CLI.",
-        "C.Turn on SSE - S3 on both S3 buckets.Encrypt the existing objects by using an S3 copy command in the AWS CLI.",
-        "D.Create an AWS Key Management Service, (AWS KMS) key in each account.Turn on server - side encryption with AWS KMS keys(SSE- KMS) on each S3 bucket by using the corresponding KMS key in that AWS account.Use S3 Batch Operations to copy the objects into the same location."
+        "B.Create an AWS Key Management Service(AWS KMS) key in each account.Turn on server-side encryption with AWS KMS keys(SSE-KMS) on each S3 bucket by using the corresponding KMS key in that AWS account.Encrypt the existing objects by using an S3 copy command in the AWS CLI.",
+        "C.Turn on SSE-S3 on both S3 buckets.Encrypt the existing objects by using an S3 copy command in the AWS CLI.",
+        "D.Create an AWS Key Management Service, (AWS KMS) key in each account.Turn on server-side encryption with AWS KMS keys(SSE-KMS) on each S3 bucket by using the corresponding KMS key in that AWS account.Use S3 Batch Operations to copy the objects into the same location."
       ],
-      "q_cn": "公司由两个独立的业务部门组成。每个业务部门在 AWS 组织的单个组织中都有自己的 AWS 账户。业务部门定期相互共享敏感文档。为了便于共享，该公司在每个账户中创建了一个 Amazon S3 存储桶，并在 S3 存储桶之间配置了低路复制。S3 存储桶有数百万个对象。\n最近，一项安全审计发现，两个 S3 存储桶都没有启用静态加密。公司策略要求所有文档必须以静态加密存储。该公司希望使用 Amazon S3 托管加密密钥 （SSE- S3） 实施服务器端加密。\n    满足这些要求的最具运营效率的解决方案是什么？",
+      "q_cn": "公司由两个独立的业务部门组成。每个业务部门在 AWS 组织的单个组织中都有自己的 AWS 账户。业务部门定期相互共享敏感文档。为了便于共享，该公司在每个账户中创建了一个 Amazon S3 存储桶，并在 S3 存储桶之间配置了低路复制。S3 存储桶有数百万个对象。\n最近，一项安全审计发现，两个 S3 存储桶都没有启用静态加密。公司策略要求所有文档必须以静态加密存储。该公司希望使用 Amazon S3 托管加密密钥 （SSE-S3） 实施服务器端加密。\n    满足这些要求的最具运营效率的解决方案是什么？",
       "a_cn": [
         "A.在两个 S3 存储桶上打开 SSE-S3。使用 S3 分批操作复制和加密同一位置的对象。",
-        "B.在每个账户中创建 AWS 密钥管理服务 （AWS KMS） 密钥。通过使用每个 AWS 账户中的相应 KMS 密钥，在每个 S3 存储桶上启用使用 AWS KMS 密钥 （SSE - KMS） 的服务器端加密。使用 AWS CLI 中的 S3 复制命令加密现有对象。",
-        "C.在两个 S3 存储桶上打开 SSE - S3。使用 AWS CLI 中的 S3 复制命令加密现有对象。",
-        "D.在每个账户中创建一个 AWS 密钥管理服务 （AWS KMS） 密钥。通过使用每个 AWS 账户中的相应 KMS 密钥，在每个 S3 存储桶上启用使用 AWS KMS 密钥 （SSE - KMS） 的服务器端加密。使用 S3 分批操作将对象复制到同一位置。"
+        "B.在每个账户中创建 AWS 密钥管理服务 （AWS KMS） 密钥。通过使用每个 AWS 账户中的相应 KMS 密钥，在每个 S3 存储桶上启用使用 AWS KMS 密钥 （SSE-KMS） 的服务器端加密。使用 AWS CLI 中的 S3 复制命令加密现有对象。",
+        "C.在两个 S3 存储桶上打开 SSE-S3。使用 AWS CLI 中的 S3 复制命令加密现有对象。",
+        "D.在每个账户中创建一个 AWS 密钥管理服务 （AWS KMS） 密钥。通过使用每个 AWS 账户中的相应 KMS 密钥，在每个 S3 存储桶上启用使用 AWS KMS 密钥 （SSE-KMS） 的服务器端加密。使用 S3 分批操作将对象复制到同一位置。"
       ],
       "aa": "A",
-      "qK": "low-way replication,SSE- S3",
-      "aK": ["SSE-S3,S3 Batch"]
+      "qK": "low-way replication,SSE-S3",
+      "aK": ["SSE-S3,S3 Batch,same location"]
     },
     {
       "no": 122,
@@ -1075,16 +1075,16 @@ $.db =
       "no": 129,
       "q": "A company is hosting a critical application on a single Amazon EC2 instance. The application uses an Amazon ElastiCache for Redis single-node cluster for an in-memory data store. The application uses an Amazon RDS for MariaDB DB instance for a relational database. For the application to function, each piece of the infrastructure must be healthy and must be in an active state.\nA solutions architect needs to improve the application's architecture so that the infrastructure can automatically recover from failure with the least possible downtime.\nWhich combination of steps will meet these requirements?(Choose three.) ",
       "a": [
-        "A. Use an Elastic Load Balancer to distribute traffic across multiple EC2 instances. Ensure that the EC2 instances are part of an Auto Scaling group that has a minimum capacity of two instances.",
+        "A.Use an Elastic Load Balancer to distribute traffic across multiple EC2 instances. Ensure that the EC2 instances are part of an Auto Scaling group that has a minimum capacity of two instances.",
         "B.Use an Elastic Load Balancer to distribute traffic across multiple EC2 instances.Ensure that the EC2 instances are configured in unlimited mode.",
         "C.Modify the DB instance to create a read replica in the same Availability Zone.Promote the read replica to be the primary DB instance in failure scenarios.",
-        "D.Modify the DB instance to create a Multi - AZ deployment that extends across two Availability Zones.",
+        "D.Modify the DB instance to create a Multi-AZ deployment that extends across two Availability Zones.",
         "E.Create a replication group for the ElastiCache for Redis cluster.Configure the cluster to use an Auto Scaling group that has a minimum capacity of two instances.",
-        "F.Create a replication group for the ElastiCache for Redis cluster.Enable Multi - AZ on the cluster"
+        "F.Create a replication group for the ElastiCache for Redis cluster.Enable Multi-AZ on the cluster"
       ],
       "q_cn": "一家公司在单个 Amazon EC2 实例上托管关键应用程序。该应用程序使用 Amazon ElastiCache for Redis 单节点集群作为内存数据存储。该应用程序将 Amazon RDS for MariaDB 数据库实例用于关系数据库。要使应用程序正常运行，基础结构的每个部分都必须正常运行，并且必须处于活动状态。\n解决方案架构师需要改进应用程序的体系结构，以便基础结构能够以尽可能少的停机时间自动从故障中恢复。\n哪些步骤组合将满足这些要求？（选择三个。",
       "a_cn": [
-        "A. 使用弹性负载均衡器在多个 EC2 实例之间分配流量。确保 EC2 实例是最小容量为 2 个实例的 Auto Scaling 组的一部分。",
+        "A.使用弹性负载均衡器在多个 EC2 实例之间分配流量。确保 EC2 实例是最小容量为 2 个实例的 Auto Scaling 组的一部分。",
         "B.使用弹性负载均衡器在多个 EC2 实例之间分配流量。确保 EC2 实例配置为无限制模式。",
         "C.修改数据库实例以在同一可用区中创建只读副本。将只读副本提升为故障情况下的主数据库实例。",
         "D.修改数据库实例以创建跨两个可用区扩展的多可用区部署。",
@@ -1095,15 +1095,15 @@ $.db =
       "qK": "ElastiCache for Redis,MariaDB",
       "aK": [
         "part of an Auto",
-        "Multi - AZ",
-        "Multi - AZ"
+        "Multi-AZ",
+        "Multi-AZ"
       ]
     },
     {
       "no": 130,
       "q": "A company has an environment that has a single AWS account. A solutions architect is reviewing the environment to recommend what the company could improve specifically in terms of access to the AWS Management Console. The company's IT support workers currently access the console for administrative tasks, authenticating with named IAM users that have been mapped to their job role.\nThe IT support workers no longer want to maintain both their Active Directory and IAM user accounts.They want to be able to access the console by using their existing Active Directory credentials.The solutions architect is using AWS IAM Identity Center (AWS Single Sign-On) to implement this functionality.\nWhich solution will meet these requirements MOST cost-effectively? ",
       "a": [
-        "A. Create an organization in AWS Organizations.Turn on the IAM Identity Center feature in Organizations.Create and configure a directory in AWS Directory Service for Microsoft Active Directory (AWS Managed Microsoft AD) with a two-way trust to the company's on-premises Active Directory. Configure AWS IAM Identity Center and set the AWS Managed Microsoft AD directory as the identity source. Create permission sets and map them to the existing groups within the AWS Managed Microsoft AD directory.",
+        "A.Create an organization in AWS Organizations.Turn on the IAM Identity Center feature in Organizations.Create and configure a directory in AWS Directory Service for Microsoft Active Directory (AWS Managed Microsoft AD) with a two-way trust to the company's on-premises Active Directory. Configure AWS IAM Identity Center and set the AWS Managed Microsoft AD directory as the identity source. Create permission sets and map them to the existing groups within the AWS Managed Microsoft AD directory.",
         "B.Create an organization in AWS Organizations.Turn on the IAM Identity Center feature in Organizations.Create and configure an AD Connector to connect to the company's on-premises Active Directory. Configure AWS IAM Identity Center and select the AD Connector as the identity source. Create permission sets and map them to the existing groups within the company's Active Directory.",
         "C.Create an organization in AWS Organizations.Turn on all features for the organization.Create and configure a directory in AWS Directory Service for Microsoft Active Directory(AWS Managed Microsoft AD) with a two-way trust to the company's on-premises Active Directory. Configure IAM Identity Center and select the AWS Managed Microsoft AD directory as the identity source. Create permission sets and map them to the existing groups within the AWS Managed Microsoft AD directory.",
         "D.Create an organization in AWS Organizations.Turn on all features for the organization.Create and configure an AD Connector to connect to the company's on-premises Active Directory. Configure IAM Identity Center and set the AD Connector as the identity source. Create permission sets and map them to the existing groups within the company's Active Directory."
@@ -1123,7 +1123,7 @@ $.db =
       "no": 135,
       "q": "A company has registered 10 new domain names. The company uses the domains for online marketing. The company needs a solution that will redirect online visitors to a specific URL for each domain. All domains and target URLS are defined in a JSON document. All DNS records are managed by Amazon Route 53.\nA solutions architect must implement a redirect service that accepts HTTP and HTTPS requests.\nWhich combination of steps should the solutions architect take to meet these requirements with the LEAST amount of operational effort?(Choose three.) ",
       "a": [
-        "A. Create a dynamic webpage that runs on an Amazon EC2 instance. Configure the webpage to use the JSON document in combination with the event message to look up and respond with a redirect URL.",
+        "A.Create a dynamic webpage that runs on an Amazon EC2 instance. Configure the webpage to use the JSON document in combination with the event message to look up and respond with a redirect URL.",
         "B.Create an Application Load Balancer that includes HTTP and HTTPS listeners.",
         "C.Create an AWS Lambda function that uses the JSON document in combination with the event message to look up and respond with a redirect URL.",
         "D.Use an Amazon API Gateway API with a custom domain to publish an AWS Lambda function.",
@@ -1132,7 +1132,7 @@ $.db =
       ],
       "q_cn": "一家公司注册了 10 个新域名。该公司使用这些域进行在线营销。该公司需要一个解决方案，将在线访问者重定向到每个域的特定URL。所有域和目标 URL 都在 JSON 文档中定义。所有 DNS 记录均由 Amazon Route 53 管理。\n解决方案架构师必须实现接受 HTTP 和 HTTPS 请求的重定向服务。\n解决方案架构师应采取哪些步骤组合，以最少的运营工作量满足这些要求？（选择三个。",
       "a_cn": [
-        "A. 创建在 Amazon EC2 实例上运行的动态网页。将网页配置为将 JSON 文档与事件消息结合使用，以查找并使用重定向 URL 进行响应。",
+        "A.创建在 Amazon EC2 实例上运行的动态网页。将网页配置为将 JSON 文档与事件消息结合使用，以查找并使用重定向 URL 进行响应。",
         "B.创建包含 HTTP 和 HTTPS 侦听器的应用程序负载均衡器。",
         "C.创建一个 AWS Lambda 函数，该函数将 JSON 文档与事件消息结合使用，以查找并使用重定向 URL 进行响应。",
         "D.将 Amazon API Gateway API 与自定义域结合使用，以发布 AWS Lambda 函数。",
@@ -1142,7 +1142,7 @@ $.db =
       "aa": "C,E,F",
       "qK": "10 new domain names",
       "aK": [
-        "Lambda,JSON",
+        "Lambda ,JSON",
         "Lambda@Edge",
         "SSL,ACM"
       ]
@@ -1151,14 +1151,14 @@ $.db =
       "no": 138,
       "q": "A company is running an application that uses an Amazon ElastiCache for Redis cluster as a caching layer. A recent security audit revealed that the company has configured encryption at rest for ElastiCache. However, the company did not configure ElastiCache to use encryption in transit. Additionally, users can access the cache without authentication.\nA solutions architect must make changes to require user authentication and to ensure that the company is using end-to-end encryption.\nWhich solution will meet these requirements ? ",
       "a": [
-        "A. Create an AUTH token. Store the token in AWS System Manager Parameter Store, as an encrypted parameter. Create a new cluster with AUTH, and configure encryption in transit. Update the application to retrieve the AUTH token from Parameter Store when necessary and to use the AUTH token for authentication.",
+        "A.Create an AUTH token. Store the token in AWS System Manager Parameter Store, as an encrypted parameter. Create a new cluster with AUTH, and configure encryption in transit. Update the application to retrieve the AUTH token from Parameter Store when necessary and to use the AUTH token for authentication.",
         "B.Create an AUTH token.Store the token in AWS Secrets Manager.Configure the existing cluster to use the AUTH token, and configure encryption in transit.Update the application to retrieve the AUTH token from Secrets Manager when necessary and to use the AUTH token for authentication.",
         "C.Create an SSL certificate.Store the certificate in AWS Secrets Manager.Create a new cluster, and configure encryption in transit.Update the application to retrieve the SSL certificate from Secrets Manager when necessary and to use the certificate for authentication.",
         "D.Create an SSL certificate.Store the certificate in AWS Systems Manager Parameter Store, as an encrypted advanced parameter.Update the existing cluster to configure encryption in transit.Update the application to retrieve the SSL certificate from Parameter Store when necessary and to use the certificate for authentication."
       ],
       "q_cn": "一家公司正在运行一个应用程序，该应用程序使用 Amazon ElastiCache for Redis 集群作为缓存层。最近的安全审计显示，该公司已经为ElastiCache配置了静态加密。但是，该公司没有将ElastiCache配置为使用传输中加密。此外，用户无需身份验证即可访问缓存。\n解决方案架构师必须进行更改以要求用户身份验证并确保公司使用端到端加密。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
-        "A. 创建身份验证令牌。将令牌作为加密参数存储在 AWS 系统管理器参数存储中。使用 AUTH 创建新集群，并配置传输中加密。更新应用程序以在必要时从参数存储中检索 AUTH 令牌，并使用 AUTH 令牌进行身份验证。",
+        "A.创建身份验证令牌。将令牌作为加密参数存储在 AWS 系统管理器参数存储中。使用 AUTH 创建新集群，并配置传输中加密。更新应用程序以在必要时从参数存储中检索 AUTH 令牌，并使用 AUTH 令牌进行身份验证。",
         "B.创建身份验证令牌。将令牌存储在 AWS 密钥管理器中。将现有群集配置为使用 AUTH 令牌，并配置传输中加密。更新应用程序以在必要时从机密管理器检索 AUTH 令牌，并使用 AUTH 令牌进行身份验证。",
         "C.创建 SSL 证书。将证书存储在 AWS 密钥管理器中。创建新群集，并配置传输中加密。更新应用程序以在必要时从机密管理器检索 SSL 证书，并使用该证书进行身份验证。",
         "D.创建 SSL 证书。将证书作为加密的高级参数存储在 AWS 系统管理器参数存储中。更新现有群集以配置传输中加密。更新应用程序以在必要时从参数存储中检索 SSL 证书，并使用证书进行身份验证。"
@@ -1237,16 +1237,16 @@ $.db =
     },
     {
       "no": 148,
-      "q": "A company wants to optimize AWS data-transfer costs and compute costs across developer accounts within the company's organization in AWS Organizations. Developers can configure VPCs and launch Amazon EC2 instances in a single AWS Region. The EC2 instances retrieve approximately 1 TB of data each day from Amazon S3.\nThe developer activity leads to excessive monthly data- transfer charges and NAT gateway processing charges between EC2 instances and S3 buckets, along with high compute costs.The company wants to proactively enforce approved architectural patterns for any EC2 instance and VPC infrastructure that developers deploy within the AWS accounts.The company does not want this enforcement to negatively affect the speed at which the developers can perform their tasks.\nWhich solution will meet these requirements MOST cost- effectively ? ",
+      "q": "A company wants to optimize AWS data-transfer costs and compute costs across developer accounts within the company's organization in AWS Organizations. Developers can configure VPCs and launch Amazon EC2 instances in a single AWS Region. The EC2 instances retrieve approximately 1 TB of data each day from Amazon S3.\nThe developer activity leads to excessive monthly data-transfer charges and NAT gateway processing charges between EC2 instances and S3 buckets, along with high compute costs.The company wants to proactively enforce approved architectural patterns for any EC2 instance and VPC infrastructure that developers deploy within the AWS accounts.The company does not want this enforcement to negatively affect the speed at which the developers can perform their tasks.\nWhich solution will meet these requirements MOST cost-effectively ? ",
       "a": [
-        "A. Create SCPs to prevent developers from launching unapproved EC2 instance types. Provide the developers with an AWS CloudFormation template to deploy an approved VPC configuration with S3 interface endpoints. Scope the developers' IAM permissions so that the developers can launch VPC resources only with CloudFormation.",
-        "B.Create a daily forecasted budget with AWS Budgets to monitor EC2 compute costs and S3 data- transfer costs across the developer accounts.When the forecasted cost is 75 % of the actual budget cost, send an alert to the developer teams.If the actual budget cost is 100 %, create a budget action to terminate the developers' EC2 instances and VPC infrastructure.",
+        "A.Create SCPs to prevent developers from launching unapproved EC2 instance types. Provide the developers with an AWS CloudFormation template to deploy an approved VPC configuration with S3 interface endpoints. Scope the developers' IAM permissions so that the developers can launch VPC resources only with CloudFormation.",
+        "B.Create a daily forecasted budget with AWS Budgets to monitor EC2 compute costs and S3 data-transfer costs across the developer accounts.When the forecasted cost is 75 % of the actual budget cost, send an alert to the developer teams.If the actual budget cost is 100 %, create a budget action to terminate the developers' EC2 instances and VPC infrastructure.",
         "C.Create an AWS Service Catalog portfolio that users can use to create an approved VPC configuration with S3 gateway endpoints and approved EC2 instances.Share the portfolio with the developer accounts.Configure an AWS Service Catalog launch constraint to use an approved IAM role.Scope the developers' IAM permissions to allow access only to AWS Service Catalog.",
         "D.Create and deploy AWS Config rules to monitor the compliance of EC2 and VPC resources in the developer AWS accounts.If developers launch unapproved EC2 instances or if developers create VPCs without S3 gateway endpoints, perform a remediation action to terminate the unapproved resources."
       ],
       "q_cn": "一家公司希望在 AWS 组织中优化公司组织内开发人员账户的 AWS 数据传输成本和计算成本。开发人员可以在单个 AWS 区域中配置 VPC 并启动 Amazon EC2 实例。EC2 实例每天从 Amazon S3 检索大约 1 TB 的数据。\n开发人员活动会导致 EC2 实例和 S3 存储桶之间的月度数据传输费用和 NAT 网关处理费用过高，以及高昂的计算成本。该公司希望为开发人员在 AWS 账户中部署的任何 EC2 实例和 VPC 基础设施主动实施批准的架构模式。该公司不希望这种实施对开发人员执行任务的速度产生负面影响。\n哪种解决方案最经济高效地满足这些要求？",
       "a_cn": [
-        "A. 创建 SCP 以防止开发人员启动未经批准的 EC2 实例类型。为开发人员提供 AWS CloudFormation 模板，以部署具有 S3 接口终端节点的已批准的 VPC 配置。限定开发人员的 IAM 权限范围，以便开发人员只能使用 CloudFormation 启动 VPC 资源。",
+        "A.创建 SCP 以防止开发人员启动未经批准的 EC2 实例类型。为开发人员提供 AWS CloudFormation 模板，以部署具有 S3 接口终端节点的已批准的 VPC 配置。限定开发人员的 IAM 权限范围，以便开发人员只能使用 CloudFormation 启动 VPC 资源。",
         "B.使用 AWS 预算创建每日预测预算，以监控开发人员账户中的 EC2 计算成本和 S3 数据传输成本。当预测成本为实际预算成本的 75 % 时，向开发人员团队发送警报。如果实际预算成本为 100 %，请创建预算操作以终止开发人员的 EC2 实例和 VPC 基础设施。",
         "C.创建 AWS 服务目录产品组合，用户可以使用该产品组合创建具有 S3 网关终端节点和批准的 EC2 实例的已批准的 VPC 配置。与开发者帐号共享产品组合。配置 AWS 服务目录启动约束以使用批准的 IAM 角色。限定开发人员的 IAM 权限范围，以仅允许访问 AWS 服务目录。",
         "D.创建和部署 AWS Config 规则，以监控开发人员 AWS 账户中 EC2 和 VPC 资源的合规性。如果开发人员启动未经批准的 EC2 实例，或者开发人员创建的 VPC 没有 S3 网关终端节点，请执行修复操作以终止未批准的资源。"
@@ -1257,16 +1257,16 @@ $.db =
     },
     {
       "no": 149,
-      "q": "A company recently acquired several other companies. Each company has a separate AWS account with a different billing and reporting method. The acquiring company has consolidated all the accounts into one organization in AWS Organizations. However, the acquiring company has found it difficult to generate a cost report that contains meaningful groups for all the teams.\nThe acquiring company’s finance team needs a solution to report on costs for all the companies through a self- managed application.\nWhich solution will meet these requirements ? ",
+      "q": "A company recently acquired several other companies. Each company has a separate AWS account with a different billing and reporting method. The acquiring company has consolidated all the accounts into one organization in AWS Organizations. However, the acquiring company has found it difficult to generate a cost report that contains meaningful groups for all the teams.\nThe acquiring company’s finance team needs a solution to report on costs for all the companies through a self-managed application.\nWhich solution will meet these requirements ? ",
       "a": [
-        "A. Create an AWS Cost and Usage Report for the organization. Define tags and cost categories in the report. Create a table in Amazon Athena. Create an Amazon QuickSight dataset based on the Athena table. Share the dataset with the finance team.",
+        "A.Create an AWS Cost and Usage Report for the organization. Define tags and cost categories in the report. Create a table in Amazon Athena. Create an Amazon QuickSight dataset based on the Athena table. Share the dataset with the finance team.",
         "B.Create an AWS Cost and Usage Report for the organization.Define tags and cost categories in the report.Create a specialized template in AWS Cost Explorer that the finance department will use to build reports.",
         "C.Create an Amazon QuickSight dataset that receives spending information from the AWS Price List Query API.Share the dataset with the finance team.",
         "D.Use the AWS Price List Query API to collect account spending information.Create a specialized template in AWS Cost Explorer that the finance department will use to build reports."
       ],
       "q_cn": "一家公司最近收购了其他几家公司。每家公司都有一个单独的 AWS 账户，采用不同的账单和报告方法。收购公司已将所有账户合并到 AWS 组织中的一个组织中。但是，收购公司发现很难生成包含所有团队有意义的组的成本报表。\n收购公司的财务团队需要一个解决方案，通过自我管理的应用程序报告所有公司的成本。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
-        "A. 为组织创建 AWS 成本和使用情况报告。在报表中定义标记和成本类别。在亚马逊雅典娜中创建表。基于 Athena 表创建 Amazon QuickSight 数据集。与财务团队共享数据集。",
+        "A.为组织创建 AWS 成本和使用情况报告。在报表中定义标记和成本类别。在亚马逊雅典娜中创建表。基于 Athena 表创建 Amazon QuickSight 数据集。与财务团队共享数据集。",
         "B.为组织创建 AWS 成本和使用情况报告。在报表中定义标记和成本类别。在 AWS 成本管理器中创建财务部门将用于构建报告的专用模板。",
         "C.创建一个 Amazon QuickSight 数据集，该数据集从 AWS 价目表查询 API 接收支出信息。与财务团队共享数据集。",
         "D.使用 AWS 价目表查询 API 收集账户支出信息。在 AWS 成本管理器中创建财务部门将用于构建报告的专用模板。"
@@ -1279,14 +1279,14 @@ $.db =
       "no": 150,
       "q": "A company wants to use AWS to create a business continuity solution in case the company's main on-premises application fails. The application runs on physical servers that also run other applications. The on-premises application that the company is planning to migrate uses a MySQL database as a data store. All the company's on-premises applications use operating systems that are compatible with Amazon EC2.\nWhich solution will achieve the company's goal with the LEAST operational overhead?",
       "a": [
-        "A. Install the AWS Replication Agent on the source servers, including the MySQL servers. Set up replication for all servers. Launch test instances for regular drills. Cut over to the test instances to fail over the workload in the case of a failure event.",
+        "A.Install the AWS Replication Agent on the source servers, including the MySQL servers. Set up replication for all servers. Launch test instances for regular drills. Cut over to the test instances to fail over the workload in the case of a failure event.",
         "B.Install the AWS Replication Agent on the source servers, including the MySQL servers.Initialize AWS Elastic Disaster Recovery in the target AWS Region.Define the launch settings.Frequently perform failover and fallback from the most recent point in time.",
         "C.Create AWS Database Migration Service(AWS DMS) replication servers and a target Amazon Aurora MySQL DB cluster to host the database.Create a DMS replication task to copy the existing data to the target DB cluster.Create a local AWS Schema Conversion Tool(AWS SCT) change data capture(CDC) task to keep the data synchronized.Install the rest of the software on EC2 instances by starting with a compatible base AMI.",
-        "D.Deploy an AWS Storage Gateway Volume Gateway on premises.Mount volumes on all on- premises servers.Install the application and the MySQL database on the new volumes.Take regular snapshots.Install all the software on EC2 Instances by starting with a compatible base AMI.Launch a Volume Gateway on an EC2 instance.Restore the volumes from the latest snapshot.Mount the new volumes on the EC2 instances in the case of a failure event."
+        "D.Deploy an AWS Storage Gateway Volume Gateway on premises.Mount volumes on all on-premises servers.Install the application and the MySQL database on the new volumes.Take regular snapshots.Install all the software on EC2 Instances by starting with a compatible base AMI.Launch a Volume Gateway on an EC2 instance.Restore the volumes from the latest snapshot.Mount the new volumes on the EC2 instances in the case of a failure event."
       ],
       "q_cn": "一家公司希望使用 AWS 创建业务连续性解决方案，以防该公司的主要本地应用程序出现故障。应用程序在也运行其他应用程序的物理服务器上运行。公司计划迁移的本地应用程序使用 MySQL 数据库作为数据存储。该公司的所有本地应用程序都使用与 Amazon EC2 兼容的操作系统。\n哪种解决方案能够以最少的运营开销实现公司的目标？",
       "a_cn": [
-        "A. 在源服务器（包括 MySQL 服务器）上安装 AWS 复制代理。为所有服务器设置复制。启动测试实例以进行常规演练。切换到测试实例，以便在发生故障事件时故障转移工作负载。",
+        "A.在源服务器（包括 MySQL 服务器）上安装 AWS 复制代理。为所有服务器设置复制。启动测试实例以进行常规演练。切换到测试实例，以便在发生故障事件时故障转移工作负载。",
         "B.在源服务器（包括 MySQL 服务器）上安装 AWS 复制代理。在目标 AWS 区域中初始化 AWS 弹性灾难恢复。定义启动设置。经常从最近的时间点执行故障转移和回退。",
         "C.创建 AWS Database Migration Service （AWS DMS） 复制服务器和目标 Amazon Aurora MySQL 数据库集群来托管数据库。创建 DMS 复制任务以将现有数据复制到目标数据库集群。创建本地 AWS 架构转换工具 （AWS SCT） 更改数据捕获 （CDC） 任务以保持数据同步。从兼容的基本 AMI 开始，在 EC2 实例上安装其余软件。",
         "D.在本地部署 AWS 存储网关卷网关。在所有本地服务器上装载卷。在新卷上安装应用程序和 MySQL 数据库。定期拍摄快照。从兼容的基本 AMI 开始，在 EC2 实例上安装所有软件。在 EC2 实例上启动卷网关。从最新快照还原卷。在发生故障事件时在 EC2 实例上挂载新卷。"
@@ -1313,7 +1313,7 @@ $.db =
       ],
       "aa": "B",
       "qK": "S3,CloudFront,REST API,CSV report",
-      "aK": ["Optimizer,EventBridge"]
+      "aK": ["Optimizer,EventBridge,ExportLambdaFunctionRecommendations"]
     },
     {
       "no": 152,
@@ -1412,8 +1412,8 @@ $.db =
       "no": 158,
       "q": "A company is building a serverless application that runs on an AWS Lambda function that is attached to a VPC. The company needs to integrate the application with a new service from an external provider. The external provider supports only requests that come from public IPv4 addresses that are in an allow list.\nThe company must provide a single public IP address to the external provider before the application can start using the new service.\nWhich solution will give the application the ability to access the new service ? ",
       "a": [
-        "A. Deploy a NAT gateway. Associate an Elastic IP address with the NAT gateway. Configure the VPC to use the NAT gateway.",
-        "B.Deploy an egress - only internet gateway.Associate an Elastic IP address with the egress- only internet gateway.Configure the elastic network interface on the Lambda function to use the egress - only internet gateway.",
+        "A.Deploy a NAT gateway. Associate an Elastic IP address with the NAT gateway. Configure the VPC to use the NAT gateway.",
+        "B.Deploy an egress-only internet gateway.Associate an Elastic IP address with the egress-only internet gateway.Configure the elastic network interface on the Lambda function to use the egress-only internet gateway.",
         "C.Deploy an internet gateway.Associate an Elastic IP address with the internet gateway.Configure the Lambda function to use the internet gateway.",
         "D.Deploy an internet gateway.Associate an Elastic IP address with the internet gateway.Configure the default route in the public VPC route table to use the internet gateway."
       ],
@@ -1432,7 +1432,7 @@ $.db =
       "no": 159,
       "q": "A solutions architect wants to cost-optimize and appropriately size Amazon EC2 instances in a single AWS account. The solutions architect wants to ensure that the instances are optimized based on CPU, memory, and network metrics.\nWhich combination of steps should the solutions architect take to meet these requirements?(Choose two.) ",
       "a": [
-        "A. Purchase AWS Business Support or AWS Enterprise Support for the account.",
+        "A.Purchase AWS Business Support or AWS Enterprise Support for the account.",
         "B.Turn on AWS Trusted Advisor and review any “Low Utilization Amazon EC2 Instances” recommendations.",
         "C.Install the Amazon CloudWatch agent and configure memory metric collection on the EC2 instances.",
         "D.Configure AWS Compute Optimizer in the AWS account to receive findings and optimization recommendations.",
@@ -1440,7 +1440,7 @@ $.db =
       ],
       "q_cn": "解决方案架构师希望在单个 AWS 账户中对 Amazon EC2 实例进行成本优化并适当调整其大小。解决方案架构师希望确保根据 CPU、内存和网络指标优化实例。\n解决方案架构师应采取哪些步骤组合来满足这些要求？（选择两个。",
       "a_cn": [
-        "A. 为账户购买 AWS 业务支持或 AWS 企业支持。",
+        "A.为账户购买 AWS 业务支持或 AWS 企业支持。",
         "B.打开 AWS Trusted Advisor 并查看任何“低利用率 Amazon EC2 实例”建议。",
         "C.在 EC2 实例上安装 Amazon CloudWatch 代理并配置内存指标收集。",
         "D.在 AWS 账户中配置 AWS 计算优化器以接收结果和优化建议。",
@@ -1457,14 +1457,14 @@ $.db =
       "no": 160,
       "q": "A company gives users the ability to upload images from a custom application. The upload process invokes an AWS Lambda function that processes and stores the image in an Amazon S3 bucket. The application invokes the Lambda function by using a specific function version ARN.\nThe Lambda function accepts image processing parameters by using environment variables.The company often adjusts the environment variables of the Lambda function to achieve optimal image processing output.The company tests different parameters and publishes a new function version with the updated environment variables after validating results.This update process also requires frequent changes to the custom application to invoke the new function version ARN.These changes cause interruptions for users.\nA solutions architect needs to simplify this process to minimize disruption to users.\nWhich solution will meet these requirements with the LEAST operational overhead?",
       "a": [
-        "A. Directly modify the environment variables of the published Lambda function version. Use the SLATEST version to test image processing parameters.",
+        "A.Directly modify the environment variables of the published Lambda function version. Use the SLATEST version to test image processing parameters.",
         "B.Create an Amazon DynamoDB table to store the image processing parameters.Modify the Lambda function to retrieve the image processing parameters from the DynamoDB table.",
         "C.Directly code the image processing parameters within the Lambda function and remove the environment variables.Publish a new function version when the company updates the parameters.",
         "D.Create a Lambda function alias.Modify the client application to use the function alias ARN.Reconfigure the Lambda alias to point to new versions of the function when the company finishes testing."
       ],
       "q_cn": "公司使用户能够从自定义应用程序上传图像。上传过程会调用 AWS Lambda 函数，该函数处理映像并将其存储在 Amazon S3 存储桶中。应用程序使用特定函数版本 ARN 调用 Lambda 函数。\nLambda 函数使用环境变量接受图像处理参数。该公司经常调整 Lambda 函数的环境变量，以实现最佳图像处理输出。该公司测试了不同的参数，并在验证结果后发布了具有更新环境变量的新函数版本。此更新过程还需要频繁更改自定义应用程序以调用新功能版本 ARN。这些更改会导致用户中断。\n解决方案架构师需要简化此过程，以最大程度地减少对用户的干扰。\n哪种解决方案能够以最少的运营开销满足这些要求？",
       "a_cn": [
-        "A. 直接修改已发布的 Lambda 函数版本的环境变量。使用 SLATEST 版本测试图像处理参数。",
+        "A.直接修改已发布的 Lambda 函数版本的环境变量。使用 SLATEST 版本测试图像处理参数。",
         "B.创建一个 Amazon DynamoDB 表来存储图像处理参数。修改 Lambda 函数以从 DynamoDB 表中检索图像处理参数。",
         "C.直接在 Lambda 函数中对图像处理参数进行编码，并删除环境变量。在公司更新参数时发布新的函数版本。",
         "D.创建 Lambda 函数别名。修改客户端应用程序以使用函数别名 ARN。重新配置 Lambda 别名，以便在公司完成测试时指向函数的新版本。"
@@ -1477,7 +1477,7 @@ $.db =
       "no": 162,
       "q": "A company is developing a new serverless API by using Amazon API Gateway and AWS Lambda. The company integrated the Lambda functions with API Gateway to use several shared libraries and custom classes.\nA solutions architect needs to simplify the deployment of the solution and optimize for code reuse.\nWhich solution will meet these requirements?",
       "a": [
-        "A. Deploy the shared libraries and custom classes into a Docker image. Store the image in an S3 bucket. Create a Lambda layer that uses the Docker image as the source. Deploy the API's Lambda functions as Zip packages. Configure the packages to use the Lambda layer.",
+        "A.Deploy the shared libraries and custom classes into a Docker image. Store the image in an S3 bucket. Create a Lambda layer that uses the Docker image as the source. Deploy the API's Lambda functions as Zip packages. Configure the packages to use the Lambda layer.",
         "B.Deploy the shared libraries and custom classes to a Docker image.Upload the image to Amazon Elastic Container Registry(Amazon ECR).Create a Lambda layer that uses the Docker image as the source.Deploy the API's Lambda functions as Zip packages. Configure the packages to use the Lambda layer.",
         "C.Deploy the shared libraries and custom classes to a Docker container in Amazon Elastic Container Service(Amazon ECS) by using the AWS Fargate launch type.Deploy the API's Lambda functions as Zip packages. Configure the packages to use the deployed container as a Lambda layer.",
         "D.Deploy the shared libraries, custom classes, and code for the API's Lambda functions to a Docker image. Upload the image to Amazon Elastic Container Registry (Amazon ECR). Configure the API's Lambda functions to use the Docker image as the deployment package."
@@ -1511,7 +1511,7 @@ $.db =
       ],
       "aa": "D",
       "qK": "ETL,Redshift,FTP,Data Exchange",
-      "aK": ["resource-based,[policies]"]
+      "aK": ["Publish,resource-based,[policies]"]
     },
     {
       "no": 165,
@@ -1535,19 +1535,19 @@ $.db =
     },
     {
       "no": 166,
-      "q": "A company is using Amazon OpenSearch Service to analyze data. The company loads data into an OpenSearch Service cluster with 10 data nodes from an Amazon S3 bucket that uses S3 Standard storage. The data resides in the cluster for 1 month for read-only analysis. After 1 month, the company deletes the index that contains the data from the cluster. For compliance purposes, the company must retain a copy of all input data.\nThe company is concerned about ongoing costs and asks a solutions architect to recommend a new solution.\nWhich solution will meet these requirements MOST cost- effectively ? ",
+      "q": "A company is using Amazon OpenSearch Service to analyze data. The company loads data into an OpenSearch Service cluster with 10 data nodes from an Amazon S3 bucket that uses S3 Standard storage. The data resides in the cluster for 1 month for read-only analysis. After 1 month, the company deletes the index that contains the data from the cluster. For compliance purposes, the company must retain a copy of all input data.\nThe company is concerned about ongoing costs and asks a solutions architect to recommend a new solution.\nWhich solution will meet these requirements MOST cost-effectively ? ",
       "a": [
         "A.Replace all the data nodes with UltraWarm nodes to handle the expected capacity. Transition the input data from S3 Standard to S3 Glacier Deep Archive when the company loads the data into the cluster.",
         "B.Reduce the number of data nodes in the cluster to 2 Add UltraWarm nodes to handle the expected capacity.Configure the indexes to transition to UltraWarm when OpenSearch Service ingests the data.Transition the input data to S3 Glacier Deep Archive after 1 month by using an S3 Lifecycle policy.",
         "C.Reduce the number of data nodes in the cluster to 2. Add UltraWarm nodes to handle the expected capacity.Configure the indexes to transition to UltraWarm when OpenSearch Service ingests the data.Add cold storage nodes to the cluster Transition the indexes from UltraWarm to cold storage.Delete the input data from the S3 bucket after 1 month by using an S3 Lifecycle policy.",
-        "D.Reduce the number of data nodes in the cluster to 2. Add instance - backed data nodes to handle the expected capacity.Transition the input data from S3 Standard to S3 Glacier Deep Archive when the company loads the data into the cluster."
+        "D.Reduce the number of data nodes in the cluster to 2. Add instance-backed data nodes to handle the expected capacity.Transition the input data from S3 Standard to S3 Glacier Deep Archive when the company loads the data into the cluster."
       ],
       "q_cn": "一家公司正在使用 Amazon OpenSearch Service 来分析数据。该公司将数据从使用 S3 标准存储的 Amazon S3 存储桶加载到具有 10 个数据节点的 OpenSearch Service 集群中。数据在集群中驻留 1 个月，用于只读分析。1 个月后，公司将从群集中删除包含数据的索引。出于合规性目的，公司必须保留所有输入数据的副本。\n该公司担心持续成本，并要求解决方案架构师推荐新的解决方案。\n哪种解决方案最经济高效地满足这些要求？",
       "a_cn": [
-        "A. 将所有数据节点替换为 UltraWarm 节点以处理预期的容量。当公司将数据加载到集群中时，将输入数据从 S3 标准转换为 S3 Glacier Deep Archive。",
+        "A.将所有数据节点替换为 UltraWarm 节点以处理预期的容量。当公司将数据加载到集群中时，将输入数据从 S3 标准转换为 S3 Glacier Deep Archive。",
         "B.将群集中的数据节点数减少到 2 个 添加 UltraWarm 节点以处理预期的容量。将索引配置为在 OpenSearch Service 摄取数据时转换为 UltraWarm。使用 S3 生命周期策略在 1 个月后将输入数据转换为 S3 冰川深度存档。",
         "C.将群集中的数据节点数减少到 2。添加超温节点以处理预期的容量。将索引配置为在 OpenSearch Service 摄取数据时转换为 UltraWarm。将冷存储节点添加到群集 将索引从超温转换为冷存储。使用 S3 生命周期策略在 1 个月后从 S3 存储桶中删除输入数据。",
-        "D.将集群中的数据节点数减少到 2 个。添加实例 - 支持的数据节点以处理预期容量。当公司将数据加载到集群中时，将输入数据从 S3 标准转换为 S3 Glacier Deep Archive。"
+        "D.将集群中的数据节点数减少到 2 个。添加实例-支持的数据节点以处理预期容量。当公司将数据加载到集群中时，将输入数据从 S3 标准转换为 S3 Glacier Deep Archive。"
       ],
       "aa": "B",
       "qK": "OpenSearch Service",
@@ -1555,7 +1555,7 @@ $.db =
     },
     {
       "no": 168,
-      "q": "A software as a service (SaaS) based company provides a case management solution to customers A3 part of the solution. The company uses a standalone Simple Mail Transfer Protocol (SMTP) server to send email messages from an application. The application also stores an email template for acknowledgement email messages that populate customer data before the application sends the email message to the customer.\nThe company plans to migrate this messaging functionality to the AWS Cloud and needs to minimize operational overhead.\nWhich solution will meet these requirements MOST cost- effectively ? ",
+      "q": "A software as a service (SaaS) based company provides a case management solution to customers A3 part of the solution. The company uses a standalone Simple Mail Transfer Protocol (SMTP) server to send email messages from an application. The application also stores an email template for acknowledgement email messages that populate customer data before the application sends the email message to the customer.\nThe company plans to migrate this messaging functionality to the AWS Cloud and needs to minimize operational overhead.\nWhich solution will meet these requirements MOST cost-effectively ? ",
       "a": [
         "A.Set up an SMTP server on Amazon EC2 instances by using an AMI from the AWS Marketplace. Store the email template in an Amazon S3 bucket. Create an AWS Lambda function to retrieve the template from the S3 bucket and to merge the customer data from the application with the template. Use an SDK in the Lambda function to send the email message.",
         "B.Set up Amazon Simple Email Service(Amazon SES) to send email messages.Store the email template in an Amazon S3 bucket.Create an AWS Lambda function to retrieve the template from the S3 bucket and to merge the customer data from the application with the template.Use an SDK in the Lambda function to send the email message.",
@@ -1578,9 +1578,9 @@ $.db =
       "q": "A company has an application that runs as a ReplicaSet of multiple pods in an Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The EKS cluster has nodes in multiple Availability Zones. The application generates many small files that must be accessible across all running instances of the application. The company needs to back up the files and retain the backups for 1 year.\nWhich solution will meet these requirements while providing the FASTEST storage performance?",
       "a": [
         "A.Create an Amazon Elastic File System (Amazon EFS) file system and a mount target for each subnet that contains nodes in the EKS cluster. Configure the ReplicaSet to mount the file system. Direct the application to store files in the file system. Configure AWS Backup to back up and retain copies of the data for 1 year.",
-        "B.Create an Amazon Elastic Block Store(Amazon EBS) volume.Enable the EBS Multi - Attach feature.Configure the ReplicaSet to mount the EBS volume.Direct the application to store files in the EBS volume.Configure AWS Backup to back up and retain copies of the data for 1 year.",
+        "B.Create an Amazon Elastic Block Store(Amazon EBS) volume.Enable the EBS Multi-Attach feature.Configure the ReplicaSet to mount the EBS volume.Direct the application to store files in the EBS volume.Configure AWS Backup to back up and retain copies of the data for 1 year.",
         "C.Create an Amazon S3 bucket.Configure the ReplicaSet to mount the S3 bucket.Direct the application to store files in the S3 bucket.Configure S3 Versioning to retain copies of the data.Configure an S3 Lifecycle policy to delete objects after 1 year.",
-        "D.Configure the ReplicaSet to use the storage available on each of the running application pods to store the files locally.Use a third- party tool to back up the EKS cluster for 1 year."
+        "D.Configure the ReplicaSet to use the storage available on each of the running application pods to store the files locally.Use a third-party tool to back up the EKS cluster for 1 year."
       ],
       "q_cn": "一家公司有一个应用程序，该应用程序在 Amazon Elastic Kubernetes Service （Amazon EKS） 集群中作为多个 Pod 的副本集运行。EKS 集群在多个可用区中具有节点。应用程序生成许多小文件，这些文件必须在应用程序的所有正在运行的实例中访问。公司需要备份文件并将备份保留 1 年。\n哪种解决方案既能满足这些要求，又能提供最快的存储性能？",
       "a_cn": [
@@ -1595,12 +1595,12 @@ $.db =
     },
     {
       "no": 172,
-      "q": "Example Corp. has an on-premises data center and a VPC named VPC A in the Example Corp. AWS account. The on-premises network connects to VPC A through an AWS Site-To-Site VPN. The on-premises servers can properly access VPC A. Example Corp. just acquired AnyCompany, which has a VPC named VPC B. There is no IP address overlap among these networks. Example Corp. has peered VPC A and VPC B.\nExample Corp.wants to connect from its on-premise servers to VPC B.Example Corp.has properly set up the network ACL and security groups.\nWhich solution will meet this requirement with the LEAST operational effort?",
+      "q": "Example Corp. has an on-premises data center and a VPC named VPC A in the Example Corp. AWS account. The on-premises network connects to VPC A through an AWS Site-To-Site VPN. The on-premises servers can properly access VPC A.Example Corp. just acquired AnyCompany, which has a VPC named VPC B. There is no IP address overlap among these networks. Example Corp. has peered VPC A and VPC B.\nExample Corp.wants to connect from its on-premise servers to VPC B.Example Corp.has properly set up the network ACL and security groups.\nWhich solution will meet this requirement with the LEAST operational effort?",
       "a": [
         "A.Create a transit gateway. Attach the Site-to-Site VPN, VPC A, and VPC B to the transit gateway. Update the transit gateway route tables for all networks to add IP range routes for all other networks.",
         "B.Create a transit gateway.Create a Site-to-Site VPN connection between the on-premises network and VPC B, and connect the VPN connection to the transit gateway.Add a route to direct traffic to the peered VPCs, and add an authorization rule to give clients access to the VPCs A and B.",
-        "C.Update the route tables for the Site- to - Site VPN and both VPCs for all three networks.Configure BGP propagation for all three networks.Wait for up to 5 minutes for BGP propagation to finish.",
-        "D.Modify the Site- to - Site VPN’s virtual private gateway definition to include VPC A and VPC B.Split the two routers of the virtual private getaway between the two VPCs."
+        "C.Update the route tables for the Site-to-Site VPN and both VPCs for all three networks.Configure BGP propagation for all three networks.Wait for up to 5 minutes for BGP propagation to finish.",
+        "D.Modify the Site-to-Site VPN’s virtual private gateway definition to include VPC A and VPC B.Split the two routers of the virtual private getaway between the two VPCs."
       ],
       "q_cn": "Example Corp. 有一个本地数据中心，在 Example Corp. AWS 账户中具有一个名为 VPC A 的 VPC。本地网络通过 AWS 站点到站点 VPN 连接到 VPC A。本地服务器可以正确访问 VPC A.Example Corp. 刚刚收购了 AnyCompany，后者拥有一个名为 VPC B 的 VPC。这些网络之间没有 IP 地址重叠。Example Corp. 已对等互连 VPC A 和 VPC B。\n示例公司希望从其本地服务器连接到 VPC B.示例公司已正确设置网络 ACL 和安全组。\n哪种解决方案能够以最少的运营工作量满足这一要求？",
       "a_cn": [
@@ -1659,14 +1659,14 @@ $.db =
       "no": 177,
       "q": "A company uses an AWS CodeCommit repository. The company must store a backup copy of the data that is in the repository in a second AWS Region.\nWhich solution will meet these requirements?",
       "a": [
-        "A. Configure AWS Elastic Disaster Recovery to replicate the CodeCommit repository data to the second Region.",
-        "B.Use AWS Backup to back up the CodeCommit repository on an hourly schedule.Create a cross - Region copy in the second Region.",
+        "A.Configure AWS Elastic Disaster Recovery to replicate the CodeCommit repository data to the second Region.",
+        "B.Use AWS Backup to back up the CodeCommit repository on an hourly schedule.Create a cross-Region copy in the second Region.",
         "C.Create an Amazon EventBridge rule to invoke AWS CodeBuild when the company pushes code to the repository.Use CodeBuild to clone the repository.Create a.zip file of the content.Copy the file to an S3 bucket in the second Region.",
         "D.Create an AWS Step Functions workflow on an hourly schedule to take a snapshot of the CodeCommit repository.Configure the workflow to copy the snapshot to an S3 bucket in the second Region"
       ],
       "q_cn": "一家公司使用 AWS CodeCommit 存储库。公司必须在第二个 AWS 区域中存储存储库中数据的备份副本。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
-        "A. 配置 AWS Elastic 灾难恢复以将 CodeCommit 存储库数据复制到第二个区域。",
+        "A.配置 AWS Elastic 灾难恢复以将 CodeCommit 存储库数据复制到第二个区域。",
         "B.使用 AWS Backup 按小时计划备份 CodeCommit 存储库。在第二个区域中创建跨区域副本。",
         "C.创建 Amazon EventBridge 规则，以便在公司将代码推送到存储库时调用 AWS CodeBuild。使用 CodeBuild 克隆存储库。创建内容的.zip文件。将文件复制到第二个区域中的 S3 存储桶。",
         "D.按小时计划创建 AWS Step Functions 工作流，以拍摄 CodeCommit 存储库的快照。配置工作流以将快照复制到第二个区域中的 S3 存储桶"
@@ -1679,14 +1679,14 @@ $.db =
       "no": 178,
       "q": "A company wants to containerize a multi-tier web application and move the application from an on-premises data center to AWS. The application includes web. application, and database tiers. The company needs to make the application fault tolerant and scalable. Some frequently accessed data must always be available across application servers. Frontend web servers need session persistence and must scale to meet increases in traffic.\nWhich solution will meet these requirements with the LEAST ongoing operational overhead?",
       "a": [
-        "A. Run the application on Amazon Elastic Container Service (Amazon ECS) on AWS Fargate. Use Amazon Elastic File System (Amazon EFS) for data that is frequently accessed between the web and application tiers. Store the frontend web server session data in Amazon Simple Queue Service (Amazon SQS).",
-        "B.Run the application on Amazon Elastic Container Service(Amazon ECS) on Amazon EC2.Use Amazon ElastiCache for Redis to cache frontend web server session data.Use Amazon Elastic Block Store(Amazon EBS) with Multi - Attach on EC2 instances that are distributed across multiple Availability Zones.",
+        "A.Run the application on Amazon Elastic Container Service (Amazon ECS) on AWS Fargate. Use Amazon Elastic File System (Amazon EFS) for data that is frequently accessed between the web and application tiers. Store the frontend web server session data in Amazon Simple Queue Service (Amazon SQS).",
+        "B.Run the application on Amazon Elastic Container Service(Amazon ECS) on Amazon EC2.Use Amazon ElastiCache for Redis to cache frontend web server session data.Use Amazon Elastic Block Store(Amazon EBS) with Multi-Attach on EC2 instances that are distributed across multiple Availability Zones.",
         "C.Run the application on Amazon Elastic Kubernetes Service(Amazon EKS).Configure Amazon EKS to use managed node groups.Use ReplicaSets to run the web servers and applications.Create an Amazon Elastic File System(Amazon EFS) file system.Mount the EFS file system across all EKS pods to store frontend web server session data.",
         "D.Deploy the application on Amazon Elastic Kubernetes Service(Amazon EKS).Configure Amazon EKS to use managed node groups.Run the web servers and application as Kubernetes deployments in the EKS cluster.Store the frontend web server session data in an Amazon DynamoDB table.Create an Amazon Elastic File System(Amazon EFS) volume that all applications will mount at the time of deployment."
       ],
       "q_cn": "一家公司希望容器化多层 Web 应用程序，并将应用程序从本地数据中心迁移到 AWS。该应用程序包括网络。应用程序和数据库层。公司需要使应用程序具有容错能力和可扩展性。某些经常访问的数据必须始终跨应用程序服务器可用。前端 Web 服务器需要会话持久性，并且必须扩展以满足流量的增加。\n哪种解决方案能够以最少的日常运营开销满足这些要求？",
       "a_cn": [
-        "A. 在 AWS Fargate 上的 Amazon Elastic Container Service （Amazon ECS） 上运行应用程序。将 Amazon Elastic File System （Amazon EFS） 用于在 Web 层和应用程序层之间频繁访问的数据。将前端 Web 服务器会话数据存储在 Amazon Simple Queue Service （Amazon SQS） 中。",
+        "A.在 AWS Fargate 上的 Amazon Elastic Container Service （Amazon ECS） 上运行应用程序。将 Amazon Elastic File System （Amazon EFS） 用于在 Web 层和应用程序层之间频繁访问的数据。将前端 Web 服务器会话数据存储在 Amazon Simple Queue Service （Amazon SQS） 中。",
         "B.在 Amazon EC2 上的 Amazon Elastic Container Service （Amazon ECS） 上运行应用程序。使用 Amazon ElastiCache for Redis 缓存前端 Web 服务器会话数据。在分布在多个可用区的 EC2 实例上将 Amazon Elastic Block Store （Amazon EBS） 与多重挂载结合使用。",
         "C.在 Amazon Elastic Kubernetes Service （Amazon EKS） 上运行应用程序。将 Amazon EKS 配置为使用托管节点组。使用副本集运行 Web 服务器和应用程序。创建 Amazon Elastic File System （Amazon EFS） 文件系统。在所有 EKS 容器中挂载 EFS 文件系统以存储前端 Web 服务器会话数据。",
         "D.在 Amazon Elastic Kubernetes Service （Amazon EKS） 上部署应用程序。将 Amazon EKS 配置为使用托管节点组。在 EKS 集群中将 Web 服务器和应用程序作为 Kubernetes 部署运行。将前端 Web 服务器会话数据存储在 Amazon DynamoDB 表中。创建一个 Amazon Elastic File System（Amazon EFS） 卷，所有应用程序都将在部署时挂载该卷。"
@@ -1720,7 +1720,7 @@ $.db =
       "aK": [
         "static,[S3]",
         "Create a new CloudFront,[S3],[origin]",
-        "second origin"
+        "second origin,OAI"
       ]
     },
     {
@@ -1742,7 +1742,7 @@ $.db =
         "E.创建从本地数据中心到 AWS 的 AWS 直接连接"
       ],
       "aa": "B,D",
-      "qK": "on-premises data center,VPN,Windows home directories,",
+      "qK": "on-premises data center,VPN,Windows home directories",
       "aK": [
         "FSx for Windows File Server",
         "Client VPN"
@@ -1752,14 +1752,14 @@ $.db =
       "no": 186,
       "q": "A company developed a pilot application by using AWS Elastic Beanstalk and Java. To save costs during development, the company's development team deployed the application into a single-instance environment. Recent tests indicate that the application consumes more CPU than expected. CPU utilization is regularly greater than 85%, which causes some performance bottlenecks.\nA solutions architect must mitigate the performance issues before the company launches the application to production.\nWhich solution will meet these requirements with the LEAST operational overhead?",
       "a": [
-        "A. Create a new Elastic Beanstalk application. Select a load-balanced environment type. Select all Availability Zones. Add a scale-out rule that will run if the maximum CPU utilization is over 85% for 5 minutes.",
-        "B.Create a second Elastic Beanstalk environment.Apply the traffic- splitting deployment policy.Specify a percentage of incoming traffic to direct to the new environment in the average CPU utilization is over 85 % for 5 minutes.",
-        "C.Modify the existing environment’s capacity configuration to use a load- balanced environment type.Select all Availability Zones.Add a scale - out rule that will run if the average CPU utilization is over 85 % for 5 minutes.",
-        "D.Select the Rebuild environment action with the load balancing option.Select an Availability Zones.Add a scale - out rule that will run if the sum CPU utilization is over 85 % for 5 minutes."
+        "A.Create a new Elastic Beanstalk application. Select a load-balanced environment type. Select all Availability Zones. Add a scale-out rule that will run if the maximum CPU utilization is over 85% for 5 minutes.",
+        "B.Create a second Elastic Beanstalk environment.Apply the traffic-splitting deployment policy.Specify a percentage of incoming traffic to direct to the new environment in the average CPU utilization is over 85 % for 5 minutes.",
+        "C.Modify the existing environment’s capacity configuration to use a load-balanced environment type.Select all Availability Zones.Add a scale-out rule that will run if the average CPU utilization is over 85 % for 5 minutes.",
+        "D.Select the Rebuild environment action with the load balancing option.Select an Availability Zones.Add a scale-out rule that will run if the sum CPU utilization is over 85 % for 5 minutes."
       ],
       "q_cn": "一家公司使用 AWS Elastic Beanstalk 和 Java 开发了一个试点应用程序。为了节省开发过程中的成本，该公司的开发团队将应用程序部署到单实例环境中。最近的测试表明，应用程序消耗的 CPU 比预期的要多。CPU 利用率通常大于 85%，这会导致一些性能瓶颈。\n解决方案架构师必须在公司将应用程序启动到生产环境之前缓解性能问题。\n      哪种解决方案能够以最少的运营开销满足这些要求？",
       "a_cn": [
-        "A. 创建一个新的 Elastic Beanstalk 应用程序。选择负载均衡环境类型。选择所有可用区。添加一个横向扩展规则，该规则将在最大 CPU 利用率超过 85% 持续 5 分钟时运行。",
+        "A.创建一个新的 Elastic Beanstalk 应用程序。选择负载均衡环境类型。选择所有可用区。添加一个横向扩展规则，该规则将在最大 CPU 利用率超过 85% 持续 5 分钟时运行。",
         "B.创建第二个 Elastic Beanstalk 环境。应用流量拆分部署策略。指定要定向到新环境的传入流量的百分比，平均 CPU 利用率在 5 分钟内超过 85 %。",
         "C.修改现有环境的容量配置以使用负载平衡环境类型。选择所有可用区。添加一个横向扩展规则，如果平均 CPU 利用率超过 85 %，持续 5 分钟，该规则将运行。",
         "D.D.选择“使用负载平衡”选项重新生成环境操作。选择可用区。添加一个横向扩展规则，如果 CPU 总利用率超过 85 %，则在 5 分钟内运行该规则。"
@@ -1792,14 +1792,14 @@ $.db =
       "no": 191,
       "q": "A company uses a Grafana data visualization solution that runs on a single Amazon EC2 instance to monitor the health of the company's AWS workloads. The company has invested time and effort to create dashboards that the company wants to preserve. The dashboards need to be highly available and cannot be down for longer than 10 minutes. The company needs to minimize ongoing maintenance.\nWhich solution will meet these requirements with the LEAST operational overhead?",
       "a": [
-        "A. Migrate to Amazon CloudWatch dashboards. Recreate the dashboards to match the existing Grafana dashboards. Use automatic dashboards where possible.",
+        "A.Migrate to Amazon CloudWatch dashboards. Recreate the dashboards to match the existing Grafana dashboards. Use automatic dashboards where possible.",
         "B.Create an Amazon Managed Grafana workspace.Configure a new Amazon CloudWatch data source.Export dashboards from the existing Grafana instance.Import the dashboards into the new workspace.",
-        "C.Create an AMI that has Grafana pre - installed.Store the existing dashboards in Amazon Elastic File System(Amazon EFS).Create an Auto Scaling group that uses the new AMI.Set the Auto Scaling group's minimum, desired, and maximum number of instances to one. Create an Application Load Balancer that serves at least two Availability Zones.",
+        "C.Create an AMI that has Grafana pre-installed.Store the existing dashboards in Amazon Elastic File System(Amazon EFS).Create an Auto Scaling group that uses the new AMI.Set the Auto Scaling group's minimum, desired, and maximum number of instances to one. Create an Application Load Balancer that serves at least two Availability Zones.",
         "D.Configure AWS Backup to back up the EC2 instance that runs Grafana once each hour.Restore the EC2 instance from the most recent snapshot in an alternate Availability Zone when required."
       ],
       "q_cn": "一家公司使用在单个 Amazon EC2 实例上运行的 Grafana 数据可视化解决方案来监控公司 AWS 工作负载的运行状况。该公司已投入时间和精力来创建公司想要保留的仪表板。仪表板需要高度可用，并且关闭时间不能超过 10 分钟。公司需要尽量减少持续维护。\n哪种解决方案能够以最少的运营开销满足这些要求？",
       "a_cn": [
-        "A. 迁移到 Amazon CloudWatch 控制面板。重新创建仪表板以匹配现有的 Grafana 仪表板。尽可能使用自动仪表板。",
+        "A.迁移到 Amazon CloudWatch 控制面板。重新创建仪表板以匹配现有的 Grafana 仪表板。尽可能使用自动仪表板。",
         "B.创建 Amazon Managed Grafana 工作区。配置新的 Amazon CloudWatch 数据源。从现有 Grafana 实例导出控制面板。将仪表板导入新工作区。",
         "C.创建预装了 Grafana 的 AMI。将现有控制面板存储在 Amazon Elastic File System （Amazon EFS） 中。创建使用新 AMI 的自动扩展组。将 Auto Scaling 组的最小实例数、所需实例数和最大实例数设置为 1。创建至少为两个可用区提供服务的应用程序负载均衡器。",
         "D.将 AWS Backup 配置为每小时备份一次运行 Grafana 的 EC2 实例。需要时，从备用可用区中的最新快照还原 EC2 实例。"
@@ -1810,14 +1810,14 @@ $.db =
     },
     {
       "no": 195,
-      "q": "A company wants to use AWS for disaster recovery for an on-premises application. The company has hundreds of Windows-based servers that run the application. All the servers mount a common share. The company has an RTO of 15 minutes and an RPO of 5 minutes. The solution must support native failover and falback capabilities.Which solution will meet these requirements MOST cost-effectively?",
+      "q": "A company wants to use AWS for disaster recovery for an on-premises application. The company has hundreds of Windows-based servers that run the application. All the servers mount a common share. The company has an RTO of 15 minutes and an RPO of 5 minutes. The solution must support native failover and fallback capabilities.Which solution will meet these requirements MOST cost-effectively?",
       "a": [
         "A.Create an AWS Storage Gateway File Gateway. Schedule daily Windows server backups. Save the data to Amazon S3. During a disaster, recover the on-premises servers from the backup. During failback, run the on-premises servers on Amazon EC2 instances",
         "B.Create a set of AWS CloudFormation templates to create infrastructure. Replicate all data to Amazon Elastic File System (Amazon EFS) by using AWS DataSync During a disaster, use AWS CodePipeline to deploy the templates to restore the on-premises servers. Fail back the data by using DataSync",
         "C.Create an AWS Cloud Development Kit (AWS CDK) pipeline to stand up a multi-site active-active environment on AWS. Replicate data into Amazon S3 by using the S3 sync command. During a disaster, swap DNS endpoints to point to AWS Fail back the data by using the S3 sync command",
         "D.Use AWS Elastic Disaster Recovery to replicate the on-premises servers. Replicate data to an Amazon FSx for Windows File Server file system by using AWS DataSync. Mount the file system to AWS servers. During a disaster, fail over the on-premises servers to AWS.Fail back to new or existing servers by using Elastic Disaster Recovery"
       ],
-      "q_cn": "一家公司希望使用 AWS 为本地应用程序进行灾难恢复。该公司拥有数百台运行该应用程序的基于Windows的服务器。所有服务器都装载一个公共共享。该公司的 RTO 为 15 分钟，RPO 为 5 分钟。该解决方案必须支持本机故障转移和 falback 功能。哪种解决方案最经济高效地满足这些要求？",
+      "q_cn": "一家公司希望使用 AWS 为本地应用程序进行灾难恢复。该公司拥有数百台运行该应用程序的基于Windows的服务器。所有服务器都装载一个公共共享。该公司的 RTO 为 15 分钟，RPO 为 5 分钟。解决方案必须支持本机故障转移和回退功能。哪种解决方案最经济高效地满足这些要求？",
       "a_cn": [
         "A.创建 AWS 存储网关文件网关。安排每日 Windows 服务器备份。将数据保存到 Amazon S3。在灾难期间，从备份中恢复本地服务器。在故障回复期间，在 Amazon EC2 实例上运行本地服务器",
         "B.创建一组 AWS CloudFormation 模板以创建基础设施。使用 AWS DataSync 将所有数据复制到 Amazon Elastic File System （Amazon EFS） 在灾难期间，使用 AWS CodePipeline 部署模板以还原本地服务器。使用数据同步故障回复数据",
@@ -1832,14 +1832,14 @@ $.db =
       "no": 196,
       "q": "A company runs a processing engine in the AWS Cloud. The engine processes environmental data from logistics centers to calculate a sustainability index. The company has millions of devices in logistics centers that are spread across Europe. The devices send information to the processing engine through a RESTful API.\nThe API experiences unpredictable bursts of traffic.The company must implement a solution to process all data that the devices send to the processing engine.Data loss is unacceptable.\nWhich solution will meet these requirements?",
       "a": [
-        "A. Create an Application Load Balancer (ALB) for the RESTful API. Create an Amazon Simple Queue Service (Amazon SQS) queue. Create a listener and a target group for the ALB Add the SQS queue as the target. Use a container that runs in Amazon Elastic Container Service (Amazon ECS) with the Fargate launch type to process messages in the queue.",
+        "A.Create an Application Load Balancer (ALB) for the RESTful API. Create an Amazon Simple Queue Service (Amazon SQS) queue. Create a listener and a target group for the ALB Add the SQS queue as the target. Use a container that runs in Amazon Elastic Container Service (Amazon ECS) with the Fargate launch type to process messages in the queue.",
         "B.Create an Amazon API Gateway HTTP API that implements the RESTful API.Create an Amazon Simple Queue Service(Amazon SQS) queue.Create an API Gateway service integration with the SQS queue.Create an AWS Lambda function to process messages in the SQS queue.",
         "C.Create an Amazon API Gateway REST API that implements the RESTful API.Create a fleet of Amazon EC2 instances in an Auto Scaling group.Create an API Gateway Auto Scaling group proxy integration.Use the EC2 instances to process incoming data.",
         "D.Create an Amazon CloudFront distribution for the RESTful API.Create a data stream in Amazon Kinesis Data Streams.Set the data stream as the origin for the distribution.Create an AWS Lambda function to consume and process data in the data stream."
       ],
       "q_cn": "一家公司在 AWS 云中运行处理引擎。该发动机处理来自物流中心的环境数据，以计算可持续性指数。该公司在遍布欧洲的物流中心拥有数百万台设备。设备通过 RESTful API 将信息发送到处理引擎。\nAPI 会遇到不可预测的流量突发。公司必须实施一个解决方案来处理设备发送到处理引擎的所有数据。数据丢失是不可接受的。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
-        "A. 为 RESTful API 创建应用程序负载均衡器 （ALB）。创建 Amazon Simple Queue Service （Amazon SQS） 队列。为 ALB 创建侦听器和目标组 添加 SQS 队列作为目标。使用在 Amazon Elastic Container Service （Amazon ECS） 中运行的具有 Fargate 启动类型的容器来处理队列中的消息。",
+        "A.为 RESTful API 创建应用程序负载均衡器 （ALB）。创建 Amazon Simple Queue Service （Amazon SQS） 队列。为 ALB 创建侦听器和目标组 添加 SQS 队列作为目标。使用在 Amazon Elastic Container Service （Amazon ECS） 中运行的具有 Fargate 启动类型的容器来处理队列中的消息。",
         "B.创建实现 RESTful API 的 Amazon API Gateway HTTP API。创建 Amazon Simple Queue Service （Amazon SQS） 队列。创建与 SQS 队列的 API 网关服务集成。创建 AWS Lambda 函数以处理 SQS 队列中的消息。",
         "C.创建实现 RESTful API 的 Amazon API Gateway REST API。在 Auto Scaling 组中创建 Amazon EC2 实例队列。创建 API 网关弹性伸缩组代理集成。使用 EC2 实例处理传入数据。",
         "D.为 RESTful API 创建 Amazon CloudFront 分配。在 Amazon Kinesis Data Streams 中创建数据流。将数据流设置为分配的源。创建 AWS Lambda 函数以使用和处理数据流中的数据。"
@@ -1850,17 +1850,17 @@ $.db =
     },
     {
       "no": 198,
-      "q": "A company's solutions architect is analyzing costs of a multi-application environment. The environment is deployed across multiple Availability Zones in a single AWS Region.After a recent acquisition, the company manages two organizations in AWS Organizations.The company has created multiple service provider applications as AWS PrivateLink- powered VPC endpoint services in one organization.The company has created multiple service consumer applications in the other organization.\nData transfer charges are much higher than the company expected, and the solutions architect needs to reduce the costs.The solutions architect must recommend guidelines for developers to follow when they deploy services.These guidelines must minimize data transfer charges for the whole environment.\nWhich guidelines meet these requirements?(Choose two.)",
+      "q": "A company's solutions architect is analyzing costs of a multi-application environment. The environment is deployed across multiple Availability Zones in a single AWS Region.After a recent acquisition, the company manages two organizations in AWS Organizations.The company has created multiple service provider applications as AWS PrivateLink-powered VPC endpoint services in one organization.The company has created multiple service consumer applications in the other organization.\nData transfer charges are much higher than the company expected, and the solutions architect needs to reduce the costs.The solutions architect must recommend guidelines for developers to follow when they deploy services.These guidelines must minimize data transfer charges for the whole environment.\nWhich guidelines meet these requirements?(Choose two.)",
       "a": [
-        "A. Use AWS Resource Access Manager to share the subnets that host the service provider applications with other accounts in the organization.",
+        "A.Use AWS Resource Access Manager to share the subnets that host the service provider applications with other accounts in the organization.",
         "B.Place the service provider applications and the service consumer applications in AWS accounts in the same organization.",
-        "C.Turn off cross - zone load balancing for the Network Load Balancer in all service provider application deployments.",
-        "D.Ensure that service consumer compute resources use the Availability Zone- specific endpoint service by using the endpoint's local DNS name.",
+        "C.Turn off cross-zone load balancing for the Network Load Balancer in all service provider application deployments.",
+        "D.Ensure that service consumer compute resources use the Availability Zone-specific endpoint service by using the endpoint's local DNS name.",
         "E.Create a Savings Plan that provides adequate coverage for the organization's planned inter-Availability Zone data transfer usage."
       ],
       "q_cn": "公司的解决方案架构师正在分析多应用程序环境的成本。环境在单个可用区中跨多个可用区部署AWS 区域。在最近的一次收购之后，该公司在 AWS 组织中管理着两个组织。该公司在一个组织中创建了多个服务提供商应用程序作为 AWS PrivateLink 支持的 VPC 终端节点服务。该公司已在另一个组织中创建了多个服务使用者应用程序。\n数据传输费用远高于公司的预期，解决方案架构师需要降低成本。解决方案架构师必须为开发人员在部署服务时推荐要遵循的准则。这些准则必须最大程度地减少整个环境的数据传输费用。\n  哪些指南符合这些要求？（选择两个。",
       "a_cn": [
-        "A. 使用 AWS 资源访问管理器与组织中的其他账户共享托管服务提供商应用程序的子网。",
+        "A.使用 AWS 资源访问管理器与组织中的其他账户共享托管服务提供商应用程序的子网。",
         "B.将服务提供商应用程序和服务使用者应用程序放在同一组织的 AWS 账户中。",
         "C.在所有服务提供商应用程序部署中关闭网络负载均衡器的跨区域负载平衡。",
         "D.通过使用终端节点的本地 DNS 名称，确保服务使用者计算资源使用特定于可用区的终端节点服务。",
@@ -1875,7 +1875,7 @@ $.db =
     },
     {
       "no": 203,
-      "q": "A solutions architect needs to define a reference architectlure for a solution for three-tier applications with web, application, and NoSQL data layers. The reference architecture must meet the folowing reduirements:\n- High availability within an AWS Region\n - Able to fail over in 1 minute to another AWS Region for disaster recovery\n - Provide the most efficient solution while minimizing the impact on the user experience Which combination of steps will meet these requirements? (Choose three.)",
+      "q": "A solutions architect needs to define a reference architectlure for a solution for three-tier applications with web, application, and NoSQL data layers. The reference architecture must meet the folowing reduirements:\n- High availability within an AWS Region\n-Able to fail over in 1 minute to another AWS Region for disaster recovery\n-Provide the most efficient solution while minimizing the impact on the user experience Which combination of steps will meet these requirements? (Choose three.)",
       "a": [
         "A.Use an Amazon Route 53 weighted routing policy set to 100/0 across the two selected Regions. Set Time to Live (TTL) to 1 hour.",
         "B.Use an Amazon Route 53 failover routing policy for failover from the primary Region to the disaster recovery Region. Set Time to Live (TTL) to 30 seconds.",
@@ -1884,7 +1884,7 @@ $.db =
         "E.Implement a hot standby model using Auto Scaling groups for the web and application layers across multiple Availability Zones in the Regions. Use zonal Reserved Instances for the minimum number of servers and On-Demand Instances for any additional resources.",
         "F.Use Auto Scaling groups for the web and application layers across multiple Availability Zones in the Regions. Use Spot Instances for the required resources."
       ],
-      "q_cn": "解决方案架构师需要为具有 Web、应用程序和 NoSQL 数据层的三层应用程序的解决方案定义参考架构。参考架构必须满足以下要求：\n- AWS 区域内的高可用性\n - 能够在 1 分钟内故障转移到另一个 AWS 区域以进行灾难恢复\n - 提供最有效的解决方案，同时最大限度地减少对用户体验的影响 哪些步骤组合将满足这些要求？（选择三个。",
+      "q_cn": "解决方案架构师需要为具有 Web、应用程序和 NoSQL 数据层的三层应用程序的解决方案定义参考架构。参考架构必须满足以下要求：\n- AWS 区域内的高可用性\n-能够在 1 分钟内故障转移到另一个 AWS 区域以进行灾难恢复\n-提供最有效的解决方案，同时最大限度地减少对用户体验的影响 哪些步骤组合将满足这些要求？（选择三个。",
       "a_cn": [
         "A.在两个选定区域中使用 Amazon Route 53 加权路由策略设置为 100/0。将生存时间 （TTL） 设置为 1 小时。",
         "B.使用 Amazon Route 53 故障转移路由策略进行从主区域到灾难恢复区域的故障转移。将生存时间 （TTL） 设置为 30 秒。",
@@ -1903,16 +1903,16 @@ $.db =
     },
     {
       "no": 207,
-      "q": "A company has an on-premises Microsoft SQL Server database that writes a nightly 200 GB export to a local drive. The company wants to move the backups to more robust cloud storage on Amazon S3. The company has set up a 10 Gbps AWS Direct Connect connection between the on-premises data center and AWS.\nWhich solution meets these requirements MOST cost- effectively ? ",
+      "q": "A company has an on-premises Microsoft SQL Server database that writes a nightly 200 GB export to a local drive. The company wants to move the backups to more robust cloud storage on Amazon S3. The company has set up a 10 Gbps AWS Direct Connect connection between the on-premises data center and AWS.\nWhich solution meets these requirements MOST cost-effectively ? ",
       "a": [
-        "A. Create a new S3 bucket. Deploy an AWS Storage Gateway file gateway within the VPC that is connected to the Direct Connect connection. Create a new SMB file share. Write nightly database exports to the new SMB file share.",
-        "B.Create an Amazon FSx for Windows File Server Single- AZ file system within the VPC that is connected to the Direct Connect connection.Create a new SMB file share.Write nightly database exports to an SMB file share on the Amazon FSx file system.Enable nightly backups.",
-        "C.Create an Amazon FSx for Windows File Server Multi- AZ file system within the VPC that is connected to the Direct Connect connection.Create a new SMB file share.Write nightly database exports to an SMB file share on the Amazon FSx file system.Enable nightly backups.",
+        "A.Create a new S3 bucket. Deploy an AWS Storage Gateway file gateway within the VPC that is connected to the Direct Connect connection. Create a new SMB file share. Write nightly database exports to the new SMB file share.",
+        "B.Create an Amazon FSx for Windows File Server Single-AZ file system within the VPC that is connected to the Direct Connect connection.Create a new SMB file share.Write nightly database exports to an SMB file share on the Amazon FSx file system.Enable nightly backups.",
+        "C.Create an Amazon FSx for Windows File Server Multi-AZ file system within the VPC that is connected to the Direct Connect connection.Create a new SMB file share.Write nightly database exports to an SMB file share on the Amazon FSx file system.Enable nightly backups.",
         "D.Create a new S3 bucket.Deploy an AWS Storage Gateway volume gateway within the VPC that is connected to the Direct Connect connection.Create a new SMB file share.Write nightly database exports to the new SMB file share on the volume gateway, and automate copies of this data to an S3 bucket."
       ],
       "q_cn": "一家公司有一个本地 Microsoft SQL Server 数据库，该数据库每晚将 200 GB 的导出写入本地驱动器。该公司希望将备份移动到Amazon S3上更强大的云存储中。该公司已在本地数据中心和AWS之间建立了10 Gbps的AWS Direct Connect连接。\n哪种解决方案最经济高效地满足这些要求？",
       "a_cn": [
-        "A. 创建新的 S3 存储桶。在连接到专线连接的 VPC 中部署 AWS 存储网关文件网关。创建新的 SMB 文件共享。将夜间数据库导出写入新的 SMB 文件共享。",
+        "A.创建新的 S3 存储桶。在连接到专线连接的 VPC 中部署 AWS 存储网关文件网关。创建新的 SMB 文件共享。将夜间数据库导出写入新的 SMB 文件共享。",
         "B.在连接到直接连接连接的 VPC 中创建适用于 Windows 文件服务器的 Amazon FSx 单可用区文件系统。创建新的 SMB 文件共享。将夜间数据库导出写入 Amazon FSx 文件系统上的 SMB 文件共享。启用夜间备份。",
         "C.在连接到专线连接的 VPC 中创建适用于 Windows 文件服务器的 Amazon FSx 多可用区文件系统。创建新的 SMB 文件共享。将夜间数据库导出写入 Amazon FSx 文件系统上的 SMB 文件共享。启用夜间备份。",
         "D.创建新的 S3 存储桶。在连接到专线连接的 VPC 内部署 AWS 存储网关卷网关。创建新的 SMB 文件共享。每晚将数据库导出写入卷网关上的新 SMB 文件共享，并自动将此数据复制到 S3 存储桶。"
@@ -2003,7 +2003,7 @@ $.db =
         "A.为 Web 应用程序使用的 S3 存储桶启用 S3 服务器端加密。",
         "B.添加策略属性 “aws：SecureTransport”： “true” 用于 S3 ACL 中的读取和写入操作。",
         "C.创建一个存储桶策略，以拒绝 Web 应用程序使用的 S3 存储桶中的任何未加密操作。",
-        "D.通过使用具有 AWS KMS 密钥 （SSE - KMS） 的服务器端加密，在 CloudFront 上配置静态加密。",
+        "D.通过使用具有 AWS KMS 密钥 （SSE-KMS） 的服务器端加密，在 CloudFront 上配置静态加密。",
         "E.在 CloudFront 中配置 HTTP 请求到 HTTPS 请求的重定向。",
         "F.在为 Web 应用程序使用的 S3 存储桶创建预签名 URL 时使用 RequireSSL 选项。"
       ],
@@ -2032,7 +2032,7 @@ $.db =
         "D.将 EC2 实例配置为使用 Amazon Data Lifecycle Manager （Amazon DLM） 拍摄 EBS 卷的快照。为 RDS 数据库实例创建跨区域只读副本。在第二个 AWS 区域中创建 ALB。创建 AWS 全球加速器终端节点，并将该终端节点与 ALB 关联。"
       ],
       "aa": "D",
-      "qK": "RPO of 2 minutes,RTO of 30 minutes",
+      "qK": "RPO of 2 minutes,RTO of 30 minutes,RPO of 5 minutes",
       "aK": [
         "DLM",
         "cross-Region"
@@ -2061,9 +2061,9 @@ $.db =
       "aa": "B,D,F",
       "qK": "SAML 2.0,(IdP)",
       "aK": [
-        "SAML principal",
-        "STS SAML",
-        "SAML map"
+        "principal",
+        "STS",
+        "map"
       ]
     },
     {

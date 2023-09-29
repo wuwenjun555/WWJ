@@ -11,17 +11,21 @@ $(function () {
   $.each(db, function (i, it) {
     const no = it.no, showNo = i + 1;
     dbIdx[no] = it;
-    arr.push(`<li><button id="q${no}" v="${no}" no="${showNo}">${showNo}</button></li>`);
+    arr.push(`<li><button id="q${no}" v="${no}" no="${showNo}">${showNo}<label class="hide">（${no}）</label></button></li>`);
   });
-  $.q = db;
-  $.qIdx = dbIdx;
-  $.qNo = 0;
+  $.extend({
+    q: db,
+    qIdx: dbIdx,
+    qNo: 0,
+    isShowMngNo: 0
+  });
 
   $('#fdsList ul')
     .html(arr.join(''))
     .click('button', function (e) {
       $('#fdsList ul button.btn-clicked').removeClass('btn-clicked');
-      $.qNo = $(e.target).addClass('btn-clicked').attr('v');
+      const obj = $(e.target), isBtn = obj.attr('v');
+      $.qNo = (isBtn ? obj : obj.closest('button')).addClass('btn-clicked').attr('v');
       const
         q = $.qIdx[$.qNo],
         qid = `q_${q.no}`,
@@ -32,7 +36,7 @@ $(function () {
 
       if (q.qK) {
         $.each(q.qK.split(','), function (i, it) {
-          q_en = q_en.replaceAll(it, `<span class="key">${it}</span>`);
+          it && (q_en = q_en.replaceAll(it, `<span class="key">${it}</span>`));
         });
       }
       $('#aFact').text('');
@@ -58,7 +62,7 @@ $(function () {
 
       //Random width
       const min = 900, max = 1250, w = Math.floor(Math.random() * (max - min) + min);
-      $('.gridOneArea').width(w);
+      $('#fdsOne').width(w);
 
       //prev next btn
       if ($.q.length > 1) {
@@ -74,11 +78,20 @@ $(function () {
           $('#btnNextQ').prop('disabled', false);
         }
       }
+
+      // auto change lang when q changed
+      const
+        rdoAutoIDs = ['rdoAutoCn', 'rdoAutoEn', 'rdoAutoNo'],
+        rdoLangIDSels = ['#rdoCn', '#rdoEn', ''],
+        rdoAutoID = $('[name="langAuto"]:checked').attr('id'),
+        rdoLangIDSel = rdoLangIDSels[rdoAutoIDs.indexOf(rdoAutoID)];
+      rdoLangIDSel && ($(rdoLangIDSel).click());
     });
 
   //show key click for highlight
   $('#btnShowKey').click(function () {
     const isLH = $('#fdsOne .highlight').length > 0, objLH = $('#fdsOne .key'), btn = $('#btnShowKey');
+    !isLH && $('#rdoEn').click();
     isLH ? (objLH.unwrap('.highlight')) : (objLH.wrap('<span class="highlight"></span>'));
     btn[isLH ? 'removeClass' : 'addClass']('highlight');
     btn.text(isLH ? 'Show Key' : 'Hide Key');
@@ -156,6 +169,12 @@ $(function () {
   $(document).keydown(function (e) {
     ['ArrowRight', 'ArrowDown'].includes(e.code) && ($('#btnNextQ').click());
     ['ArrowLeft', 'ArrowUp'].includes(e.code) && ($('#btnPrevQ').click());
+  });
+
+  // show manage no
+  $('#btnShowMngNo').click(function () {
+    $('#fdsList button>label')[$.isShowMngNo ? 'addClass' : 'removeClass']('hide');
+    $.isShowMngNo = !$.isShowMngNo;
   });
 
   //page init default click the first q

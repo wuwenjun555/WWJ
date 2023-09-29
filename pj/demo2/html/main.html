@@ -26,18 +26,31 @@
     <nav class="navbar">
       <button id="btnPrevQ" disabled>＜ Prev Question</button>
       <button id="btnNextQ" disabled>Next Question ＞</button>
+      <label>｜</label>
       <button id="btnShowKey">Show Key</button>
-      <input id="rdoEn" type="radio" name="lang"><label for="rdoEn">英文</label>
-      <input id="rdoCn" type="radio" name="lang" checked><label for="rdoCn">中文</label>
+      <label>｜</label>
+      <button class="rdo-wrap-btn"><input id="rdoEn" type="radio" name="lang"><label for="rdoEn">英文</label></button>
+      <button class="rdo-wrap-btn"><input id="rdoCn" type="radio" name="lang" checked><label
+          for="rdoCn">中文</label></button>
+      <label>
+        （题目切换的时候自动切回
+        <button class="rdo-wrap-btn"><input id="rdoAutoCn" type="radio" name="langAuto" checked><label
+            for="rdoAutoCn">中文</label></button>
+        <button class="rdo-wrap-btn"><input id="rdoAutoEn" type="radio" name="langAuto"><label
+            for="rdoAutoEn">英文</label></button>
+        <button class="rdo-wrap-btn"><input id="rdoAutoNo" type="radio" name="langAuto"><label
+            for="rdoAutoNo">不切换</label></button>
+        ）
+      </label>
     </nav>
 
     <div class="userbar">
-      <button id="btn"></button>
+      <button id="btnShowMngNo">Show Manage No</button>
     </div>
   </header>
 
   <main>
-    <fieldset id="fdsList" class="uiListArea mainer">
+    <fieldset id="fdsList" class="mainer">
       <legend>List</legend>
       <nav>
         <ul>
@@ -45,7 +58,7 @@
       </nav>
     </fieldset>
 
-    <fieldset id="fdsOne" class="gridOneArea mainer">
+    <fieldset id="fdsOne" class="mainer">
       <legend>One</legend>
       <table>
         <thead>
