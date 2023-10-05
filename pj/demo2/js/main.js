@@ -1,25 +1,97 @@
 /**
  * TODO:
- *  1. Random Q order
- *  2. Random A order
  *  3. Save every result log
- *  4. [sub key] to bold ?
  */
 
+$.extend({
+  typeOf: o => { return Object.prototype.toString.call(o).slice(8, -1).toLowerCase(); },
+  isStr: o => { return $.typeOf(o) == 'string'; },
+  padS: (o, l, c) => { return ($.isStr(o) ? o : String(o)).padStart(l, c); },
+  pad0: (o, l) => { return $.padS(o, l, '0') },
+  now: () => { var d = new Date(); return '' + d.getFullYear() + $.pad0(d.getMonth() + 1, 2) + $.pad0(d.getDate(), 2) + $.pad0(d.getHours(), 2) + $.pad0(d.getMinutes(), 2) + $.pad0(d.getSeconds(), 2) + $.pad0(d.getMilliseconds(), 3); },
+  dl2SaveOrBK: async function (isBK) {
+    const
+      path = $.db.path || getRootDir(),
+      q = JSON.stringify($.db, ($.db.path = path) && navigator.clipboard.writeText(path), 2),
+      qs = `$.db =\n${q};`,
+      opts = {
+        suggestedName: 'db' + (isBK ? '_' + $.now() : ''),
+        types: [
+          {
+            description: `Save this file to [${path}]`,
+            accept: { "text/javascript": [".js"] },
+          },
+        ],
+      },
+      fileHandle = await window.showSaveFilePicker(opts),
+      writable = await fileHandle.createWritable();
+    await writable.write(qs);
+    await writable.close();
+
+    // const blob = new Blob([qs], { type: 'application/txt' })
+    // a = document.createElement('a');
+    // a.href = URL.createObjectURL(blob)
+    // a.download = 'db.js'
+    // a.click();
+  },
+  shuffle: arr => {
+    let i = arr.length;
+    while (i) {
+      let j = Math.floor(Math.random() * i--);
+      [arr[j], arr[i]] = [arr[i], arr[j]];
+    }
+    return arr;
+  }
+});
+
 $(function () {
-  const db = $.db.awsSAP, arr = [], dbIdx = {};
-  $.each(db, function (i, it) {
-    const no = it.no, showNo = i + 1;
-    dbIdx[no] = it;
-    arr.push(`<li><button id="q${no}" v="${no}" no="${showNo}">${showNo}<label class="hide">（${no}）</label></button></li>`);
-  });
+  const db = $.db.awsSAP, lvs = $.db.lv, arr = [], dbIdx = {}, getRootDir = () => {
+    const a = location.pathname.split('/');
+    a.shift();  // del '/'
+    a.pop();  // del 'main.html'
+    a.pop();  // del 'html'
+    a.push('js');
+    return a.join('/');
+  };
+
   $.extend({
+    aMST: ['A', 'B', 'C', 'D', 'E', 'F'],
     q: db,
     qIdx: dbIdx,
     qNo: 0,
-    isShowMngNo: 0
+    isShowMngNo: 0,
+    idxMap: 0  //key:oldIdx, val:newIdx
   });
 
+  $.each($.shuffle(db), function (i, it) {
+    const no = it.no, showNo = i + 1, lv = lvs[`lv${no}`] || 1;
+    dbIdx[no] = it;
+    arr.push(`<li class="lv0 lv${lv} hide"><button id="q${no}" v="${no}" no="${showNo}">${showNo}<label class="hide">（${no}）</label></button></li>`);
+  });
+
+  // get show Lv
+  $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9').click((e) => {
+    const btn = $(e.target), qLv = btn.attr('id').substr(-1), ul = $('#fdsList ul');
+    ul.find('li').addClass('hide');
+    ul.find(`li.lv${qLv}`).removeClass('hide');
+    ul.find('li:visible>button:first').click();
+    $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9').removeClass('btn-clicked');
+    btn.addClass('btn-clicked');
+  });
+
+  // set show Lv
+  $('#btnSLv1, #btnSLv2, #btnSLv8, #btnSLv9').click((e) => {
+    const no = $('#fdsList .btn-clicked').attr('v');
+    $.db.lv[`lv${no}`] = $(e.target).attr('id').substr(-1);
+  });
+
+  // bk Q
+  $('#btnBKQ').click(() => { $.dl2SaveOrBK(1); });
+
+  // Save Q
+  $('#btnSaveQ').click(() => { $.dl2SaveOrBK(0); });
+
+  // Q
   $('#fdsList ul')
     .html(arr.join(''))
     .click('button', function (e) {
@@ -30,7 +102,6 @@ $(function () {
         q = $.qIdx[$.qNo],
         qid = `q_${q.no}`,
         aType = q.aa.split(',').length > 1 ? 'checkbox' : 'radio',
-        aMST = ['A', 'B', 'C', 'D', 'E', 'F'],
         lang = $('nav :checked')[0].id === 'rdoEn' ? 'En' : 'Cn';
       let q_en = q.q.replaceAll('\n', '<br>');
 
@@ -43,17 +114,25 @@ $(function () {
       $('#qEn').html(q_en);
       $('#qCn').html(q.q_cn.replaceAll('\n', '<br>'));
 
-      let s = '', keys = [];
+      const keys = [], newA = [...q.a];
+      let s = '';
       q.aK && ($.each(q.aK, function (i, it) { $.each(it.split(','), function (j, key) { !keys.includes(key) && (keys.push(key)); }); }));
-      $.each(q.a, function (i, it) {
-        const aid = `${qid}_${i}`;
-        let sEn = it.replaceAll('\n', '<br>');
-        $.each(keys, function (i, it) { sEn = sEn.replaceAll(it, `<span class="key">${it}</span>`); });
+      $.idxMap = [];
+      $.each($.shuffle(newA), function (i, it) {
+        const aid = `${qid}_${i}`, oldIdx = $.aMST.indexOf(it.substr(0, 1));
+        let
+          sEn = $.aMST[i] + '.' + it.substr(2).replaceAll('\n', '<br>'),
+          sCn = $.aMST[i] + '.' + q.a_cn[oldIdx].substr(2).replaceAll('\n', '<br>');
+        $.idxMap[oldIdx] = i;
+        $.each(keys, function (i, it) {
+          sEn = sEn.replaceAll(it, `<span class="key">${it}</span>`);
+          sCn = sCn.replaceAll(it, `<span class="key">${it}</span>`);
+        });
         s +=
           `<tr>
-            <td class="td-rdo-chk"><input id="${aid}" name="aGrp" value="${aMST[i]}" type="${aType}"></td>
+            <td class="td-rdo-chk"><input id="${aid}" name="aGrp" value="${$.aMST[i]}" type="${aType}"></td>
             <td class="langEn hide"><label for="${aid}">${sEn}</label></td>
-            <td class="langCn hide"><label for="${aid}">${q.a_cn[i]}</label></td>
+            <td class="langCn hide"><label for="${aid}">${sCn}</label></td>
           </tr>`
           ;
       });
@@ -87,6 +166,7 @@ $(function () {
         rdoLangIDSel = rdoLangIDSels[rdoAutoIDs.indexOf(rdoAutoID)];
       rdoLangIDSel && ($(rdoLangIDSel).click());
     });
+  // TODO:[DEL] $('#fdsList ul').find(`li.lv${$.qLv}`).removeClass('hide');
 
   //show key click for highlight
   $('#btnShowKey').click(function () {
@@ -117,6 +197,7 @@ $(function () {
   // OK button click
   $('#btnOK').click(function () {
     const q = $.qIdx[$.qNo], aa = q.aa.split(',');
+    $.each(aa, function (i, it) { aa[i] = $.aMST[$.idxMap[$.aMST.indexOf(it)]] });
     $('#fdsOne tbody').find(':radio, :checkbox').each(function (i, it) {
       const tr = $(it).parent().parent();
       tr.removeClass('ok');
@@ -180,6 +261,7 @@ $(function () {
   //page init default click the first q
   $.q.length > 1 && $('#btnNextQ').prop('disabled', false);
   $.q.length > 0 && $('#fdsList button:eq(0)').click();
+  $('#btnGLv0').click();
   $('#rdoCn').click();
   $('.mainer').show();
 });
@@ -213,5 +295,27 @@ $(function () {
   "aK": [""]
 },
 
+{
+  "no": 0,
+  "lv": 0,  //1:暂未考量，2:频繁出错，8：差不多了，9:绝对不错
+},
 
+    shuffle: arr => {  //while (m > 1)
+      let m = arr.length;
+      while (m > 1) {
+        let index = Math.floor(Math.random() * m--);
+        [arr[m], arr[index]] = [arr[index], arr[m]]
+      }
+      return arr;
+    }
+
+    shuffle: function(arr) {  // ES5
+      var i = arr.length, t, j;
+      while (i) {
+        j = Math.floor(Math.random() * i--);
+        t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
+      }
+    }
 */

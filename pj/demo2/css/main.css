@@ -92,3 +92,8 @@ tfoot td {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+#btnBKQ, #btnSaveQ {
+  width: auto;
+  padding: 0 6px;
+}
