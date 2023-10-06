@@ -592,28 +592,24 @@ $.db =
       "aK": ["AWS Global Accelerator"]
     },
     {
-      "no": 0,
-      "q": "",
+      "no": 280,
+      "q": "A company has an application in the AWS Cloud. The application runs on a fleet of 20 Amazon EC2 instances. The EC2 instances are persistent and store data on multiple attached Amazon Elastic Block Store (Amazon EBS) volumes.\nThe company must maintain backups in a separate AWS Region.The company must be able to recover the EC2 instances and their configuration within 1 business day, with loss of no more than 1 day's worth of data. The company has limited staff and needs a backup solution that optimizes operational efficiency and cost. The company already has created an AWS CloudFormation template that can deploy the required network configuration in a secondary Region.\nWhich solution will meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.Create a second CloudFormation template that can recreate the EC2 instances in the secondary Region. Run daily multivolume snapshots by using AWS Systems Manager Automation runbooks. Copy the snapshots to the secondary Region. In the event of a failure launch the CloudFormation templates, restore the EBS volumes from snapshots, and transfer usage to the secondary Region.",
+        "B.Use Amazon Data Lifecycle Manager (Amazon DLM) to create daily multivolume snapshots of the EBS volumes. In the event of a failure, launch the CloudFormation template and use Amazon DLM to restore the EBS volumes and transfer usage to the secondary Region.",
+        "C.Use AWS Backup to create a scheduled daily backup plan for the EC2 instances. Configure the backup task to copy the backups to a vault in the secondary Region. In the event of a failure, launch the CloudFormation template, restore the instance volumes and configurations from the backup vault, and transfer usage to the secondary Region.",
+        "D.Deploy EC2 instances of the same size and configuration to the secondary Region. Configure AWS DataSync daily to copy data from the primary Region to the secondary Region. In the event of a failure, launch the CloudFormation template and transfer usage to the secondary Region."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司在 AWS 云中有一个应用程序。该应用程序在由 20 个 Amazon EC2 实例组成的队列上运行。EC2 实例是永久性的，并将数据存储在多个附加的 Amazon Elastic Block Store （Amazon EBS） 卷上。\n公司必须在单独的 AWS 区域中维护备份。公司必须能够在 1 个工作日内恢复 EC2 实例及其配置，丢失的数据量不超过 1 天。该公司的员工有限，需要一个能够优化运营效率和成本的备份解决方案。该公司已经创建了一个 AWS CloudFormation 模板，该模板可以在次要区域中部署所需的网络配置。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
         "",
         "",
         "",
-        "",
-        "",
         ""
       ],
-      "aa": "",
-      "qK": "",
-      "aK": [""]
+      "aa": "C",
+      "qK": "20 Amazon EC2,1 business day,1 day's",
+      "aK": ["AWS Backup"]
     },
     {
       "no": 31,
