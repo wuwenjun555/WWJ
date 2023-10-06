@@ -83,14 +83,20 @@ tfoot td {
   background-color: yellow;
 }
 
-#btnOK {
+#btnOK, #btnShowKey,
+#btnSLv1, #btnSLv2, #btnSLv8, #btnSLv9 {
   width: 108px;
   height: 36px;
 }
 
 #btnShowKey {
+  float: left;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#btnOK {
+  float: right;
 }
 
 #btnBKQ, #btnSaveQ {

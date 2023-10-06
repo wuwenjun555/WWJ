@@ -258,6 +258,9 @@ $(function () {
     $.isShowMngNo = !$.isShowMngNo;
   });
 
+  // refresh buttton
+  $('#btnRefresh').click(() => { location.reload(); });
+
   //page init default click the first q
   $.q.length > 1 && $('#btnNextQ').prop('disabled', false);
   $.q.length > 0 && $('#fdsList button:eq(0)').click();
