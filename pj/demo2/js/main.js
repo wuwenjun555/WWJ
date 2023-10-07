@@ -267,6 +267,19 @@ $(function () {
   $('#btnGLv0').click();
   $('#rdoCn').click();
   $('.mainer').show();
+
+  //count q
+  const
+    lv1Cnt = $('#fdsList .lv1').length,
+    lv2Cnt = $('#fdsList .lv2').length,
+    lv8Cnt = $('#fdsList .lv8').length,
+    lv9Cnt = $('#fdsList .lv9').length,
+    lv0Cnt = lv1Cnt + lv2Cnt + lv8Cnt + lv9Cnt;
+  $('#lblLv1Cnt').text(lv1Cnt);
+  $('#lblLv2Cnt').text(lv2Cnt);
+  $('#lblLv8Cnt').text(lv8Cnt);
+  $('#lblLv9Cnt').text(lv9Cnt);
+  $('#lblLv0Cnt').text(lv0Cnt);
 });
 
 
