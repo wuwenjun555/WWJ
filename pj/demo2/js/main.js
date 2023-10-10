@@ -164,6 +164,7 @@ $(function () {
 
   //show key click for highlight
   $('#btnShowKey').click(function () {
+    $('#btnOK').click();
     const isLH = $('#fdsOne .highlight').length > 0, objLH = $('#fdsOne .key'), btn = $('#btnShowKey');
     !isLH && $('#rdoEn').click();
     isLH ? (objLH.unwrap('.highlight')) : (objLH.wrap('<span class="highlight"></span>'));
@@ -214,6 +215,7 @@ $(function () {
     $('#qCn').hide();
     $('#qEn').show();
   });
+  $('#qCn').click(e => { $('#rdoEn').click(); });
 
   // click cn radio
   $('#rdoCn').click(function () {
@@ -223,6 +225,7 @@ $(function () {
     $('#qEn').hide();
     $('#qCn').show();
   });
+  $('#qEn').click(e => { $('#rdoCn').click(); });
 
   // ＜ Prev Question
   $('#btnPrevQ').click(function () {
