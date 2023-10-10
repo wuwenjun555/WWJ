@@ -60,7 +60,8 @@ $(function () {
     qIdx: dbIdx,
     qNo: 0,
     isShowMngNo: 0,
-    idxMap: 0  //key:oldIdx, val:newIdx
+    idxMap: 0,  //key:oldIdx, val:newIdx
+    qLv: 0
   });
 
   $.each($.shuffle(db), function (i, it) {
@@ -70,17 +71,18 @@ $(function () {
   });
 
   // get show Lv
-  $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9').click((e) => {
+  $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9, #btnGLv4').click((e) => {
     const btn = $(e.target), qLv = btn.attr('id').substr(-1), ul = $('#fdsList ul');
+    $.qLv = qLv;
     ul.find('li').addClass('hide');
     ul.find(`li.lv${qLv}`).removeClass('hide');
     ul.find('li:visible>button:first').click();
-    $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9').removeClass('btn-clicked');
+    $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9, #btnGLv4').removeClass('btn-clicked');
     btn.addClass('btn-clicked');
   });
 
   // set show Lv
-  $('#btnSLv1, #btnSLv2, #btnSLv8, #btnSLv9').click((e) => {
+  $('#btnSLv1, #btnSLv2, #btnSLv8, #btnSLv9, #btnSLv4').click((e) => {
     const no = $('#fdsList .btn-clicked').attr('v');
     $.db.lv[`lv${no}`] = $(e.target).attr('id').substr(-1);
   });
@@ -119,10 +121,10 @@ $(function () {
       q.aK && ($.each(q.aK, function (i, it) { $.each(it.split(','), function (j, key) { !keys.includes(key) && (keys.push(key)); }); }));
       $.idxMap = [];
       $.each($.shuffle(newA), function (i, it) {
-        const aid = `${qid}_${i}`, oldIdx = $.aMST.indexOf(it.substr(0, 1));
+        const aid = `${qid}_${i}`, oldIdx = $.aMST.indexOf(it.substr(0, 1)), it_cn = q.a_cn[oldIdx];
         let
-          sEn = $.aMST[i] + '.' + it.substr(2).replaceAll('\n', '<br>'),
-          sCn = $.aMST[i] + '.' + q.a_cn[oldIdx].substr(2).replaceAll('\n', '<br>');
+          sEn = $.aMST[i] + '.' + ((!it || it.length < 3) ? '' : it.substr(2).replaceAll('\n', '<br>')),
+          sCn = $.aMST[i] + '.' + ((!it_cn || it_cn.length < 3) ? '' : it_cn.substr(2).replaceAll('\n', '<br>'));
         $.idxMap[oldIdx] = i;
         $.each(keys, function (i, it) {
           sEn = sEn.replaceAll(it, `<span class="key">${it}</span>`);
@@ -145,17 +147,9 @@ $(function () {
 
       //prev next btn
       if ($.q.length > 1) {
-        const no = parseInt($('#fdsList .btn-clicked').text(), 10);
-        if (no === 1) {
-          $('#btnPrevQ').prop('disabled', true);
-          $('#btnNextQ').prop('disabled', false);
-        } else if (no === $.q.length) {
-          $('#btnPrevQ').prop('disabled', false);
-          $('#btnNextQ').prop('disabled', true);
-        } else {
-          $('#btnPrevQ').prop('disabled', false);
-          $('#btnNextQ').prop('disabled', false);
-        }
+        const li = $('#fdsList .btn-clicked').parent();
+        $('#btnPrevQ').prop('disabled', li.prevAll(`.lv${$.qLv}:first`).length < 1);
+        $('#btnNextQ').prop('disabled', li.nextAll(`.lv${$.qLv}:first`).length < 1);
       }
 
       // auto change lang when q changed
@@ -232,18 +226,12 @@ $(function () {
 
   // ＜ Prev Question
   $('#btnPrevQ').click(function () {
-    const no = parseInt($('#fdsList .btn-clicked').text(), 10) - 1;
-    $(`#fdsList [no="${no}"]`).click();
-    // no === 1 && ($('#btnPrevQ').prop('disabled', true));
-    // no < $.q.length && ($('#btnNextQ').prop('disabled', false));
+    $('#fdsList .btn-clicked').parent().prevAll(`.lv${$.qLv}:first`).find('button').click();
   });
 
   // Next Question ＞
   $('#btnNextQ').click(function () {
-    const no = parseInt($('#fdsList .btn-clicked').text(), 10) + 1;
-    $(`#fdsList [no="${no}"]`).click();
-    // no > 1 && ($('#btnPrevQ').prop('disabled', false));
-    // no === $.q.length && ($('#btnNextQ').prop('disabled', true));
+    $('#fdsList .btn-clicked').parent().nextAll(`.lv${$.qLv}:first`).find('button').click();
   });
 
   // shotcut key
@@ -274,11 +262,13 @@ $(function () {
     lv2Cnt = $('#fdsList .lv2').length,
     lv8Cnt = $('#fdsList .lv8').length,
     lv9Cnt = $('#fdsList .lv9').length,
-    lv0Cnt = lv1Cnt + lv2Cnt + lv8Cnt + lv9Cnt;
+    lv4Cnt = $('#fdsList .lv4').length,
+    lv0Cnt = lv1Cnt + lv2Cnt + lv8Cnt + lv9Cnt + lv4Cnt;
   $('#lblLv1Cnt').text(lv1Cnt);
   $('#lblLv2Cnt').text(lv2Cnt);
   $('#lblLv8Cnt').text(lv8Cnt);
   $('#lblLv9Cnt').text(lv9Cnt);
+  $('#lblLv4Cnt').text(lv4Cnt);
   $('#lblLv0Cnt').text(lv0Cnt);
 });
 
