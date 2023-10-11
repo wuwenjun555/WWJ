@@ -71,13 +71,13 @@ $(function () {
   });
 
   // get show Lv
-  $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9, #btnGLv4').click((e) => {
+  $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9, #btnGLv4, #btnGLv7').click((e) => {
     const btn = $(e.target), qLv = btn.attr('id').substr(-1), ul = $('#fdsList ul');
     $.qLv = qLv;
     ul.find('li').addClass('hide');
     ul.find(`li.lv${qLv}`).removeClass('hide');
     ul.find('li:visible>button:first').click();
-    $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9, #btnGLv4').removeClass('btn-clicked');
+    $('#btnGLv0, #btnGLv1, #btnGLv2, #btnGLv8, #btnGLv9, #btnGLv4, #btnGLv7').removeClass('btn-clicked');
     btn.addClass('btn-clicked');
   });
 
@@ -266,12 +266,14 @@ $(function () {
     lv8Cnt = $('#fdsList .lv8').length,
     lv9Cnt = $('#fdsList .lv9').length,
     lv4Cnt = $('#fdsList .lv4').length,
-    lv0Cnt = lv1Cnt + lv2Cnt + lv8Cnt + lv9Cnt + lv4Cnt;
+    lv7Cnt = $('#fdsList .lv7').length,
+    lv0Cnt = lv1Cnt + lv2Cnt + lv8Cnt + lv9Cnt + lv4Cnt + lv7Cnt;
   $('#lblLv1Cnt').text(lv1Cnt);
   $('#lblLv2Cnt').text(lv2Cnt);
   $('#lblLv8Cnt').text(lv8Cnt);
   $('#lblLv9Cnt').text(lv9Cnt);
   $('#lblLv4Cnt').text(lv4Cnt);
+  $('#lblLv7Cnt').text(lv7Cnt);
   $('#lblLv0Cnt').text(lv0Cnt);
 });
 
