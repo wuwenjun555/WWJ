@@ -30,7 +30,7 @@ tfoot td {
 
   & label {
     display: inline-block;
-      padding: 2px 4px;
+    padding: 2px 4px;
   }
 }
 
@@ -61,11 +61,11 @@ tfoot td {
 }
 
 .rdochk-checked {
-  background-color: aqua ;
+  background-color: aqua;
 }
 
 .ok {
-  background-color:green;
+  background-color: green;
 }
 
 .ok-ng {
