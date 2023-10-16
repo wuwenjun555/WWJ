@@ -3,14 +3,14 @@ $.db =
   "awsSAP": [
     {
       "no": 1,
-      "q": "",
+      "q": "An e-commerce company is revamping its IT infrastructure and is planning to use AWS services. The company's CIO has asked a Solutions Architect to design a simple, highly available, and loosely coupled order processing application. The application is responsible for receiving and processing orders before storing them in an Amazon DynamoDB table. The application has a sporadic traffic pattern and should be able to scale during marketing campaigns to process the orders with minimal delays.\nWhich of the following is the MOST reliable approach to meet the requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Receive the orders in an Amazon EC2-hosted database and use EC2 instances to process them.",
+        "B.Receive the orders in an Amazon SQS queue and trigger an AWS Lambda function to process them.",
+        "C.Receive the orders using the AWS Step Functions program and trigger an Amazon ECS container to process them.",
+        "D.Receive the orders in Amazon Kinesis Data Streams and use Amazon EC2 instances to process them."
       ],
-      "q_cn": "",
+      "q_cn": "一家电子商务公司正在改造其 IT 基础设施，并计划使用 AWS 服务。该公司的首席信息官已要求解决方案架构师设计一个简单、高度可用且松散耦合的订单处理应用程序。应用程序负责接收和处理订单，然后再将其存储在 Amazon DynamoDB 表中。该应用程序具有零星的流量模式，并且应该能够在营销活动期间进行扩展，以最小的延迟处理订单。\n以下哪项是满足要求的最可靠方法？",
       "a_cn": [
         "",
         "",
@@ -19,18 +19,18 @@ $.db =
       ],
       "aa": "B",
       "qK": "",
-      "aK": [""]
+      "aK": ["SQS"]
     },
     {
       "no": 2,
-      "q": "",
+      "q": "A Solutions Architect must establish a patching plan for a large mixed fleet of Windows and Linux servers. The patching plan must be implemented securely, be audit-ready, and comply with the company's business requirements.\nWhich option will meet these requirements with MINIMAL effort?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Install and use an OS-native patching service to manage the update frequency and release approval for all instances. Use AWS Config to verify the OS state on each instance and report on any patch compliance issues.",
+        "B.Use AWS Systems Manager on all instances to manage patching. Test patches outside of production and then deploy during a maintenance window with the appropriate approval.",
+        "C.Use AWS OpsWorks for Chef Automate to run a set of scripts that will iterate through all instances of a given type. Issue the appropriate OS command to get and install updates on each instance, including any required restarts during the maintenance window.",
+        "D.Migrate all applications to AWS OpsWorks and use OpsWorks automatic patching support to keep the OS up-to-date following the initial installation. Use AWS Config to provide audit and compliance reporting."
       ],
-      "q_cn": "",
+      "q_cn": "解决方案架构师必须为大型混合 Windows 和 Linux 服务器队列建立修补计划。修补计划必须安全实施，做好审计准备，并符合公司的业务需求。\n哪个选项可以毫不费力地满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -39,18 +39,18 @@ $.db =
       ],
       "aa": "B",
       "qK": "",
-      "aK": [""]
+      "aK": ["Systems Manager"]
     },
     {
       "no": 3,
-      "q": "",
+      "q": "A company has a serverless application comprised of Amazon CloudFront, Amazon API Gateway, and AWS Lambda functions. The current deployment process of the application code is to create a new version number of the Lambda function and run an AWS CLI script to update. If the new function version has errors, another CLI script reverts by deploying the previous working version of the function. The company would like to decrease the time to deploy new versions of the application logic provided by the Lambda functions, and also reduce the time to detect and revert when errors are identified.\nHow can this be accomplished?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Create and deploy nested AWS CloudFormation stacks with the parent stack consisting of the AWS CloudFront distribution and API Gateway, and the child stack containing the Lambda function. For changes to Lambda, create an AWS CloudFormation change set and deploy; if errors are triggered, revert the AWS CloudFormation change set to the previous version.",
+        "B.Use AWS SAM and built-in AWS CodeDeploy to deploy the new Lambda version, gradually shift traffic to the new version, and use pre-traffic and post-traffic test functions to verify code. Rollback if Amazon CloudWatch alarms are triggered.",
+        "C.Refactor the AWS CLI scripts into a single script that deploys the new Lambda version. When deployment is completed, the script tests execute. If errors are detected, revert to the previous Lambda version.",
+        "D.Create and deploy an AWS CloudFormation stack that consists of a new API Gateway endpoint that references the new Lambda version. Change the CloudFront origin to the new API Gateway endpoint, monitor errors and if detected, change the AWS CloudFront origin to the previous API Gateway endpoint."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司有一个由 Amazon CloudFront、Amazon API Gateway 和 AWS Lambda 函数组成的无服务器应用程序。应用程序代码的当前部署过程是创建 Lambda 函数的新版本号并运行 AWS CLI 脚本进行更新。如果新函数版本有错误，则另一个 CLI 脚本将通过部署函数的先前工作版本来还原。该公司希望减少部署 Lambda 函数提供的应用程序逻辑新版本的时间，并减少在发现错误时检测和还原的时间。\n如何做到这一点？",
       "a_cn": [
         "",
         "",
@@ -59,18 +59,18 @@ $.db =
       ],
       "aa": "B",
       "qK": "",
-      "aK": [""]
+      "aK": ["CodeDeploy"]
     },
     {
       "no": 4,
-      "q": "",
+      "q": "A company with several AWS accounts is using AWS Organizations and service control policies (SCPs). An Administrator created the following SCP and has attached it to an organizational unit (OU) that contains AWS account 1111-1111-1111:\n{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"AllowAllActions\",\n            \"Effect\": \"Allow\",\n            \"Action\": \"*\",\n            \"Resource\": \"*\"\n        },\n        {\n            \"Sid\": \"DenyCloudTrail\",\n            \"Effect\": \"Deny\",\n            \"Action\": \"cloudtrail:*\",\n            \"Resource\": \"*\"\n        }\n    ]\n}\nDevelopers working in account 1111-1111-1111 complain that they cannot create Amazon S3 buckets. How should the Administrator address this problem?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Add s3:CreateBucket with ג€Allowג€ effect to the SCP.",
+        "B.Remove the account from the OU, and attach the SCP directly to account 1111-1111-1111.",
+        "C.Instruct the Developers to add Amazon S3 permissions to their IAM entities.",
+        "D.Remove the SCP from account 1111-1111-1111."
       ],
-      "q_cn": "",
+      "q_cn": "拥有多个 AWS 账户的公司正在使用 AWS 组织和服务控制策略 （SCP）。管理员创建了以下 SCP，并将其附加到包含 AWS 账户 1111-1111-1111 的组织单位 （OU）：\n{\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"AllowAllActions\",\n            \"Effect\": \"Allow\",\n            \"Action\": \"*\",\n            \"Resource\": \"*\"\n        },\n        {\n            \"Sid\": \"DenyCloudTrail\",\n            \"Effect\": \"Deny\",\n            \"Action\": \"cloudtrail:*\",\n            \"Resource\": \"*\"\n        }\n    ]\n}\n在账户 1111-1111-1111 中工作的开发人员抱怨他们无法创建 Amazon S3 存储桶。管理员应如何解决此问题？",
       "a_cn": [
         "",
         "",
@@ -79,18 +79,18 @@ $.db =
       ],
       "aa": "C",
       "qK": "",
-      "aK": [""]
+      "aK": ["S3,IAM entities"]
     },
     {
       "no": 6,
-      "q": "",
+      "q": "A company is using AWS CloudFormation to deploy its infrastructure. The company is concerned that, if a production CloudFormation stack is deleted, important data stored in Amazon RDS databases or Amazon EBS volumes might also be deleted.\nHow can the company prevent users from accidentally deleting data in this way?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Modify the CloudFormation templates to add a DeletionPolicy attribute to RDS and EBS resources.",
+        "B.Configure a stack policy that disallows the deletion of RDS and EBS resources.",
+        "C.Modify IAM policies to deny deleting RDS and EBS resources that are tagged with an \"aws:cloudformation:stack-name\" tag.",
+        "D.Use AWS Config rules to prevent deleting RDS and EBS resources."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司正在使用 AWS CloudFormation 来部署其基础设施。该公司担心，如果删除生产 CloudFormation 堆栈，存储在 Amazon RDS 数据库或 Amazon EBS 卷中的重要数据也可能被删除。\n公司如何防止用户以这种方式意外删除数据？",
       "a_cn": [
         "",
         "",
@@ -99,18 +99,18 @@ $.db =
       ],
       "aa": "A",
       "qK": "",
-      "aK": [""]
+      "aK": ["CloudFormation templates"]
     },
     {
       "no": 7,
-      "q": "",
+      "q": "A company used Amazon EC2 instances to deploy a web fleet to host a blog site. The EC2 instances are behind an Application Load Balancer (ALB) and are configured in an Auto Scaling group. The web application stores all blog content on an Amazon EFS volume.\nThe company recently added a feature for bloggers to add video to their posts, attracting 10 times the previous user traffic. At peak times of day, users report buffering and timeout issues while attempting to reach the site or watch videos.\nWhich is the MOST cost-efficient and scalable deployment that will resolve the issues for users?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Reconfigure Amazon EFS to enable maximum I/O.",
+        "B.Update the blog site to use instance store volumes for storage. Copy the site contents to the volumes at launch and to Amazon S3 at shutdown.",
+        "C.Configure an Amazon CloudFront distribution. Point the distribution to an S3 bucket, and migrate the videos from EFS to Amazon S3.",
+        "D.Set up an Amazon CloudFront distribution for all site contents, and point the distribution at the ALB."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司使用 Amazon EC2 实例部署了 Web 队列来托管博客站点。EC2 实例位于应用程序负载均衡器 （ALB） 后面，并在 Auto Scaling 组中配置。Web 应用程序将所有博客内容存储在 Amazon EFS 卷上。\n该公司最近为博主添加了一项功能，可以在他们的帖子中添加视频，吸引了10倍于以前的用户流量。在一天中的高峰时段，用户在尝试访问网站或观看视频时报告缓冲和超时问题。\n哪个是最具成本效益和可扩展的部署，可以为用户解决问题？",
       "a_cn": [
         "",
         "",
@@ -119,19 +119,19 @@ $.db =
       ],
       "aa": "C",
       "qK": "",
-      "aK": [""]
+      "aK": ["CloudFront,EFS,S3"]
     },
     {
       "no": 8,
-      "q": "",
+      "q": "A company runs an IoT platform on AWS. IoT sensors in various locations send data to the company's Node.js API servers on Amazon EC2 instances running behind an Application Load Balancer. The data is stored in an Amazon RDS MySQL DB instance that uses a 4 TB General Purpose SSD volume.\nThe number of sensors the company has deployed in the field has increased over time, and is expected to grow significantly. The API servers are consistently overloaded and RDS metrics show high write latency.\nWhich of the following steps together will resolve the issues permanently and enable growth as new sensors are provisioned, while keeping this platform cost- efficient? (Choose two.)",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.Resize the MySQL General Purpose SSD storage to 6 TB to improve the volume's IOPS",
+        "B.Re-architect the database tier to use Amazon Aurora instead of an RDS MySQL DB instance and add read replicas",
+        "C.Leverage Amazon Kinesis Data Streams and AWS Lambda to ingest and process the raw data",
+        "D.Use AWS X-Ray to analyze and debug application issues and add more API servers to match the load",
+        "E.Re-architect the database tier to use Amazon DynamoDB instead of an RDS MySQL DB instance"
       ],
-      "q_cn": "",
+      "q_cn": "一家公司在 AWS 上运行物联网平台。不同位置的物联网传感器将数据发送到在应用程序负载均衡器后面运行的 Amazon EC2 实例上的公司的 Node.js API 服务器。数据存储在使用 4 TB 通用型 SSD 卷的 Amazon RDS MySQL 数据库实例中。\n该公司在现场部署的传感器数量随着时间的推移而增加，预计还会大幅增长。API 服务器始终过载，RDS 指标显示高写入延迟。\n以下哪些步骤将永久解决问题，并在配置新传感器时实现增长，同时保持此平台的经济高效？（选择两个。",
       "a_cn": [
         "",
         "",
@@ -141,18 +141,18 @@ $.db =
       ],
       "aa": "C,E",
       "qK": "",
-      "aK": [""]
+      "aK": ["Kinesis Data Streams,DynamoDB"]
     },
     {
       "no": 10,
-      "q": "",
+      "q": "A solutions architect is designing the data storage and retrieval architecture for a new application that a company will be launching soon. The application is designed to ingest millions of small records per minute from devices all around the world. Each record is less than 4 KB in size and needs to be stored in a durable location where it can be retrieved with low latency. The data is ephemeral and the company is required to store the data for 120 days only, after which the data can be deleted.\nThe solutions architect calculates that, during the course of a year, the storage requirements would be about 10-15 TB.\nWhich storage strategy is the MOST cost-effective and meets the design requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Design the application to store each incoming record as a single .csv file in an Amazon S3 bucket to allow for indexed retrieval. Configure a lifecycle policy to delete data older than 120 days.",
+        "B.Design the application to store each incoming record in an Amazon DynamoDB table properly configured for the scale. Configure the DynamoDB Time to Live (TTL) feature to delete records older than 120 days.",
+        "C.Design the application to store each incoming record in a single table in an Amazon RDS MySQL database. Run a nightly cron job that executes a query to delete any records older than 120 days.",
+        "D.Design the application to batch incoming records before writing them to an Amazon S3 bucket. Update the metadata for the object to contain the list of records in the batch and use the Amazon S3 metadata search feature to retrieve the data. Configure a lifecycle policy to delete the data after 120 days."
       ],
-      "q_cn": "",
+      "q_cn": "解决方案架构师正在为一家公司即将推出的新应用程序设计数据存储和检索体系结构。该应用程序旨在每分钟从世界各地的设备摄取数百万条小记录。每条记录的大小小于 4 KB，需要存储在可以低延迟检索的持久位置。数据是临时的，公司只需要将数据存储 120 天，之后可以删除数据。\n解决方案架构师计算出，在一年中，存储需求约为 10-15 TB。\n哪种存储策略最经济高效且满足设计要求？",
       "a_cn": [
         "",
         "",
@@ -161,27 +161,27 @@ $.db =
       ],
       "aa": "B",
       "qK": "",
-      "aK": [""]
+      "aK": ["DynamoDB"]
     },
     {
       "no": 13,
-      "q": "",
+      "q": "A company is in the process of implementing AWS Organizations to constrain its developers to use only Amazon EC2, Amazon S3, and Amazon DynamoDB. The Developers account resides in a dedicated organizational unit (OU). The Solutions Architect has implemented the following SCP on the Developers account:\n{\n    \"Version\": \"2012-10-17\",\n    \"Stattement\": [\n        {\n            \"Sid\": \"AllowEC2\",\n           \"Effect\": \"Allow\",\n           \"Action\": \"ec2:*\",\n           \"Resource\": \"*\"\n        },\n        {\n            \"Sid\": \"AllowDynamoDB\",\n           \"Effect\": \"Allow\",\n           \"Action\": \"dynamodb:*\",\n           \"Resource\": \"*\"\n        },\n        {\n            \"Sid\": \"AllowS3\",\n           \"Effect\": \"Allow\",\n           \"Action\": \"s3:*\",\n           \"Resource\": \"*\"\n        }\n    ]\n}\nWhen this policy is deployed, IAM users in the Developers account are still able to use AWS services that are not listed in the policy.\nWhat should the Solutions Architect do to eliminate the Developers' ability to use services outside the scope of this policy?",
       "a": [
         "",
         "",
         "",
         ""
       ],
-      "q_cn": "",
+      "q_cn": "一家公司正在实施 AWS Organizations 以限制其开发人员仅使用 Amazon EC2、Amazon S3 和 Amazon DynamoDB。开发者帐号位于专用单位部门 （OU） 中。解决方案架构师已在开发人员帐户上实现了以下 SCP：\n{\n    \"Version\": \"2012-10-17\",\n    \"Stattement\": [\n        {\n            \"Sid\": \"AllowEC2\",\n           \"Effect\": \"Allow\",\n           \"Action\": \"ec2:*\",\n           \"Resource\": \"*\"\n        },\n        {\n            \"Sid\": \"AllowDynamoDB\",\n           \"Effect\": \"Allow\",\n           \"Action\": \"dynamodb:*\",\n           \"Resource\": \"*\"\n        },\n        {\n            \"Sid\": \"AllowS3\",\n           \"Effect\": \"Allow\",\n           \"Action\": \"s3:*\",\n           \"Resource\": \"*\"\n        }\n    ]\n}\n部署此策略后，开发人员账户中的 IAM 用户仍可使用策略中未列出的 AWS 服务。n解决方案架构师应如何消除开发人员使用此策略范围之外的服务的能力？",
       "a_cn": [
-        "",
-        "",
-        "",
-        ""
+        "A.Create an explicit deny statement for each AWS service that should be constrained.",
+        "B.Remove the FullAWSAccess SCP from the Developer account's OU.",
+        "C.Modify the FullAWSAccess SCP to explicitly deny all services.",
+        "D.Add an explicit deny statement using a wildcard to the end of the SCP."
       ],
       "aa": "B",
       "qK": "",
-      "aK": [""]
+      "aK": ["Remove the FullAWSAccess"]
     },
     {
       "no": 16,
@@ -225,14 +225,14 @@ $.db =
     },
     {
       "no": 18,
-      "q": "",
+      "q": "A company uses AWS Organizations with a single OU named Production to manage multiple accounts. All accounts are members of the Production OU.\nAdministrators use deny list SCPs in the root of the organization to manage access to restricted services.\nThe company recently acquired a new business unit and invited the new unit's existing AWS account to the organization. Once onboarded, the administrators of the new business unit discovered that they are not able to update existing AWS Config rules to meet the company's policies.\nWhich option will allow administrators to make changes and continue to enforce the current policies without introducing additional long-term maintenance?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Remove the organization's root SCPs that limit access to AWS Config. Create AWS Service Catalog products for the company's standard AWS Config rules and deploy them throughout the organization, including the new account.",
+        "B.Create a temporary OU named Onboarding for the new account. Apply an SCP to the Onboarding OU to allow AWS Config actions. Move the new account to the Production OU when adjustments to AWS Config are complete.",
+        "C.Convert the organization's root SCPs from deny list SCPs to allow list SCPs to allow the required services only. Temporally apply an SCP to the organization's root that allows AWS Config actions for principals only in the new account.",
+        "D.Create a temporary OU named Onboarding for the new account. Apply an SCP to the Onboarding OU to allow AWS Config actions. Move the organization's root SCP to the Production OU. Move the new account to the Production OU when adjustments to AWS Config are complete."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司使用具有一个名为 Production 的单个 OU 的 AWS 组织来管理多个账户。所有帐户都是生产 OU 的成员。\n管理员使用组织根目录中的拒绝列表 SCP 来管理对受限服务的访问。\n该公司最近收购了一个新的业务部门，并邀请新部门现有的AWS账户加入该组织。加入后，新业务部门的管理员发现他们无法更新现有的 AWS Config 规则以满足公司的策略。\n哪个选项将允许管理员进行更改并继续实施当前策略，而无需引入额外的长期维护？",
       "a_cn": [
         "",
         "",
@@ -241,7 +241,7 @@ $.db =
       ],
       "aa": "D",
       "qK": "",
-      "aK": [""]
+      "aK": ["Create a temporary OU,organization's root SCP"]
     },
     {
       "no": 20,
@@ -285,14 +285,14 @@ $.db =
     },
     {
       "no": 22,
-      "q": "",
+      "q": "An AWS partner company is building a service in AWS Organizations using its organization named org1. This service requires the partner company to have access to AWS resources in a customer account, which is in a separate organization named org2. The company must establish least privilege security access using an API or command line tool to the customer account.\nWhat is the MOST secure way to allow org1 to access resources in org2?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.The customer should provide the partner company with their AWS account access keys to log in and perform the required tasks.",
+        "B.The customer should create an IAM user and assign the required permissions to the IAM user. The customer should then provide the credentials to the partner company to log in and perform the required tasks.",
+        "C.The customer should create an IAM role and assign the required permissions to the IAM role. The partner company should then use the IAM role's Amazon Resource Name (ARN) when requesting access to perform the required tasks.",
+        "D.The customer should create an IAM role and assign the required permissions to the IAM role. The partner company should then use the IAM role's Amazon Resource Name (ARN), including the external ID in the IAM role's trust policy, when requesting access to perform the required tasks."
       ],
-      "q_cn": "",
+      "q_cn": "一家 AWS 合作伙伴公司正在使用其名为 org1 的组织在 AWS 组织中构建服务。此服务要求合作伙伴公司有权访问客户账户中的 AWS 资源，该账户位于名为 org2 的单独组织中。公司必须使用 API 或命令行工具建立对客户帐户的最低特权安全访问。\n允许 org1 访问 org2 中的资源的最安全方法是什么？",
       "a_cn": [
         "",
         "",
@@ -301,7 +301,7 @@ $.db =
       ],
       "aa": "D",
       "qK": "",
-      "aK": [""]
+      "aK": ["external ID"]
     },
     {
       "no": 23,
@@ -325,14 +325,14 @@ $.db =
     },
     {
       "no": 24,
-      "q": "",
+      "q": "A security engineer determined that an existing application retrieves credentials to an Amazon RDS for MySQL database from an encrypted file in Amazon S3. For the next version of the application, the security engineer wants to implement the following application design changes to improve security:\n - The database must use strong, randomly generated passwords stored in a secure AWS managed service.\n - The application resources must be deployed through AWS CloudFormation.\n - The application must rotate credentials for the database every 90 days.\nA solutions architect will generate a CloudFormation template to deploy the application.\nWhich resources specified in the CloudFormation template will meet the security engineer's requirements with the LEAST amount of operational overhead?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Generate the database password as a secret resource using AWS Secrets Manager. Create an AWS Lambda function resource to rotate the database password. Specify a Secrets Manager RotationSchedule resource to rotate the database password every 90 days.",
+        "B.Generate the database password as a SecureString parameter type using AWS Systems Manager Parameter Store. Create an AWS Lambda function resource to rotate the database password. Specify a Parameter Store RotationSchedule resource to rotate the database password every 90 days.",
+        "C.Generate the database password as a secret resource using AWS Secrets Manager. Create an AWS Lambda function resource to rotate the database password. Create an Amazon EventBridge scheduled rule resource to trigger the Lambda function password rotation every 90 days.",
+        "D.Generate the database password as a SecureString parameter type using AWS Systems Manager Parameter Store. Specify an AWS AppSync DataSource resource to automatically rotate the database password every 90 days."
       ],
-      "q_cn": "",
+      "q_cn": "安全工程师确定现有应用程序从 Amazon S3 中的加密文件中检索到 Amazon RDS for MySQL 数据库的凭证。对于应用程序的下一版本，安全工程师希望实施以下应用程序设计更改以提高安全性：\n - 数据库必须使用存储在安全的 AWS 托管服务中的随机生成的强密码。\n - 必须通过 AWS CloudFormation 部署应用程序资源。\n - 应用程序必须每 90 天轮换一次数据库的凭据。\n解决方案架构师将生成一个 CloudFormation 模板来部署应用程序。\n哪个CloudFormation 模板中指定的资源能否以最少的运营开销满足安全工程师的要求？",
       "a_cn": [
         "",
         "",
@@ -341,18 +341,18 @@ $.db =
       ],
       "aa": "A",
       "qK": "",
-      "aK": [""]
+      "aK": ["Secrets Manager,RotationSchedule"]
     },
     {
       "no": 25,
-      "q": "",
+      "q": "A company is running a two-tier web-based application in an on-premises data center. The application layer consists of a single server running a stateful application. The application connects to a PostgreSQL database running on a separate server. The application’s user base is expected to grow significantly, so the company is migrating the application and database to AWS. The solution will use Amazon Aurora PostgreSQL, Amazon EC2 Auto Scaling, and Elastic Load Balancing.\nWhich solution will provide a consistent user experience that will allow the application and database tiers to scale?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Enable Aurora Auto Scaling for Aurora Replicas. Use a Network Load Balancer with the least outstanding requests routing algorithm and sticky sessions enabled.",
+        "B.Enable Aurora Auto Scaling for Aurora writers. Use an Application Load Balancer with the round robin routing algorithm and sticky sessions enabled.",
+        "C.Enable Aurora Auto Scaling for Aurora Replicas. Use an Application Load Balancer with the round robin routing and sticky sessions enabled.",
+        "D.Enable Aurora Scaling for Aurora writers. Use a Network Load Balancer with the least outstanding requests routing algorithm and sticky sessions enabled."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司正在本地数据中心运行基于 Web 的双层应用程序。应用层由运行有状态应用程序的单个服务器组成。应用程序连接到在单独服务器上运行的 PostgreSQL 数据库。该应用程序的用户群预计将大幅增长，因此该公司正在将应用程序和数据库迁移到 AWS。该解决方案将使用 Amazon Aurora PostgreSQL、Amazon EC2 Auto Scaling 和 Elastic Load Balancing。\n哪种解决方案将提供一致的用户体验，允许应用程序和数据库层进行扩展？",
       "a_cn": [
         "",
         "",
@@ -361,18 +361,18 @@ $.db =
       ],
       "aa": "C",
       "qK": "",
-      "aK": [""]
+      "aK": ["Aurora Replicas,Application Load Balancer"]
     },
     {
       "no": 26,
-      "q": "",
+      "q": "A company wants to change its internal cloud billing strategy for each of its business units. Currently, the cloud governance team shares reports for overall cloud spending with the head of each business unit. The company uses AWS Organizations to manage the separate AWS accounts for each business unit. The existing tagging standard in Organizations includes the application, environment, and owner. The cloud governance team wants a centralized solution so each business unit receives monthly reports on its cloud spending. The solution should also send notifications for any cloud spending that exceeds a set threshold.\nWhich solution is the MOST cost-effective way to meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Configure AWS Budgets in each account and configure budget alerts that are grouped by application, environment, and owner. Add each business unit to an Amazon SNS topic for each alert. Use Cost Explorer in each account to create monthly reports for each business unit.",
+        "B.Configure AWS Budgets in the organization's master account and configure budget alerts that are grouped by application, environment, and owner. Add each business unit to an Amazon SNS topic for each alert. Use Cost Explorer in the organization's master account to create monthly reports for each business unit.",
+        "C.Configure AWS Budgets in each account and configure budget alerts that are grouped by application, environment, and owner. Add each business unit to an Amazon SNS topic for each alert. Use the AWS Billing and Cost Management dashboard in each account to create monthly reports for each business unit.",
+        "D.Enable AWS Cost and Usage Reports in the organization's master account and configure reports grouped by application, environment, and owner. Create an AWS Lambda function that processes AWS Cost and Usage Reports, sends budget alerts, and sends monthly reports to each business unit's email list."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司希望更改其每个业务部门的内部云计费策略。目前，云治理团队与每个业务部门的负责人共享整体云支出的报告。该公司使用 AWS Organizations 来管理每个业务部门的单独 AWS 账户。组织中的现有标记标准包括应用程序、环境和所有者。云治理团队需要一个集中式解决方案，以便每个业务部门每月收到有关其云支出的报告。解决方案还应针对超过设置阈值的任何云支出发送通知。\n哪种解决方案是满足这些要求的最具成本效益的方法？",
       "a_cn": [
         "",
         "",
@@ -381,7 +381,7 @@ $.db =
       ],
       "aa": "B",
       "qK": "",
-      "aK": [""]
+      "aK": ["Cost Explorer,organization's master account"]
     },
     {
       "no": 27,
@@ -427,14 +427,14 @@ $.db =
     },
     {
       "no": 39,
-      "q": "",
+      "q": "A company needs to implement a patching process for its servers. The on-premises servers and Amazon EC2 instances use a variety of tools to perform patching.\nManagement requires a single report showing the patch status of all the servers and instances.\nWhich set of actions should a solutions architect take to meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Use AWS Systems Manager to manage patches on the on-premises servers and EC2 instances. Use Systems Manager to generate patch compliance reports",
+        "B.Use AWS OpsWorks to manage patches on the on-premises servers and EC2 instances. Use Amazon QuickSight integration with OpsWorks to generate patch compliance reports.",
+        "C.Use an Amazon EventBridge (Amazon CloudWatch Events) rule to apply patches by scheduling an AWS Systems Manager patch remediation job. Use Amazon Inspector to generate patch compliance reports.",
+        "D.Use AWS OpsWorks to manage patches on the on-premises servers and EC2 instances. Use AWS X-Ray to post the patch status to AWS Systems Manager OpsCenter to generate patch compliance reports."
       ],
-      "q_cn": "",
+      "q_cn": "公司需要为其服务器实施修补过程。本地服务器和 Amazon EC2 实例使用各种工具来执行修补。\n管理需要单个报告来显示所有服务器和实例的补丁状态。\n解决方案架构师应采取哪一组操作来满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -443,7 +443,7 @@ $.db =
       ],
       "aa": "A",
       "qK": "",
-      "aK": [""]
+      "aK": ["Use AWS Systems Manager"]
     },
     {
       "no": 40,
@@ -467,15 +467,15 @@ $.db =
     },
     {
       "no": 41,
-      "q": "",
+      "q": "A company has 50 AWS accounts that are members of an organization in AWS Organizations. Each account contains multiple VPCs. The company wants to use AWS Transit Gateway to establish connectivity between the VPCs in each member account.Each time a new member account is created, the company wants to automate the process of creating a new VPC and a transit gateway attachment.\nWhich combination of steps will meet these requirements?(Choose TWO.) ",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.From the management account, share the transit gateway with member accounts by using AWS Resource Access Manager.",
+        "B.From the management account, share the transit gateway with member accounts by using an AWS Organizations SCP.",
+        "C.Launch an AWS CloudFormation stack set from the management account that automatically creates a new VPC and a VPC transit gateway attachment in a member account. Associate the attachment with the transit gateway in the management account by using the transit gateway ID.",
+        "D.Launch an AWS CloudFormation stack set from the management account that automatically creates a new VPC and a peering transit gateway attachment in a member account. Share the attachment with the transit gateway in the management account by using a transit gateway service-linked role.",
+        "E.From the management account, share the transit gateway with member accounts by using AWS Service Catalog."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司有 50 个 AWS 账户，这些账户是 AWS 组织中某个组织的成员。每个账户包含多个 VPC。该公司希望使用 AWS Transit Gateway 在每个成员账户中的 VPC 之间建立连接。每次创建新成员账户时，公司都希望自动执行创建新 VPC 和中转网关连接的过程。\n哪些步骤组合将满足这些要求？（选择两个。",
       "a_cn": [
         "",
         "",
@@ -485,7 +485,7 @@ $.db =
       ],
       "aa": "A,C",
       "qK": "",
-      "aK": [""]
+      "aK": ["Resource Access Manager,transit gateway ID"]
     },
     {
       "no": 42,
@@ -529,16 +529,16 @@ $.db =
     },
     {
       "no": 47,
-      "q": "",
+      "q": "A company is using multiple AWS accounts and has multiple DevOps teams running production and non- production workloads in these accounts. The company would like to centrally-restrict access to some of the AWS services that the DevOps teams do not use. The company decided to use AWS Organizations and successfully invited all AWS accounts into the Organization. They would like to allow access to services that are currently in-use and deny a few specific services Also they would like to administer multiple accounts together as a single unit.What combination of steps should the Solutions Architect take to satisfy these requirements? (Select THREE)",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.Use a Deny list strategy.",
+        "B.Review the Access Advisor in AWS IAM to determine services recently used",
+        "C.Review the AWS Trusted Advisor report to determine services recently used.",
+        "D.Remove the default FullAWSAccess SCP.",
+        "E.Define organizational units (OUs) and place the member accounts in the OUs.",
+        "F.Remove the default DenyAWSAccess SCP"
       ],
-      "q_cn": "",
+      "q_cn": "一家公司正在使用多个 AWS 账户，并且有多个开发运营团队在这些账户中运行生产和非生产工作负载。该公司希望集中限制对开发运营团队不使用的某些 AWS 服务的访问。该公司决定使用 AWS 组织，并成功邀请所有 AWS 账户加入该组织。他们希望允许访问当前正在使用的服务并拒绝一些特定服务 他们还希望将多个帐户作为一个单元一起管理。解决方案架构师应采取哪些步骤组合来满足这些要求？（选择三项）",
       "a_cn": [
         "",
         "",
@@ -549,7 +549,7 @@ $.db =
       ],
       "aa": "B,D,E",
       "qK": "",
-      "aK": [""]
+      "aK": ["Access Advisor,Remove,FullAWSAccess SCP,OUs"]
     },
     {
       "no": 50,
@@ -573,14 +573,14 @@ $.db =
     },
     {
       "no": 51,
-      "q": "",
+      "q": "A company is running a data-intensive application on AWS. The application runs on a cluster of hundreds of Amazon EC2 instances. A shared file system also runs on several EC2 instances that store 200 TB of data. The application reads and modifies the data on the shared file system and generates a report. The job runs once monthly, reads a subset of the files from the shared file system, and takes about 72 hours to complete. The compute instances scale in an Auto Scaling group, but the instances that host the shared the system run continuously. The compute and storage instances are all in the same AWS Region.\nA solutions architect needs to reduce costs by replacing the shared file system instances. The file system must provide high performance access to the needed data for the duration of the 72-hour run.\nWhich solution will provide the LARGEST overall cost reduction while meeting these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Migrate the data from the existing shared file system to an Amazon S3 bucket that uses the S3 Intelligent-Tiering storage class. Before the job runs each month, use Amazon FSx for Lustre to create a new file system with the data from Amazon S3 by using lazy loading. Use the new file system as the shared storage for the duration of the job. Delete the file system when the job is complete.",
+        "B.Migrate the data from the existing shared file system to a large Amazon Elastic Block Store (Amazon EBS) volume with Multi-Attach enabled. Attach the EBS volume to each of the instances by using a user data script in the Auto Scaling group launch template. Use the EBS volume as the shared storage for the duration of the job. Detach the EBS volume when the job is complete.",
+        "C.Migrate the data from the existing shared file system to an Amazon S3 bucket that uses the S3 Standard storage class. Before the job runs each month, use Amazon FSx for Lustre to create a new file system with the data from Amazon S3 by using batch loading. Use the new file system as the shared storage for the duration of the job. Delete the file system when the job is complete.",
+        "D.Migrate the data from the existing shared file system to an Amazon S3 bucket. Before the job runs each month, use AWS Storage Gateway to create a file gateway with the data from Amazon S3. Use the file gateway as the shared storage for the job. Delete the file gateway when the job is complete."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司在 AWS 上运行数据密集型应用程序。该应用程序在包含数百个 Amazon EC2 实例的集群上运行。共享文件系统还在多个存储 200 TB 数据的 EC2 实例上运行。应用程序读取和修改共享文件系统上的数据并生成报告。该作业每月运行一次，从共享文件系统读取文件子集，大约需要 72 小时才能完成。计算实例在 Auto Scaling 组中扩展，但托管共享系统的实例持续运行。计算实例和存储实例都位于同一 AWS 区域中。\n解决方案架构师需要通过替换共享文件系统实例来降低成本。文件系统必须在 72 小时运行期间提供对所需数据的高性能访问。\n哪种解决方案将在满足这些要求的同时实现最大的总体成本降低？",
       "a_cn": [
         "",
         "",
@@ -589,7 +589,7 @@ $.db =
       ],
       "aa": "A",
       "qK": "",
-      "aK": [""]
+      "aK": ["S3 Intelligent-Tiering"]
     },
     {
       "no": 52,
@@ -635,14 +635,14 @@ $.db =
     },
     {
       "no": 55,
-      "q": "",
+      "q": "A company has created an OU in AWS Organizations for each of its engineering teams. Each OU owns multiple AWS accounts. The organization has hundreds of AWS accounts.\nA solutions architect must design a solution so that each OU can view a breakdown of usage costs across its AWS accounts.\nWhich solution meets these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Create an AWS Cost and Usage Report (CUR) for each OU by using AWS Resource Access Manager. Allow each team to visualize the CUR through an Amazon QuickSight dashboard.",
+        "B.Create an AWS Cost and Usage Report (CUR) from the AWS Organizations management account. Allow each team to visualize the CUR through an Amazon QuickSight dashboard.",
+        "C.Create an AWS Cost and Usage Report (CUR) in each AWS Organizations member account. Allow each team to visualize the CUR through an Amazon QuickSight dashboard.",
+        "D.Create an AWS Cost and Usage Report (CUR) by using AWS Systems Manager. Allow each team to visualize the CUR through Systems Manager OpsCenter dashboards."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司在 AWS 组织中为其每个工程团队创建了一个 OU。每个 OU 拥有多个 AWS 账户。该组织拥有数百个 AWS 账户。\n解决方案架构师必须设计一个解决方案，以便每个 OU 都可以查看其 AWS 账户的使用成本明细。\n      哪种解决方案满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -651,7 +651,7 @@ $.db =
       ],
       "aa": "B",
       "qK": "",
-      "aK": [""]
+      "aK": ["Organizations management account"]
     },
     {
       "no": 61,
@@ -697,14 +697,14 @@ $.db =
     },
     {
       "no": 67,
-      "q": "",
+      "q": "A solutions architect needs to implement a client-side encryption mechanism for objects that will be stored in a new Amazon S3 bucket. The solutions architect created a CMK that is stored in AWS Key Management Service (AWS KMS) for this purpose.\nThe solutions architect created the following IAM policy and attached it to an IAM role:\n{\n    \"Version\": \"2012-10-17\",\n    \"Version\": [\n        {\n            \"Sid\": \"DownloadUpload\",\n            \"Action\": [                \"s3:GetObject\",                \"s3:GetObjectVersion\",                \"s3:PutObject\",                \"s3:PutObjectAcl\"\n            ],            \"Effect\": \"Allow\",\n            \"Resource\": \"arn:aws:s3:::BucketName/*\"\n        },\n        {\n            \"Sid\": \"KMSAccess\",\n            \"Action\": [\n                \"kms:Decrypt\",\n                \"kms:Encrypt\"\n            ],\n            \"Effect\": \"Allow\",\n            \"Resource\": \"arn:aws:kms:Region:Account:key/Key ID\"\n        }\n    ]\n        \n}\nDuring tests, the solutions architect was able to successfully get existing test objects in the S3 bucket.However, attempts to upload a new object resulted in an error message.The error message stated that the action was forbidden.\nWhich action must the solutions architect add to the IAM policy to meet all the requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.kms:GenerateDataKey",
+        "B.kms:GetKeyPolicy",
+        "C.kms:GetPublicKey",
+        "D.kms:Sign"
       ],
-      "q_cn": "",
+      "q_cn": "解决方案架构师需要为将存储在新 Amazon S3 存储桶中的对象实施客户端加密机制。解决方案架构师为此创建了一个存储在 AWS 密钥管理服务 （AWS KMS） 中的 CMK。n解决方案架构师创建了以下 IAM 策略并将其附加到 IAM 角色：\n{\n    \"Version\": \"2012-10-17\",\n    \"Version\": [\n        {\n            \"Sid\": \"DownloadUpload\",\n            \"Action\": [                \"s3:GetObject\",                \"s3:GetObjectVersion\",                \"s3:PutObject\",                \"s3:PutObjectAcl\"\n            ],            \"Effect\": \"Allow\",\n            \"Resource\": \"arn:aws:s3:::BucketName/*\"\n        },\n        {\n            \"Sid\": \"KMSAccess\",\n            \"Action\": [\n                \"kms:Decrypt\",\n                \"kms:Encrypt\"\n            ],\n            \"Effect\": \"Allow\",\n            \"Resource\": \"arn:aws:kms:Region:Account:key/Key ID\"\n        }\n    ]\n        \n}\n在测试期间，解决方案架构师能够成功获取 S3 存储桶中的现有测试对象。但是，尝试上载新对象会导致错误消息。错误消息指出禁止该操作。n解决方案架构师必须向 IAM 策略添加哪些操作才能满足所有要求？",
       "a_cn": [
         "",
         "",
@@ -713,7 +713,7 @@ $.db =
       ],
       "aa": "A",
       "qK": "",
-      "aK": [""]
+      "aK": ["GenerateDataKey"]
     },
     {
       "no": 68,
@@ -797,14 +797,14 @@ $.db =
     },
     {
       "no": 74,
-      "q": "",
+      "q": "A video processing company wants to build a machine learning (ML) model by using 600 TB of compressed data that is stored as thousands of files in the company's on-premises network attached storage system. The company does not have the necessary compute resources on premises for ML experiments and wants to use AWS.\nThe company needs to complete the data transfer to AWS within 3 weeks. The data transfer will be a one-time transfer. The data must be encrypted in transit. The measured upload speed of the company's internet connection is 100 Mbps, and multiple departments share the connection.\nWhich solution will meet these requirements MOST cost-effectively?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Order several AWS Snowball Edge Storage Optimized devices by using the AWS Management Console. Configure the devices with a destination S3 bucket. Copy the data to the devices. Ship the devices back to AWS.",
+        "B.Set up a 10 Gbps AWS Direct Connect connection between the company location and the nearest AWS Region. Transfer the data over a VPN connection into the Region to store the data in Amazon S3.",
+        "C.Create a VPN connection between the on-premises network storage and the nearest AWS Region. Transfer the data over the VPN connection.",
+        "D.Deploy an AWS Storage Gateway file gateway on premises. Configure the file gateway with a destination S3 bucket. Copy the data to the file gateway."
       ],
-      "q_cn": "",
+      "q_cn": "一家视频处理公司希望使用 600 TB 的压缩数据构建机器学习 （ML） 模型，这些数据作为数千个文件存储在公司的本地网络连接存储系统中。该公司在本地没有必要的计算资源来进行 ML 实验，并希望使用 AWS。\n该公司需要在 3 周内完成到 AWS 的数据传输。数据传输将是一次性传输。数据在传输过程中必须加密。该公司互联网连接的测量上传速度为100 Mbps，多个部门共享连接。\n哪种解决方案最经济高效地满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -813,18 +813,18 @@ $.db =
       ],
       "aa": "A",
       "qK": "",
-      "aK": [""]
+      "aK": ["Snowball Edge"]
     },
     {
       "no": 75,
-      "q": "",
+      "q": "A company runs a content management application on a single Windows Amazon EC2 instance in a development environment. The application reads and writes static content to a 2 TB Amazon Elastic Block Store (Amazon EBS) volume that is attached to the instance as the root device. The company plans to deploy this application in production as a highly available and fault-tolerant solution that runs on at least three EC2 instances across multiple Availability Zones.\nA solutions architect must design a solution that joins all the instances that run the application to an Active Directory domain. The solution also must implement Windows ACLs to control access to file contents. The application always must maintain exactly the same content on all running instances at any given point in time.\nWhich solution will meet these requirements with the LEAST management overhead?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Create an Amazon Elastic File System (Amazon EFS) file share. Create an Auto Scaling group that extends across three Availability Zones and maintains a minimum size of three instances. Implement a user data script to install the application, join the instance to the AD domain, and mount the EFS file share.",
+        "B.Create a new AMI from the current EC2 Instance that is running. Create an Amazon FSx for Lustre file system. Create an Auto Scaling group that extends across three Availability Zones and maintains a minimum size of three instances. Implement a user data script to join the instance to the AD domain and mount the FSx for Lustre file system.",
+        "C.Create an Amazon FSx for Windows File Server file system. Create an Auto Scaling group that extends across three Availability Zones and maintains a minimum size of three instances. Implement a user data script to install the application and mount the FSx for Windows File Server file system. Perform a seamless domain join to join the instance to the AD domain.",
+        "D.Create a new AMI from the current EC2 instance that is running. Create an Amazon Elastic File System (Amazon EFS) file system. Create an Auto Scaling group that extends across three Availability Zones and maintains a minimum size of three Instances. Perform a seamless domain join to join the instance to the AD domain."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司在开发环境中的单个 Windows Amazon EC2 实例上运行内容管理应用程序。应用程序将静态内容读取和写入作为根设备附加到实例的 2 TB Amazon Elastic Block Store （Amazon EBS） 卷。该公司计划将此应用程序部署在生产中，作为高度可用且容错的解决方案，在跨多个可用区的至少三个 EC2 实例上运行。\n解决方案架构师必须设计一个将运行该应用程序的所有实例连接到 Active Directory 域的解决方案。该解决方案还必须实现 Windows ACL 来控制对文件内容的访问。在任何给定时间点，应用程序必须始终在所有正在运行的实例上维护完全相同的内容。\n哪种解决方案能够以最少的管理开销满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -833,18 +833,18 @@ $.db =
       ],
       "aa": "C",
       "qK": "",
-      "aK": [""]
+      "aK": ["FSx for Windows File Server"]
     },
     {
       "no": 77,
-      "q": "",
+      "q": "A retail company is hosting an ecommerce website on AWS across multiple AWS Regions. The company wants the website to be operational at all times for online purchases. The website stores data in an Amazon RDS for MySQL DB instance.\nWhich solution will provide the HIGHEST availability for the database?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Configure automated backups on Amazon RDS. In the case of disruption, promote an automated backup to be a standalone DB instance. Direct database traffic to the promoted DB instance. Create a replacement read replica that has the promoted DB instance as its source.",
+        "B.Configure global tables and read replicas on Amazon RDS. Activate the cross-Region scope. In the case of disruption, use AWS Lambda to copy the read replicas from one Region to another Region.",
+        "C.Configure global tables and automated backups on Amazon RDS. In the case of disruption, use AWS Lambda to copy the read replicas from one Region to another Region.",
+        "D.Configure read replicas on Amazon RDS. In the case of disruption, promote a cross-Region and read replica to be a standalone DB instance. Direct database traffic to the promoted DB instance. Create a replacement read replica that has the promoted DB instance as its source."
       ],
-      "q_cn": "",
+      "q_cn": "一家零售公司在多个 AWS 区域在 AWS 上托管电子商务网站。该公司希望该网站始终可以在线购买。该网站将数据存储在适用于 MySQL 的 Amazon RDS 数据库实例中。\n哪种解决方案将为数据库提供最高可用性？",
       "a_cn": [
         "",
         "",
@@ -853,18 +853,18 @@ $.db =
       ],
       "aa": "D",
       "qK": "",
-      "aK": [""]
+      "aK": ["Configure read replicas"]
     },
     {
       "no": 78,
-      "q": "",
+      "q": "An external audit of a company's serverless application reveals IAM policies that grant too many permissions. These policies are attached to the company's AWS Lambda execution roles. Hundreds of the company's Lambda functions have broad access permissions, such as full access to Amazon S3 buckets and Amazon DynamoDB tables. The company wants each function to have only the minimum permissions that the function needs to complete its task.\nA solutions architect must determine which permissions each Lambda function needs.\nWhat should the solutions architect do to meet this requirement with the LEAST amount of effort?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Set up Amazon CodeGuru to profile the Lambda functions and search for AWS API calls. Create an inventory of the required API calls and resources for each Lambda function. Create new IAM access policies for each Lambda function. Review the new policies to ensure that they meet the company's business requirements.",
+        "B.Turn on AWS CloudTrail logging for the AWS account. Use AWS Identity and Access Management Access Analyzer to generate IAM access policies based on the activity recorded in the CloudTrail log. Review the generated policies to ensure that they meet the company's business requirements.",
+        "C.Turn on AWS CloudTrail logging for the AWS account. Create a script to parse the CloudTrail log, search for AWS API calls by Lambda execution role, and create a summary report. Review the report. Create IAM access policies that provide more restrictive permissions for each Lambda function.",
+        "D.Turn on AWS CloudTrail logging for the AWS account. Export the CloudTrail logs to Amazon S3. Use Amazon EMR to process the CloudTrail logs in Amazon S3 and produce a report of API calls and resources used by each execution role. Create a new IAM access policy for each role. Export the generated roles to an S3 bucket. Review the generated policies to ensure that they meet the company's business requirements."
       ],
-      "q_cn": "",
+      "q_cn": "对公司的无服务器应用程序的外部审计揭示了授予过多权限的 IAM 策略。这些策略附加到公司的 AWS Lambda 执行角色。该公司的数百个 Lambda 函数具有广泛的访问权限，例如对 Amazon S3 存储桶和 Amazon DynamoDB 表的完全访问权限。该公司希望每个函数仅具有该函数完成其任务所需的最低权限。\n解决方案架构师必须确定每个 Lambda 函数需要哪些权限。\n解决方案架构师应该怎么做才能以最少的努力满足这一要求？",
       "a_cn": [
         "",
         "",
@@ -873,7 +873,7 @@ $.db =
       ],
       "aa": "B",
       "qK": "",
-      "aK": [""]
+      "aK": ["Use AWS Identity and Access Management Access Analyzer"]
     },
     {
       "no": 80,
@@ -945,15 +945,15 @@ $.db =
     },
     {
       "no": 83,
-      "q": "",
+      "q": "A solutions architect has developed a web application that uses an Amazon API Gateway Regional endpoint and an AWS Lambda function. The consumers of the web application are all close to the AWS Region where the application will be deployed. The Lambda function only queries an Amazon Aurora MySQL database. The solutions architect has configured the database to have three read replicas.\nDuring testing, the application does not meet performance requirements. Under high load, the application opens a large number of database connections. The solutions architect must improve the application's performance.\nWhich actions should the solutions architect take to meet these requirements? (Choose two.)",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.Use the cluster endpoint of the Aurora database.",
+        "B.Use RDS Proxy to set up a connection pool to the reader endpoint of the Aurora database.",
+        "C.Use the Lambda Provisioned Concurrency feature.",
+        "D.Move the code for opening the database connection in the Lambda function outside of the event handler",
+        "E.Change the API Gateway endpoint to an edge-optimized endpoint."
       ],
-      "q_cn": "",
+      "q_cn": "解决方案架构师开发了一个使用 Amazon API 网关区域终端节点和 AWS Lambda 函数的 Web 应用程序。Web 应用程序的使用者都靠近将部署应用程序的 AWS 区域。Lambda 函数仅查询 Amazon Aurora MySQL 数据库。解决方案架构师已将数据库配置为具有三个只读副本。\n在测试期间，应用程序不符合性能要求。在高负载下，应用程序会打开大量数据库连接。解决方案架构师必须提高应用程序的性能。\n解决方案架构师应采取哪些操作来满足这些要求？（选择两个。",
       "a_cn": [
         "",
         "",
@@ -963,18 +963,18 @@ $.db =
       ],
       "aa": "B,D",
       "qK": "",
-      "aK": [""]
+      "aK": ["RDS Proxy,Move the code,Lambda function outside"]
     },
     {
       "no": 85,
-      "q": "",
+      "q": "A company wants to use a third-party software-as-a-service (SaaS) application. The third-party SaaS application is consumed through several API calls. The third- party SaaS application also runs on AWS inside a VPC.\nThe company will consume the third-party SaaS application from inside a VPC. The company has internal security policies that mandate the use of private connectivity that does not traverse the internet. No resources that run in the company VPC are allowed to be accessed from outside the company's VPC. All permissions must conform to the principles of least privilege.\nWhich solution meets these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Create an AWS PrivateLink interface VPC endpoint. Connect this endpoint to the endpoint service that the third-party SaaS application provides. Create a security group to limit the access to the endpoint. Associate the security group with the endpoint.",
+        "B.Create an AWS Site-to-Site VPN connection between the third-party SaaS application and the company VPC. Configure network ACLs to limit access across the VPN tunnels.",
+        "C.Create a VPC peering connection between the third-party SaaS application and the company VPC. Update route tables by adding the needed routes for the peering connection.",
+        "D.Create an AWS PrivateLink endpoint service. Ask the third-party SaaS provider to create an interface VPC endpoint for this endpoint service. Grant permissions for the endpoint service to the specific account of the third-party SaaS provider."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司希望使用第三方软件即服务 （SaaS） 应用程序。第三方 SaaS 应用程序通过多个 API 调用使用。第三方 SaaS 应用程序也在 VPC 内的 AWS 上运行。\n该公司将从 VPC 内部使用第三方 SaaS 应用程序。该公司有内部安全策略，要求使用不遍历互联网的专用连接。不允许从公司 VPC 外部访问在公司 VPC 中运行的资源。所有权限都必须符合最小特权原则。\n哪种解决方案满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -983,20 +983,20 @@ $.db =
       ],
       "aa": "A",
       "qK": "",
-      "aK": [""]
+      "aK": ["Create an AWS PrivateLink interface"]
     },
     {
       "no": 87,
-      "q": "",
+      "q": "A company is migrating some of its applications to AWS. The company wants to migrate and modernize the applications quickly after it finalizes networking and security strategies. The company has set up an AWS Direct Connect connection in a central network account.\nThe company expects to have hundreds of AWS accounts and VPCs in the near future. The corporate network must be able to access the resources on AWS seamlessly and also must be able to communicate with all the VPCs. The company also wants to route its cloud resources to the internet through its on-premises data center.\nWhich combination of steps will meet these requirements? (Choose three.)",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.Create a Direct Connect gateway in the central account. In each of the accounts, create an association proposal by using the Direct Connect gateway and the account ID for every virtual private gateway.",
+        "B.Create a Direct Connect gateway and a transit gateway in the central network account. Attach the transit gateway to the Direct Connect gateway by using a transit VIF.",
+        "C.Provision an internet gateway. Attach the internet gateway to subnets. Allow internet traffic through the gateway.",
+        "D.Share the transit gateway with other accounts. Attach VPCs to the transit gateway.",
+        "E.Provision VPC peering as necessary.",
+        "F.Provision only private subnets. Open the necessary route on the transit gateway and customer gateway to allow outbound internet traffic from AWS to flow through NAT services that run in the data center."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司正在将其部分应用程序迁移到 AWS。该公司希望在最终确定网络和安全策略后快速迁移和现代化应用程序。该公司已在中央网络账户中设置了 AWS Direct Connect 连接。\n该公司预计在不久的将来将拥有数百个AWS账户和VPC。企业网络必须能够无缝访问 AWS 上的资源，并且还必须能够与所有 VPC 通信。该公司还希望通过其本地数据中心将其云资源路由到互联网。\n哪些步骤组合将满足这些要求？（选择三个。",
       "a_cn": [
         "",
         "",
@@ -1007,7 +1007,7 @@ $.db =
       ],
       "aa": "B,D,F",
       "qK": "",
-      "aK": [""]
+      "aK": ["transit VIF,Share the transit gateway,Provision only private subnets"]
     },
     {
       "no": 90,
@@ -1031,14 +1031,14 @@ $.db =
     },
     {
       "no": 91,
-      "q": "",
+      "q": "A company has migrated Its forms-processing application to AWS. When users interact with the application, they upload scanned forms as files through a web application. A database stores user metadata and references to files that are stored in Amazon S3. The web application runs on Amazon EC2 instances and an Amazon RDS for PostgreSQL database.\nWhen forms are uploaded, the application sends notifications to a team through Amazon Simple Notification Service (Amazon SNS). A team member then logs in and processes each form. The team member performs data validation on the form and extracts relevant data before entering the information into another system that uses an API.\nA solutions architect needs to automate the manual processing of the forms. The solution must provide accurate form extraction. minimize time to market, and minimize tong-term operational overhead.\nWhich solution will meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Develop custom libraries to perform optical character recognition (OCR) on the forms. Deploy the libraries to an Amazon Elastic Kubernetes Service (Amazon EKS) cluster as an application tier. Use this tier to process the forms when forms are uploaded. Store the output in Amazon S3. Parse this output by extracting the data into an Amazon DynamoDB table. Submit the data to the target system's APL. Host the new application tier on EC2 instances.",
+        "B.Extend the system with an application tier that uses AWS Step Functions and AWS Lambda. Configure this tier to use artificial intelligence and machine learning (AI/ML) models that are trained and hosted on an EC2 instance to perform optical character recognition (OCR) on the forms when forms are uploaded. Store the output in Amazon S3. Parse this output by extracting the data that is required within the application tier. Submit the data to the target system's API.",
+        "C.Host a new application tier on EC2 instances. Use this tier to call endpoints that host artificial intelligence and machine teaming (AI/ML) models that are trained and hosted in Amazon SageMaker to perform optical character recognition (OCR) on the forms. Store the output in Amazon ElastiCache. Parse this output by extracting the data that is required within the application tier. Submit the data to the target system's API.",
+        "D.Extend the system with an application tier that uses AWS Step Functions and AWS Lambda. Configure this tier to use Amazon Textract and Amazon Comprehend to perform optical character recognition (OCR) on the forms when forms are uploaded. Store the output in Amazon S3. Parse this output by extracting the data that is required within the application tier. Submit the data to the target system's API."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司已将其表单处理应用程序迁移到 AWS。当用户与应用程序交互时，他们通过 Web 应用程序将扫描的表单作为文件上传。数据库存储用户元数据和对存储在 Amazon S3 中的文件的引用。Web 应用程序在 Amazon EC2 实例和 Amazon RDS for PostgreSQL 数据库上运行。\n上传表单后，应用程序会通过 Amazon Simple Notification Service （Amazon SNS） 向团队发送通知。然后，团队成员登录并处理每个表单。团队成员对表单执行数据验证并提取相关数据，然后再将信息输入使用 API 的另一个系统。\n解决方案架构师需要自动手动处理表单。该解决方案必须提供准确的表单提取。最大限度地缩短上市时间，并最大限度地减少钳子长期运营开销。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -1047,18 +1047,18 @@ $.db =
       ],
       "aa": "D",
       "qK": "",
-      "aK": [""]
+      "aK": ["Amazon Textract"]
     },
     {
       "no": 92,
-      "q": "",
+      "q": "An adventure company has launched a new feature on its mobile app. Users can use the feature to upload their hiking and rafting photos and videos anytime. The photos and videos are stored in Amazon S3 Standard storage in an S3 bucket and are served through Amazon CloudFront.\nThe company needs to optimize the cost of the storage. A solutions architect discovers that most of the uploaded photos and videos are accessed infrequently after 30 days. However, some of the uploaded photos and videos are accessed frequently after 30 days. The solutions architect needs to implement a solution that maintains millisecond retrieval availability of the photos and videos at the lowest possible cost.\nWhich solution will meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Configure S3 Intelligent-Tiering on the S3 bucket.",
+        "B.Configure an S3 Lifecycle policy to transition image objects and video objects from S3 Standard to S3 Glacier Deep Archive after 30 days.",
+        "C.Replace Amazon S3 with an Amazon Elastic File System (Amazon EFS) file system that is mounted on Amazon EC2 instances.",
+        "D.Add a Cache-Control: max-age header to the S3 image objects and S3 video objects. Set the header to 30 days."
       ],
-      "q_cn": "",
+      "q_cn": "一家冒险公司在其移动应用程序上推出了一项新功能。用户可以随时使用该功能上传他们的远足和漂流照片和视频。照片和视频存储在 S3 存储桶中的 Amazon S3 标准存储中，并通过 Amazon CloudFront 提供。n公司需要优化存储成本。解决方案架构师发现，大多数上传的照片和视频在 30 天后很少被访问。但是，上传的某些照片和视频在 30 天后会频繁访问。解决方案架构师需要实现一个解决方案，以尽可能低的成本保持照片和视频的毫秒级检索可用性。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -1067,18 +1067,18 @@ $.db =
       ],
       "aa": "A",
       "qK": "",
-      "aK": [""]
+      "aK": ["S3 Intelligent-Tiering"]
     },
     {
       "no": 93,
-      "q": "",
+      "q": "A company has an asynchronous HTTP application that is hosted as an AWS Lambda function. A public Amazon API Gateway endpoint invokes the Lambda function. The Lambda function and the API Gateway endpoint reside in the us-east-1 Region. A solutions architect needs to redesign the application to support failover to another AWS Region.\nWhich solution will meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Create an API Gateway endpoint in the us-west-2 Region to direct traffic to the Lambda function in us-east-1. Configure Amazon Route 53 to use a failover routing policy to route traffic for the two API Gateway endpoints.",
+        "B.Create an Amazon Simple Queue Service (Amazon SQS) queue. Configure API Gateway to direct traffic to the SQS queue instead of to the Lambda function. Configure the Lambda function to pull messages from the queue for processing.",
+        "C.Deploy the Lambda function to the us-west-2 Region. Create an API Gateway endpoint in us-west-2 10 direct traffic to the Lambda function in us-west-2. Configure AWS Global Accelerator and an Application Load Balancer to manage traffic across the two API Gateway endpoints.",
+        "D.Deploy the Lambda function and an API Gateway endpoint to the us-west-2 Region. Configure Amazon Route 53 to use a failover routing policy to route traffic for the two API Gateway endpoints."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司有一个作为 AWS Lambda 函数托管的异步 HTTP 应用程序。公有 Amazon API Gateway 终端节点调用 Lambda 函数。Lambda 函数和 API 网关终端节点位于 us-east-1 区域中。解决方案架构师需要重新设计应用程序，以支持故障转移到另一个 AWS 区域。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -1087,7 +1087,7 @@ $.db =
       ],
       "aa": "D",
       "qK": "",
-      "aK": [""]
+      "aK": ["Deploy the Lambda function and an API Gateway endpoint"]
     },
     {
       "no": 94,
@@ -1139,15 +1139,15 @@ $.db =
     },
     {
       "no": 97,
-      "q": "",
+      "q": "A video processing company has an application that downloads images from an Amazon S3 bucket, processes the images, stores a transformed image in a second S3 bucket, and updates metadata about the image in an Amazon DynamoDB table. The application is written in Node.js and runs by using an AWS Lambda function. The Lambda function is invoked when a new image is uploaded to Amazon S3.\nThe application ran without incident for a while. However, the size of the images has grown significantly. The Lambda function is now failing frequently with timeout errors. The function timeout is set to its maximum value. A solutions architect needs to refactor the application’s architecture to prevent invocation failures. The company does not want to manage the underlying infrastructure.\nWhich combination of steps should the solutions architect take to meet these requirements? (Choose two.)",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.Modify the application deployment by building a Docker image that contains the application code. Publish the image to Amazon Elastic Container Registry (Amazon ECR).",
+        "B.Create a new Amazon Elastic Container Service (Amazon ECS) task definition with a compatibility type of AWS Fargate. Configure the task definition to use the new image in Amazon Elastic Container Registry (Amazon ECR). Adjust the Lambda function to invoke an ECS task by using the ECS task definition when a new file arrives in Amazon S3.",
+        "C.Create an AWS Step Functions state machine with a Parallel state to invoke the Lambda function. Increase the provisioned concurrency of the Lambda function.",
+        "D.Create a new Amazon Elastic Container Service (Amazon ECS) task definition with a compatibility type of Amazon EC2. Configure the task definition to use the new image in Amazon Elastic Container Registry (Amazon ECR). Adjust the Lambda function to invoke an ECS task by using the ECS task definition when a new file arrives in Amazon S3.",
+        "E.Modify the application to store images on Amazon Elastic File System (Amazon EFS) and to store metadata on an Amazon RDS DB instance. Adjust the Lambda function to mount the EFS file share."
       ],
-      "q_cn": "",
+      "q_cn": "一家视频处理公司有一个应用程序，该应用程序从 Amazon S3 存储桶下载图像、处理图像、将转换后的图像存储在第二个 S3 存储桶中，并在 Amazon DynamoDB 表中更新有关图像的元数据。该应用程序以 Node.js 编写，并使用 AWS Lambda 函数运行。将新映像上传到 Amazon S3 时，将调用 Lambda 函数。\n应用程序运行了一段时间，没有发生任何事件。但是，图像的大小已显着增长。Lambda 函数现在经常失败并出现超时错误。函数超时设置为其最大值。解决方案架构师需要重构应用程序的体系结构以防止调用失败。该公司不想管理底层基础设施。\n解决方案架构师应采取哪些步骤组合来满足这些要求？（选择两个。",
       "a_cn": [
         "",
         "",
@@ -1157,7 +1157,7 @@ $.db =
       ],
       "aa": "A,B",
       "qK": "",
-      "aK": [""]
+      "aK": ["Docker image,Fargate"]
     },
     {
       "no": 98,
@@ -1240,7 +1240,7 @@ $.db =
       "aa": "C",
       "qK": "30 minutes,international delivery company,files are not always in the archive and that the central system is not always updated",
       "aK": [
-        "SNS"
+        "SNS,Transfer Family,S3"
       ]
     },
     {
@@ -1614,7 +1614,7 @@ $.db =
       "aa": "C",
       "qK": "",
       "aK": [
-        ""
+        "failover"
       ]
     },
     {
@@ -1763,14 +1763,14 @@ $.db =
     },
     {
       "no": 111,
-      "q": "",
+      "q": "A retail company has structured its AWS accounts to be part of an organization in AWS Organizations. The company has set up consolidated billing and has mapped its departments to the following OUs: Finance, Sales, Human Resources (HR), Marketing, and Operations. Each OU has multiple AWS accounts, one for each environment within a department. These environments are development, test, pre-production, and production.\nThe HR department is releasing a new system that will launch in 3 months. In preparation, the HR department has purchased several Reserved Instances (RIs) in its production AWS account. The HR department will install the new application on this account. The HR department wants to make sure that other departments cannot share the RI discounts.\nWhich solution will meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.In the AWS Billing and Cost Management console for the HR department's production account turn off RI sharing.",
+        "B.Remove the HR department's production AWS account from the organization. Add the account to the consolidating billing configuration only.",
+        "C.In the AWS Billing and Cost Management console. use the organization’s management account to turn off RI Sharing for the HR departments production AWS account.",
+        "D.Create an SCP in the organization to restrict access to the RIs. Apply the SCP to the OUs of the other departments."
       ],
-      "q_cn": "",
+      "q_cn": "一家零售公司已将其 AWS 账户构建为 AWS 组织中组织的一部分。该公司已设置整合计费，并将其部门映射到以下 OU：财务、销售、人力资源 （HR）、营销和运营。每个 OU 都有多个 AWS 账户，一个账户对应一个部门中的每个环境。这些环境是开发、测试、预生产和生产。\n人力资源部门正在发布一个新系统，该系统将在 3 个月内推出。在准备过程中，人力资源部门已在其生产 AWS 账户中购买了多个预留实例 （RI）。人力资源部门将在此帐户上安装新应用程序。人力资源部门希望确保其他部门不能共享 RI 折扣。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -1780,7 +1780,7 @@ $.db =
       "aa": "C",
       "qK": "",
       "aK": [
-        ""
+        "organization’s management account"
       ]
     },
     {
@@ -1912,7 +1912,7 @@ $.db =
         "C.Use AWS CloudHSM to store the encryption keys. Create a new S3 bucket. Use S3 Batch Operations to copy the existing objects to the new S3 bucket. Encrypt the objects by using the keys from CloudHSM.",
         "D.Use the S3 Intelligent-Tiering storage class for the S3 bucket. Create an S3 Intelligent-Tiering archive configuration to transition objects that are not accessed for 90 days to S3 Glacier Deep Archive."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司在 Amazon S3 存储桶中有数百万个对象。对象位于 S3 标准存储类中。所有 S3 对象都经常被访问。访问对象的用户和应用程序的数量正在迅速增加。这些对象使用 AWS KMS 密钥 （SSE-KMS） 的服务器端加密进行加密。\n解决方案架构师查看了该公司的每月 AWS 发票，并注意到由于来自 Amazon S3 的大量请求，AWS KMS 成本正在增加。解决方案架构师需要以最少的应用程序更改来优化成本。\n哪种解决方案能够以最少的运营开销满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -2200,7 +2200,7 @@ $.db =
       "aa": "D",
       "qK": "",
       "aK": [
-        ""
+        "ECS,Fargate"
       ]
     },
     {
@@ -2293,19 +2293,15 @@ $.db =
     },
     {
       "no": 109,
-      "q": "",
+      "q": "A company has developed APIs that use Amazon API Gateway with Regional endpoints. The APIs call AWS Lambda functions that use API Gateway authentication mechanisms. After a design review, a solutions architect identifies a set of APIs that do not require public access.\nThe solutions architect must design a solution to make the set of APIs accessible only from a VPC. All APIs need to be called with an authenticated user.\nWhich solution will meet these requirements with the LEAST amount of effort?",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.Create an internal Application Load Balancer (ALB). Create a target group. Select the Lambda function to call. Use the ALB DNS name to call the API from the VPC.",
+        "B.Remove the DNS entry that is associated with the API in API Gateway. Create a hosted zone in Amazon Route 53. Create a CNAME record in the hosted zone. Update the API in API Gateway with the CNAME record. Use the CNAME record to call the API from the VPC.",
+        "C.Update the API endpoint from Regional to private in API Gateway. Create an interface VPC endpoint in the VPCreate a resource policy, and attach it to the API. Use the VPC endpoint to call the API from the VPC.",
+        "D.Deploy the Lambda functions inside the VPC Provision an EC2 instance, and install an Apache server. From the Apache server, call the Lambda functions. Use the internal CNAME record of the EC2 instance to call the API from the VPC."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司开发了使用具有区域终端节点的 Amazon API 网关的 API。API 调用使用 API 网关身份验证机制的 AWS Lambda 函数。在设计评审之后，解决方案架构师确定一组不需要公共访问的 API。\n解决方案架构师必须设计一个解决方案，使这组 API 只能从 VPC 访问。所有 API 都需要使用经过身份验证的用户调用。\n哪种解决方案能够以最少的努力满足这些要求？",
       "a_cn": [
-        "",
-        "",
         "",
         "",
         "",
@@ -2314,7 +2310,7 @@ $.db =
       "aa": "C",
       "qK": "",
       "aK": [
-        ""
+        "Update the API endpoint from Regional to private in API Gateway"
       ]
     },
     {
@@ -3131,14 +3127,14 @@ $.db =
     },
     {
       "no": 118,
-      "q": "",
+      "q": "A company is running an application in the AWS Cloud. The application runs on containers m an Amazon Elastic Container Service (Amazon ECS) cluster. The ECS tasks use the Fargate launch type. The application's data is relational and is stored in Amazon Aurora MySQL. To meet regulatory requirements, the application must be able to recover to a separate AWS Region in the event of an application failure. In case of a failure, no data can be lost.\nWhich solution will meet these requirements with the LEAST amount of operational overhead?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Provision an Aurora Replica in a different Region.",
+        "B.Set up AWS DataSync for continuous replication of the data to a different Region.",
+        "C.Set up AWS Database Migration Service (AWS DMS) to perform a continuous replication of the data to a different Region.",
+        "D.Use Amazon Data Lifecycle Manager (Amazon DLM) to schedule a snapshot every 5 minutes."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司在 AWS 云中运行应用程序。该应用程序在 Amazon Elastic Container Service （Amazon ECS） 集群的容器上运行。ECS 任务使用 Fargate 启动类型。应用程序的数据是关系性的，存储在 Amazon Aurora MySQL 中。为了满足法规要求，应用程序必须能够在应用程序发生故障时恢复到单独的 AWS 区域。如果发生故障，则不会丢失任何数据。\n哪种解决方案能够以最少的运营开销满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -3148,7 +3144,7 @@ $.db =
       "aa": "A",
       "qK": "",
       "aK": [
-        ""
+        "Aurora Replica"
       ]
     },
     {
@@ -3650,19 +3646,15 @@ $.db =
     },
     {
       "no": 105,
-      "q": "",
+      "q": "A company that has multiple AWS accounts is using AWS Organizations. The company’s AWS accounts host VPCs, Amazon EC2 instances, and containers.\nThe company’s compliance team has deployed a security tool in each VPC where the company has deployments. The security tools run on EC2 instances and send information to the AWS account that is dedicated for the compliance team. The company has tagged all the compliance-related resources with a key of “costCenter” and a value or “compliance”.\nThe company wants to identify the cost of the security tools that are running on the EC2 instances so that the company can charge the compliance team’s AWS account. The cost calculation must be as accurate as possible.\nWhat should a solutions architect do to meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.In the management account of the organization, activate the costCenter user-defined tag. Configure monthly AWS Cost and Usage Reports to save to an Amazon S3 bucket in the management account. Use the tag breakdown in the report to obtain the total cost for the costCenter tagged resources.",
+        "B.In the member accounts of the organization, activate the costCenter user-defined tag. Configure monthly AWS Cost and Usage Reports to save to an Amazon S3 bucket in the management account. Schedule a monthly AWS Lambda function to retrieve the reports and calculate the total cost for the costCenter tagged resources.",
+        "C.In the member accounts of the organization activate the costCenter user-defined tag. From the management account, schedule a monthly AWS Cost and Usage Report. Use the tag breakdown in the report to calculate the total cost for the costCenter tagged resources.",
+        "D.Create a custom report in the organization view in AWS Trusted Advisor. Configure the report to generate a monthly billing summary for the costCenter tagged resources in the compliance team’s AWS account."
       ],
-      "q_cn": "",
+      "q_cn": "拥有多个 AWS 账户的公司正在使用 AWS 组织。该公司的 AWS 账户托管 VPC、Amazon EC2 实例和容器。\n该公司的合规团队已在公司部署的每个 VPC 中部署了安全工具。安全工具在 EC2 实例上运行，并将信息发送到专用于合规性团队的 AWS 账户。该公司已使用“costCenter”键和值或“合规性”标记了所有与合规性相关的资源。\n该公司希望确定在 EC2 实例上运行的安全工具的成本，以便公司可以向合规团队的 AWS 账户收费。成本计算必须尽可能准确。\n解决方案架构师应该做些什么来满足这些要求？",
       "a_cn": [
-        "",
-        "",
         "",
         "",
         "",
@@ -3676,14 +3668,14 @@ $.db =
     },
     {
       "no": 117,
-      "q": "",
+      "q": "A company is planning to migrate its business-critical applications from an on-premises data center to AWS. The company has an on-premises installation of a Microsoft SQL Server Always On cluster. The company wants to migrate to an AWS managed database service. A solutions architect must design a heterogeneous database migration on AWS.\nWhich solution will meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Migrate the SQL Server databases to Amazon RDS for MySQL by using backup and restore utilities.",
+        "B.Use an AWS Snowball Edge Storage Optimized device to transfer data to Amazon S3. Set up Amazon RDS for MySQL. Use S3 integration with SQL Server features, such as BULK INSERT.",
+        "C.Use the AWS Schema Conversion Tool to translate the database schema to Amazon RDS for MeSQL. Then use AWS Database Migration Service (AWS DMS) to migrate the data from on-premises databases to Amazon RDS.",
+        "D.Use AWS DataSync to migrate data over the network between on-premises storage and Amazon S3. Set up Amazon RDS for MySQL. Use S3 integration with SQL Server features, such as BULK INSERT."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司正计划将其业务关键型应用程序从本地数据中心迁移到 AWS。该公司在本地安装了Microsoft SQL Server Always On 群集。该公司希望迁移到 AWS 托管数据库服务。解决方案架构师必须在 AWS 上设计异构数据库迁移。\n哪种解决方案可以满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -3693,7 +3685,7 @@ $.db =
       "aa": "C",
       "qK": "",
       "aK": [
-        ""
+        "Schema Conversion Tool"
       ]
     },
     {
@@ -4257,7 +4249,7 @@ $.db =
       "aa": "C",
       "qK": "deploying sensors in major cities,measure air quality,timeseries data",
       "aK": [
-        "Route 53 health check,IoT Core domain"
+        "Route 53 health check,IoT Core domain,global table"
       ]
     },
     {
@@ -4269,7 +4261,7 @@ $.db =
         "C.Create a data migration pipeline by using AWS Data Pipeline. Define data nodes for the on-premises MongoDB database and the Amazon DocumentDB database. Create a scheduled task to run the data pipeline.",
         "D.Create a source endpoint for the on-premises MongoDB database by using AWS Glue crawlers.Configure continuous asynchronous replication between the MongoDB database and the Amazon DocumentDB database"
       ],
-      "q_cn": "",
+      "q_cn": "一家公司在 AWS 云中的 Amazon EC2 实例上运行应用程序。应用程序使用具有副本集的 MongoDB 数据库作为其数据层。MongoDB 数据库安装在公司本地数据中心的系统上，可通过与数据中心环境的 AWS Direct Connect 连接进行访问。解决方案架构师必须将本地 MongoDB 数据库迁移到 Amazon DocumentDB（与 MongoDB 兼容）。解决方案架构师应选择哪种策略来执行此迁移？",
       "a_cn": [
         "",
         "",
@@ -4372,7 +4364,7 @@ $.db =
     },
     {
       "no": 212,
-      "q": "A company recently started hosting new application workloads in the AWS Cloud. The company is using Amazon EC2 instances, Amazon Elastic File System (Amazon EFS) file systems, and Amazon RDS DB instances.\nTo meet regulatory and business requirements, the company must make the following changes for data backups:\n * Backups must be retained based on custom daily, weekly, and monthly requirements.\n * Backups must be replicated to at least one other AWS Region immediately after capture.\n * The backup solution must provide a single source of backup status across the AWS environment.\n * The backup solution must send immediate notifications upon failure of any resource backup.\n Which combination of steps will meet these requirements with the LEAST amount of operational overhead? (Choose three.)",
+      "q": "A company recently started hosting new application workloads in the AWS Cloud. The company is using Amazon EC2 instances, Amazon Elastic File System (Amazon EFS) file systems, and Amazon RDS DB instances.\nTo meet regulatory and business requirements, the company must make the following changes for data backups:\n - Backups must be retained based on custom daily, weekly, and monthly requirements.\n - Backups must be replicated to at least one other AWS Region immediately after capture.\n - The backup solution must provide a single source of backup status across the AWS environment.\n - The backup solution must send immediate notifications upon failure of any resource backup.\n Which combination of steps will meet these requirements with the LEAST amount of operational overhead? (Choose three.)",
       "a": [
         "A.Create an AWS Backup plan with a backup rule for each of the retention requirements",
         "B.Configure an AWS Backup plan to copy backups to another Region.",
@@ -4419,7 +4411,7 @@ $.db =
       "aa": "A,C,E",
       "qK": "",
       "aK": [
-        "Create a new AWS account,Single Sign-On"
+        "Create a new AWS account,Single Sign-On,Ensure that each account accepts the invitation"
       ]
     },
     {
@@ -4468,14 +4460,14 @@ $.db =
     },
     {
       "no": 296,
-      "q": "A company needs to build a disaster recovery (DR) solution for its ecommerce website. The web application is hosted on a fleet of t3.large Amazon EC2 instances and uses an Amazon RDS for MySQL DB instance. The EC2 instances are in an Auto Scaling group that extends across multiple Availability Zones.\nIn the event of a disaster, the web application must fail over to the secondary environment with an RPO of 30 seconds and an RTO of 10 minutes.\nWhich solution will meet these requirements MOST cost- effectively ? ",
+      "q": "A company needs to build a disaster recovery (DR) solution for its ecommerce website. The web application is hosted on a fleet of t3.large Amazon EC2 instances and uses an Amazon RDS for MySQL DB instance. The EC2 instances are in an Auto Scaling group that extends across multiple Availability Zones.\nIn the event of a disaster, the web application must fail over to the secondary environment with an RPO of 30 seconds and an RTO of 10 minutes.\nWhich solution will meet these requirements MOST cost-effectively?",
       "a": [
         "A.Use infrastructure as code (IaC) to provision the new infrastructure in the DR Region. Create a cross-Region read replica for the DB instance. Set up a backup plan in AWS Backup to create cross-Region backups for the EC2 instances and the DB instance. Create a cron expression to back up the EC2 instances and the DB instance every 30 seconds to the DR Region. Recover the EC2 instances from the latest EC2 backup. Use an Amazon Route 53 geolocation routing policy to automatically fail over to the DR Region in the event of a disaster.",
         "B.Use infrastructure as code (IaC) to provision the new infrastructure in the DR Region. Create a cross-Region read replica for the DB instance. Set up AWS Elastic Disaster Recovery to continuously replicate the EC2 instances to the DR Region. Run the EC2 instances at the minimum capacity in the DR Region. Use an Amazon Route 53 failover routing policy to automatically fail over to the DR Region in the event of a disaster. Increase the desired capacity of the Auto Scaling group.",
         "C.Set up a backup plan in AWS Backup to create cross-Region backups for the EC2 instances and the DB instance. Create a cron expression to back up the EC2 instances and the DB instance every 30 seconds to the DR Region. Use infrastructure as code (IaC) to provision the new infrastructure in the DR Region. Manually restore the backed-up data on new instances. Use an Amazon Route 53 simple routing policy to automatically fail over to the DR Region in the event of a disaster.",
         "D.Use infrastructure as code (IaC) to provision the new infrastructure in the DR Region. Create an Amazon Aurora global database. Set up AWS Elastic Disaster Recovery to continuously replicate the EC2 instances to the DR Region. Run the Auto Scaling group of EC2 instances at full capacity in the DR Region. Use an Amazon Route 53 failover routing policy to automatically fail over to the DR Region in the event of a disaster."
       ],
-      "q_cn": "",
+      "q_cn": "公司需要为其电子商务网站构建灾难恢复 （DR） 解决方案。Web 应用程序托管在 t3.large Amazon EC2 实例队列上，并使用适用于 MySQL 数据库的 Amazon RDS 实例。EC2 实例位于跨多个可用区扩展的 Auto Scaling 组中。\n发生灾难时，Web 应用程序必须以 30 秒的 RPO 和 10 分钟的 RTO 故障切换到辅助环境。\n哪种解决方案最经济高效地满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -4892,7 +4884,7 @@ $.db =
         "C.Order an AWS Snowball device. Deploy a SageMaker endpoint the ML model and an Amazon EC2 instance on the Snowball device. Take still images from the cameras. Run inference from the EC2 instance. Configure the instance to call the local API when a defect is detected.",
         "D.Deploy Amazon Monitron devices on each IP camera. Deploy an Amazon Monitron Gateway on premises. Deploy the ML model to the Amazon Monitron devices. Use Amazon Monitron health state alarms to call the local API from an AWS Lambda function when a defect is detected."
       ],
-      "q_cn": "",
+      "q_cn": "一家制造公司正在为其工厂构建检测解决方案。该公司在每条装配线的末端都有IP摄像机。该公司已使用 Amazon SageMaker 训练机器学习 （ML） 模型，以识别静止图像中的常见缺陷。\n该公司希望在检测到缺陷时向工厂工人提供本地反馈。即使工厂的互联网连接中断，公司也必须能够提供此反馈。该公司有一个本地 Linux 服务器，该服务器托管一个向工作人员提供本地反馈的 API。\n公司应如何部署 ML 模型以满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -5128,7 +5120,7 @@ $.db =
       "aa": "B",
       "qK": "from their homes,VPN",
       "aK": [
-        "main,routing that allows"
+        "main,Configure required routing that allows"
       ]
     },
     {
@@ -5224,19 +5216,15 @@ $.db =
     },
     {
       "no": 107,
-      "q": "",
+      "q": "A government solution runs on a fleet of more than 2,000 Amazon EC2 instances. Each EC2 instance runs highly secure software on Windows Server OS with an AWS Systems Manager Agent(SSM Agent) installed. The TCP/443 inbound port is open to the fleet of instances. All the other inbound ports are closed.Currently, any changes to the port configuration requires a lengthy multi-level review process. Which solution will provide secure access to run scripts on the fleet of instances with the LEAST amount of administrative overhead?",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.Configure AWS OpsWorks for Puppet Enterprise with a connection to the SSM Agent on the instances Manage the scripts by using Puppet stacks",
+        "B.Open the required ports. Manage the fleet of instances by using Session Manager, a capability of AWS Systems Manager",
+        "C.Add interface endpoints and an IAM role. Manage the fleet of instances by using Run Command, a capability of AWS Systems Manager.",
+        "D.Open Port TCP/22 and copy scripts onto each instance. Manage instances at scale by using scripts"
       ],
-      "q_cn": "",
+      "q_cn": "政府解决方案在包含 2000 多个 Amazon EC2 实例的队列上运行。每个 EC2 实例都在安装了 AWS Systems Manager Agent（SSM Agent）的 Windows Server OS 上运行高度安全的软件。TCP/443 入站端口对实例队列开放。所有其他入站端口均已关闭。目前，对端口配置的任何更改都需要漫长的多级审查过程。哪种解决方案将提供安全访问，以最少的管理开销在实例队列上运行脚本？",
       "a_cn": [
-        "",
-        "",
         "",
         "",
         "",
@@ -5245,7 +5233,7 @@ $.db =
       "aa": "B",
       "qK": "",
       "aK": [
-        ""
+        "Session Manager"
       ]
     },
     {
@@ -5388,14 +5376,14 @@ $.db =
     },
     {
       "no": 124,
-      "q": "",
+      "q": "A financial services company receives a regular data feed from its credit card servicing partner. Approximately 5,000 records are sent every 15 minutes in plaintext, delivered over HTTPS directly into an Amazon S3 bucket with server-side encryption. This feed contains sensitive credit card primary account number (PAN) data. The company needs to automatically mask the PAN before sending the data to another S3 bucket for additional internal processing. The company also needs to remove and merge specific fields, and then transform the record into JSON format. Additionally, extra feeds are likely to be added in the future, so any design needs to be easily expandable.\nWhich solutions will meet these requirements?",
       "a": [
-        "",
-        "",
-        "",
-        ""
+        "A.Invoke an AWS Lambda function on file delivery that extracts each record and writes it to an Amazon SQS queue. Invoke another Lambda function when new messages arrive in the SQS queue to process the records, writing the results to a temporary location in Amazon S3. Invoke a final Lambda function once the SQS queue is empty to transform the records into JSON format and send the results to another S3 bucket for internal processing.",
+        "B.Invoke an AWS Lambda function on file delivery that extracts each record and writes it to an Amazon SQS queue. Configure an AWS Fargate container application to automatically scale to a single instance when the SQS queue contains messages. Have the application process each record, and transform the record into JSON format. When the queue is empty, send the results to another S3 bucket for internal processing and scale down the AWS Fargate instance.",
+        "C.Create an AWS Glue crawler and custom classifier based on the data feed formats and build a table definition to match. Invoke an AWS Lambda function on file delivery to start an AWS Glue ETL job to transform the entire record according to the processing and transformation requirements. Define the output format as JSON. Once complete, have the ETL job send the results to another S3 bucket for internal processing.",
+        "D.Create an AWS Glue crawler and custom classifier based upon the data feed formats and build a table definition to match. Perform an Amazon Athena query on file delivery to start an Amazon EMR ETL job to transform the entire record according to the processing and transformation requirements. Define the output format as JSON. Once complete, send the results to another S3 bucket for internal processing and scale down the EMR cluster."
       ],
-      "q_cn": "",
+      "q_cn": "金融服务公司从其信用卡服务合作伙伴接收定期数据馈送。大约 5000 条记录每 15 分钟以明文形式发送一次，通过 HTTPS 直接传送到具有服务器端加密的 Amazon S3 存储桶中。此源包含敏感的信用卡主帐号 （PAN） 数据。该公司需要在将数据发送到另一个 S3 存储桶以进行额外的内部处理之前自动屏蔽 PAN。该公司还需要删除和合并特定字段，然后将记录转换为 JSON 格式。此外，将来可能会添加额外的馈送，因此任何设计都需要易于扩展。\n哪些解决方案可以满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -5405,7 +5393,7 @@ $.db =
       "aa": "C",
       "qK": "",
       "aK": [
-        ""
+        "Glue,Lambda"
       ]
     },
     {
@@ -5600,7 +5588,7 @@ $.db =
         "C.Modify the API Gateway to use IAM authentication Update the IAM policy for the IAM role that is assigned to the EC2 instances to allow access to the API Gateway Move the API Gateway into a new VPC. Deploy a transit gateway and connect the VPCs.",
         "D.Create an accelerator in AWS Global Accelerator, and connect the accelerator to the API Gateway. Update the route table for all VPC subnets with a route to the created Global Accelerator endpoint IP address. Add an API key for each service to use for authentication."
       ],
-      "q_cn": "一家公司在 AWS 云中运行应用程序。该应用程序由在应用程序负载均衡器后面的多个可用区中的 Amazon EC2 实例队列上运行的微服务组成。该公司最近添加了一个新的 REST API，该 API 已在 Amazon API Gateway 中实施。在 EC2 实例上运行的某些较旧的微服务需要调用此新 API。\n公司不希望从公共互联网访问 API，也不希望专有数据遍历公共互联网。n解决方案架构师应如何满足这些要求？",
+      "q_cn": "一家公司在 AWS 云中运行应用程序。该应用程序由在应用程序负载均衡器后面的多个可用区中的 Amazon EC2 实例队列上运行的微服务组成。该公司最近添加了一个新的 REST API，该 API 已在 Amazon API Gateway 中实施。在 EC2 实例上运行的某些较旧的微服务需要调用此新 API。\n公司不希望从公共互联网访问 API，也不希望专有数据遍历公共互联网。\n解决方案架构师应如何满足这些要求？",
       "a_cn": [
         "",
         "",
@@ -6008,7 +5996,7 @@ $.db =
       "aa": "C",
       "qK": "",
       "aK": [
-        ""
+        "Configure AWS Organizations,Use Tag Editor"
       ]
     },
     {
@@ -6035,19 +6023,15 @@ $.db =
     },
     {
       "no": 106,
-      "q": "",
+      "q": "A company's solutions architect is reviewing a web application that runs on AWS. The application references static assets in an Amazon S3 bucket in the us-east-1 Region. The company needs resiliency across multiple AWS Regions. The company already has created an S3 bucket in a second Region.\nWhich solution will meet these requirements with the LEAST operational overhead?",
       "a": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A.Configure the application to write each object to both S3 buckets. Set up an Amazon Route 53 public hosted zone with a record set by using a weighted routing policy for each S3 bucket. Configure the application to reference the objects by using the Route 53 DNS name.",
+        "B.Create an AWS Lambda function to copy objects from the S3 bucket in us-east-1 to the S3 bucket in the second Region. Invoke the Lambda function each time an object is written to the S3 bucket in us-east-1. Set up an Amazon CloudFront distribution with an origin group that contains the two S3 buckets as origins.",
+        "C.Configure replication on the S3 bucket in us-east-1 to replicate objects to the S3 bucket in the second Region. Set up an Amazon CloudFront distribution with an origin group that contains the two S3 buckets as origins.",
+        "D.Configure replication on the S3 bucket in us-east-1 to replicate objects to the S3 bucket in the second Region. If Lawyer is required, update the application code to load S3 objects from the S3 bucket in the second Region."
       ],
-      "q_cn": "",
+      "q_cn": "一家公司的解决方案架构师正在审查在 AWS 上运行的 Web 应用程序。该应用程序引用 us-east-1 区域中 Amazon S3 存储桶中的静态资产。该公司需要跨多个 AWS 区域的弹性。该公司已在第二个区域中创建了一个 S3 存储桶。\n哪种解决方案能够以最少的运营开销满足这些要求？",
       "a_cn": [
-        "",
-        "",
         "",
         "",
         "",
@@ -6056,7 +6040,7 @@ $.db =
       "aa": "C",
       "qK": "",
       "aK": [
-        ""
+        "Configure replication,CloudFront"
       ]
     },
     {
@@ -6176,7 +6160,7 @@ $.db =
     },
     {
       "no": 238,
-      "q": "A solutions architect is creating an application that stores objects in an Amazon S3 bucket. The solutions architect must deploy the application in two AWS Regions that will be used simultaneously. The objects in the two S3 buckets must remain synchronized with each other. Which combination of steps will meet these requirements with the LEAST operational overhead?(Select THREE.",
+      "q": "A solutions architect is creating an application that stores objects in an Amazon S3 bucket. The solutions architect must deploy the application in two AWS Regions that will be used simultaneously. The objects in the two S3 buckets must remain synchronized with each other. Which combination of steps will meet these requirements with the LEAST operational overhead?(Select THREE)",
       "a": [
         "A.Create an S3 Multi-Region Access Point. Change the application to refer to the Multi-Region Access Point",
         "B.Configure two-way S3 Cross-Region Replication (CRR) between the two S3 buckets",
@@ -6185,7 +6169,7 @@ $.db =
         "E.Enable S3 Versioning for each S3 bucket",
         "F.Configure an event notification for each S3 bucket to invoke an AWS Lambda function to copy objects from one S3 bucket to the other S3 bucket."
       ],
-      "q_cn": "",
+      "q_cn": "解决方案架构师正在创建一个应用程序，用于将对象存储在 Amazon S3 存储桶中。解决方案架构师必须在将同时使用的两个 AWS 区域中部署应用程序。两个 S3 存储桶中的对象必须彼此保持同步。哪些步骤组合将以最少的运营开销满足这些要求？（选择三项）",
       "a_cn": [
         "",
         "",
@@ -6636,7 +6620,7 @@ $.db =
         "D.Convert the existing DynamoDB table to a global table by adding another Region to its configuration",
         "E.Use Amazon Route 53 Application Recovery Controller to automate database backup and recovery to the secondary Region"
       ],
-      "q_cn": "",
+      "q_cn": "公司有一个关键应用程序，其中数据层部署在单个 AWS 区域中。数据层使用 Amazon DynamoDB 表和 Amazon Aurora MySQL 数据库集群。当前的 Aurora MySQL 引擎版本支持全局数据库。应用层已部署在两个区域中。\n公司策略规定，关键应用程序必须跨两个区域部署应用层组件和数据层组件。RTO 和 RPO 各不得超过几分钟。解决方案架构师必须推荐一个解决方案，以使数据层符合公司策略。\n哪些步骤组合将满足这些要求？（选择两个。",
       "a_cn": [
         "",
         "",
@@ -7017,7 +7001,7 @@ $.db =
       "q": "A company is rearchitecting its applications to run on AWS. The company's infrastructure includes multiple Amazon EC2 instances. The company's development team needs different levels of access. The company wants to implement a policy that requires all Windows EC2 instances to be joined to an Active Directory domain on AWS. The company also wants to implement enhanced security processes such as multi-factor authentication (MFA). The company wants to use managed AWS services wherever possible. Which solution will meet these requirements?",
       "a": [
         "A.Create an AWS Directory Service for Microsoft Active Directory implementation. Launch an Amazon WorkSpace. Connec to and use the WorkSpace for domain security configuration tasks",
-        "B.Create an AWS Directory Servicelor Microsoft Active Directory implementation. Launch an EC2 instance. Connect to and use the EC2 instance for domain security configuration tasks",
+        "B.Create an AWS Directory Service for Microsoft Active Directory implementation. Launch an EC2 instance. Connect to and use the EC2 instance for domain security configuration tasks",
         "C.Create an AWS Directory Service Simple AD implementation. Launch an EC2 instance. Connect to and use the EC2instance for domain security configuration tasks",
         "D.Create an AWS Directory Service Simple AD implementation. Launch an Amazon WorkSpace. Connect to and use the WorkSpace for domain security configuration tasks"
       ],
@@ -7251,26 +7235,26 @@ $.db =
     "lv154": "9",
     "lv165": "9",
     "lv64": "9",
-    "lv196": "2",
+    "lv196": "1",
     "lv88": "9",
     "lv84": "8",
     "lv159": "8",
     "lv108": "8",
-    "lv144": "2",
+    "lv144": "8",
     "lv72": "9",
     "lv147": "9",
-    "lv100": "8",
+    "lv100": "2",
     "lv28": "9",
     "lv178": "2",
     "lv89": "9",
     "lv160": "9",
     "lv56": "8",
-    "lv43": "2",
-    "lv31": "1",
-    "lv156": "2",
-    "lv150": "2",
+    "lv43": "8",
+    "lv31": "8",
+    "lv156": "8",
+    "lv150": "8",
     "lv112": "2",
-    "lv49": "2",
+    "lv49": "8",
     "lv158": "8",
     "lv103": "8",
     "lv257": "9",
@@ -7278,12 +7262,12 @@ $.db =
     "lv172": "8",
     "lv169": "9",
     "lv38": "9",
-    "lv135": "2",
-    "lv213": "8",
-    "lv45": "2",
+    "lv135": "8",
+    "lv213": "2",
+    "lv45": "1",
     "lv116": "9",
     "lv280": "2",
-    "lv79": "2",
+    "lv79": "1",
     "lv162": "9",
     "lv122": "9",
     "lv243": "1",
@@ -7291,63 +7275,63 @@ $.db =
     "lv44": "1",
     "lv115": "8",
     "lv276": "9",
-    "lv176": "9",
+    "lv176": "8",
     "lv166": "9",
-    "lv155": "2",
+    "lv155": "8",
     "lv148": "9",
-    "lv69": "2",
-    "lv86": "2",
+    "lv69": "8",
+    "lv86": "8",
     "lv32": "9",
     "lv175": "8",
-    "lv168": "2",
+    "lv168": "8",
     "lv149": "8",
-    "lv274": "2",
+    "lv274": "1",
     "lv58": "8",
     "lv37": "9",
     "lv12": "2",
-    "lv34": "2",
+    "lv34": "8",
     "lv19": "8",
-    "lv275": "2",
-    "lv278": "2",
-    "lv164": "2",
-    "lv183": "2",
+    "lv275": "8",
+    "lv278": "8",
+    "lv164": "1",
+    "lv183": "8",
     "lv232": "2",
     "lv246": "7",
     "lv184": "8",
     "lv138": "9",
     "lv188": "9",
     "lv57": "8",
-    "lv15": "2",
-    "lv113": "2",
+    "lv15": "8",
+    "lv113": "8",
     "lv130": "8",
     "lv253": "2",
-    "lv65": "1",
+    "lv65": "2",
     "lv11": "2",
     "lv33": "8",
-    "lv247": "2",
+    "lv247": "8",
     "lv60": "9",
-    "lv269": "2",
+    "lv269": "8",
     "lv263": "8",
-    "lv236": "2",
-    "lv271": "2",
+    "lv236": "8",
+    "lv271": "1",
     "lv209": "2",
-    "lv48": "8",
+    "lv48": "2",
     "lv96": "9",
     "lv195": "2",
     "lv9": "8",
     "lv273": "1",
     "lv76": "8",
-    "lv202": "2",
+    "lv202": "8",
     "lv230": "9",
-    "lv268": "2",
+    "lv268": "8",
     "lv139": "9",
     "lv120": "9",
     "lv59": "9",
     "lv152": "9",
     "lv203": "9",
-    "lv215": "2",
+    "lv215": "8",
     "lv235": "2",
-    "lv252": "2",
+    "lv252": "8",
     "lv129": "7",
     "lv63": "9",
     "lv207": "1",
@@ -7356,9 +7340,9 @@ $.db =
     "lv53": "8",
     "lv266": "2",
     "lv36": "9",
-    "lv186": "2",
+    "lv186": "8",
     "lv14": "8",
-    "lv242": "2",
+    "lv242": "1",
     "lv270": "8",
     "lv177": "9",
     "lv245": "2",
@@ -7367,108 +7351,108 @@ $.db =
     "lv110": "9",
     "lv30": "9",
     "lv198": "8",
-    "lv222": "2",
+    "lv222": "1",
     "lv109": "4",
-    "lv233": "4",
-    "lv145": "4",
-    "lv240": "4",
-    "lv187": "4",
+    "lv233": "2",
+    "lv145": "2",
+    "lv240": "2",
+    "lv187": "2",
     "lv173": "4",
-    "lv279": "4",
-    "lv231": "4",
-    "lv126": "4",
-    "lv214": "4",
-    "lv255": "4",
-    "lv234": "4",
-    "lv297": "4",
-    "lv223": "4",
-    "lv258": "4",
-    "lv305": "4",
+    "lv279": "2",
+    "lv231": "1",
+    "lv126": "2",
+    "lv214": "2",
+    "lv255": "2",
+    "lv234": "2",
+    "lv297": "2",
+    "lv223": "1",
+    "lv258": "2",
+    "lv305": "2",
     "lv117": "4",
-    "lv179": "4",
-    "lv310": "4",
-    "lv256": "4",
-    "lv267": "4",
-    "lv204": "4",
-    "lv194": "4",
+    "lv179": "2",
+    "lv310": "2",
+    "lv256": "2",
+    "lv267": "1",
+    "lv204": "1",
+    "lv194": "2",
     "lv229": "4",
-    "lv224": "4",
-    "lv318": "4",
-    "lv294": "4",
+    "lv224": "2",
+    "lv318": "2",
+    "lv294": "2",
     "lv106": "4",
-    "lv182": "4",
-    "lv141": "4",
-    "lv167": "4",
-    "lv248": "4",
+    "lv182": "2",
+    "lv141": "2",
+    "lv167": "2",
+    "lv248": "2",
     "lv124": "4",
     "lv107": "4",
-    "lv239": "4",
-    "lv254": "4",
-    "lv211": "4",
-    "lv244": "4",
-    "lv250": "4",
-    "lv161": "4",
-    "lv289": "4",
-    "lv261": "4",
-    "lv314": "4",
-    "lv189": "4",
-    "lv308": "4",
-    "lv288": "4",
-    "lv259": "4",
-    "lv241": "4",
-    "lv216": "4",
+    "lv239": "2",
+    "lv254": "2",
+    "lv211": "2",
+    "lv244": "2",
+    "lv250": "2",
+    "lv161": "1",
+    "lv289": "2",
+    "lv261": "2",
+    "lv314": "8",
+    "lv189": "2",
+    "lv308": "2",
+    "lv288": "1",
+    "lv259": "2",
+    "lv241": "1",
+    "lv216": "2",
     "lv111": "4",
-    "lv137": "4",
-    "lv201": "4",
-    "lv190": "4",
-    "lv277": "4",
-    "lv272": "4",
-    "lv298": "4",
-    "lv208": "4",
-    "lv265": "4",
-    "lv205": "4",
+    "lv137": "2",
+    "lv201": "2",
+    "lv190": "2",
+    "lv277": "1",
+    "lv272": "2",
+    "lv298": "1",
+    "lv208": "1",
+    "lv265": "2",
+    "lv205": "1",
     "lv180": "4",
     "lv192": "4",
     "lv118": "4",
-    "lv237": "4",
-    "lv262": "4",
-    "lv185": "4",
-    "lv293": "4",
-    "lv292": "4",
-    "lv127": "4",
-    "lv295": "4",
-    "lv251": "4",
-    "lv249": "4",
-    "lv210": "4",
-    "lv284": "4",
-    "lv304": "4",
-    "lv153": "4",
+    "lv237": "7",
+    "lv262": "1",
+    "lv185": "2",
+    "lv293": "2",
+    "lv292": "2",
+    "lv127": "2",
+    "lv295": "2",
+    "lv251": "2",
+    "lv249": "2",
+    "lv210": "1",
+    "lv284": "2",
+    "lv304": "2",
+    "lv153": "2",
     "lv163": "4",
-    "lv212": "4",
-    "lv303": "4",
-    "lv132": "4",
-    "lv134": "4",
-    "lv226": "4",
-    "lv206": "4",
-    "lv140": "5",
-    "lv221": "4",
-    "lv228": "4",
-    "lv136": "4",
-    "lv217": "4",
-    "lv219": "4",
+    "lv212": "1",
+    "lv303": "2",
+    "lv132": "2",
+    "lv134": "1",
+    "lv226": "2",
+    "lv206": "2",
+    "lv140": "7",
+    "lv221": "2",
+    "lv228": "2",
+    "lv136": "2",
+    "lv217": "1",
+    "lv219": "2",
     "lv105": "4",
-    "lv286": "4",
+    "lv286": "2",
     "lv296": "4",
-    "lv197": "4",
-    "lv260": "4",
-    "lv220": "4",
-    "lv315": "4",
-    "lv227": "4",
+    "lv197": "1",
+    "lv260": "1",
+    "lv220": "1",
+    "lv315": "2",
+    "lv227": "2",
     "lv238": "4",
-    "lv225": "4",
-    "lv264": "4",
-    "lv218": "4",
-    "lv309": "4",
+    "lv225": "1",
+    "lv264": "2",
+    "lv218": "2",
+    "lv309": "1",
     "lv121": "9",
     "lv114": "2",
     "lv102": "2",
@@ -7476,49 +7460,49 @@ $.db =
     "lv282": "2",
     "lv104": "8",
     "lv125": "9",
-    "lv307": "2",
-    "lv311": "2",
-    "lv281": "2",
-    "lv146": "2",
-    "lv291": "2",
+    "lv307": "8",
+    "lv311": "8",
+    "lv281": "8",
+    "lv146": "8",
+    "lv291": "8",
     "lv317": "8",
     "lv143": "8",
     "lv299": "2",
     "lv170": "9",
     "lv285": "2",
-    "lv171": "2",
-    "lv200": "2",
-    "lv319": "2",
+    "lv171": "8",
+    "lv200": "8",
+    "lv319": "8",
     "lv321": "2",
     "lv313": "9",
-    "lv287": "2",
+    "lv287": "8",
     "lv302": "8",
-    "lv300": "2",
-    "lv199": "8",
-    "lv301": "2",
-    "lv128": "2",
+    "lv300": "1",
+    "lv199": "2",
+    "lv301": "8",
+    "lv128": "8",
     "lv133": "7",
-    "lv101": "2",
-    "lv181": "2",
+    "lv101": "8",
+    "lv181": "8",
     "lv320": "8",
     "lv131": "8",
     "lv306": "2",
     "lv283": "7",
-    "lv157": "2",
-    "lv290": "2",
+    "lv157": "8",
+    "lv290": "8",
     "lv174": "9",
     "lv142": "2",
-    "lv312": "2",
+    "lv312": "8",
     "lv193": "8",
-    "lv316": "1",
-    "lv123": "2",
+    "lv316": "8",
+    "lv123": "8",
     "lv21": "8",
-    "lv23": "2",
+    "lv23": "1",
     "lv27": "2",
     "lv29": "8",
     "lv40": "8",
     "lv46": "2",
-    "lv50": "1",
+    "lv50": "2",
     "lv42": "9",
     "lv52": "9",
     "lv1": "4",
@@ -7531,7 +7515,7 @@ $.db =
     "lv10": "4",
     "lv13": "4",
     "lv16": "1",
-    "lv17": "1",
+    "lv17": "2",
     "lv18": "4",
     "lv22": "4",
     "lv24": "4",
@@ -7542,13 +7526,13 @@ $.db =
     "lv41": "4",
     "lv47": "4",
     "lv51": "4",
-    "lv54": "1",
-    "lv61": "2",
-    "lv62": "1",
-    "lv70": "2",
+    "lv54": "2",
+    "lv61": "8",
+    "lv62": "2",
+    "lv70": "8",
     "lv71": "8",
-    "lv82": "2",
-    "lv94": "2",
+    "lv82": "8",
+    "lv94": "8",
     "lv95": "2",
     "lv90": "8",
     "lv55": "4",
@@ -7560,7 +7544,7 @@ $.db =
     "lv77": "4",
     "lv78": "4",
     "lv80": "1",
-    "lv81": "1",
+    "lv81": "2",
     "lv83": "4",
     "lv85": "4",
     "lv87": "4",
