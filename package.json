@@ -13,6 +13,13 @@
     "Chromium": ">=115",
     "node": ">=20.5.0"
   },
+  "wwj": {
+    "swsIP": "127.0.0.1",
+    "swsPort": "5555",
+    "buildDir": "www",
+    "indexPJ": "wwj",
+    "index": "A.html"
+  },
   "keywords": [
     "NW.js",
     "Node.js",

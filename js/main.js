@@ -1,8 +1,57 @@
 $(function () {
   // $.log('page init main');
+  $$.getCfg = function () {
+    var cfg = $.toJSON($.readFile({ url: $.appURL + 'package.json' }));
+    $$.webIP = cfg.wwj.swsIP;
+    $$.webPort = cfg.wwj.swsPort;
+    $$.appURL = 'http://' + $$.webIP + ':' + $$.webPort;
+    return cfg;
+  };
+
+  $$.btnStartSWS.click(function () {
+    var cmd = 'node ' + $.appURL + 'lib\\$HTTPServer.js'
+    $$.btnStartSWS.dis();
+    $$.lblSWSState.val('SWS is starting...');
+    $.runCMD(cmd, 0);
+    setTimeout(function () { $$.btnCheckSWSState.click() }, 900);
+  });
+
+  $$.btnStopSWS.click(function () {
+    $$.btnStopSWS.dis();
+    $$.btnOpenSWSHomePage.dis();
+    $$.lblSWSState.val('SWS is stoping...');
+    $$.ifrWatchSWSState.o[0].src = $$.appURL + '/stopserver';
+    setTimeout(function () { $$.btnCheckSWSState.click() }, 900);
+  });
+
+  $$.btnOpenSWSHomePage.click(function () {
+    $$.getCfg();
+    $.openWeb($$.appURL);
+  });
+
+  $$.btnCheckSWSState.click(function () {
+    var ifr = $$.ifrWatchSWSState.o[0];
+    $$.getCfg();
+    ifr.onload = function () {
+      var txt = ifr.contentDocument.body.innerText, cfgTxt, isSWSOK;
+      try {
+        cfgTxt = $.toJSON(txt);
+        isSWSOK = cfgTxt.wwj && cfgTxt.wwj.swsIP === $$.webIP;
+      } catch (e) {
+        isSWSOK = 0;
+      } finally {
+        msg = 'SWS is ' + (isSWSOK ? 'running' : 'stoped');
+        $$.lblSWSState.val(msg);
+        $$.btnStartSWS[isSWSOK ? 'dis' : 'ena']();
+        $$.btnStopSWS[isSWSOK ? 'ena' : 'dis']();
+        $$.btnOpenSWSHomePage[isSWSOK ? 'ena' : 'dis']();
+      }
+    };
+    ifr.src = $$.appURL + '/package.json';
+  });
 
   $$.btnBuildCfgSave.click(function () {
-
+    // TODO:
   });
 
   $$.btnBuild.click(function () {
@@ -17,7 +66,8 @@ $(function () {
       dst = $$.txtBuildDst.val(),
       aHtmlURL = dst + '\\A.html',
       mainHtmlURL = dst + '\\html\\main.html',
-      s;
+      cfg = $$.getCfg(),
+      pjID, s;
 
     if ($.isHTA) {
       $.bkFolder(dst);
@@ -26,8 +76,13 @@ $(function () {
       $.copyFolder(src, dst);
 
       // 替换文件A.html中的title变量 TODO: 共通化？
+      pjID = src.split('\\').pop();
       s = $.readFile({ url: aHtmlURL });
-      s = s.replace('{0}', src.split('\\').pop());
+      s = s.replace('{0}', pjID);
+      s = s.replace('{1}', cfg.wwj.swsIP);
+      s = s.replace('{2}', cfg.wwj.swsPort);
+      s = s.replace('{3}', pjID);
+      s = s.replace('{4}', cfg.wwj.index);
       $.writeFile({ url: aHtmlURL, val: s });
     }
 
@@ -459,8 +514,16 @@ $(function () {
   $$.selBuildSrc.change(function () {
     var
       pjNM = $$.selBuildSrc.val().split('\\').pop(),
-      dst = ($.hasFolder('D:\\') ? 'D' : 'C') + ':\\ASoftRun\\A\\' + pjNM;
-    $$.txtBuildDst.val(dst);
+      dstB = $.appURL + 'www\\' + pjNM,
+      dstD = ($.hasFolder('D:\\') ? 'D' : 'C') + ':\\ASoftRun\\A\\' + pjNM;
+    $$.txtBuildDst.val(dstB);
+    $$.txtDeployDst.val(dstD);
+  });
+
+  $$.btnSWS.click(function () {
+    $('.mainer').hide();
+    $$.fdsSWS.show();
+    $$.btnCheckSWSState.click();
   });
 
   $$.btnBuilder.click(function () {
@@ -472,7 +535,7 @@ $(function () {
     var a = [];
     $.eachFolder($.appURL + '\\pj', function (folder, i) {
       a.push('<option value="' + folder.Path + '">' + folder.Name + ' ( ' + folder.Path + ' ) </option>');
-    }, 1, 1);
+    }, 0, 1);
     $$.selBuildSrc.html(a.join(''));
     $$.selBuildSrc.change();
   }).click();

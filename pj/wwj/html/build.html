@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>WWJ - build</title>
+</head>
+
+<body>
+  <fieldset id="fdsBuilder" class="builderArea mainer">
+    <legend>Builder</legend>
+    <label>src: </label><select id="selBuildSrc"></select>
+    <br>
+    <label>Build dst: </label><input id="txtBuildDst" value="">
+    <button id="btnBuild">Build</button>
+    <!-- TODO: <br>
+    <label>Deploy dst: </label><input id="txtDeployDst" value="">
+    <button id="btnDeploy">Deploy</button>
+    <br>
+    <button id="btnBuildCfgSave">Save</button>-->
+    <br>
+    <textarea id="txaTestAstIn" rows="48" cols="108"></textarea>
+    <textarea id="txaTestAstOut" rows="48" cols="108"></textarea>
+  </fieldset>
+
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/build.js"></script>
+</body>
+
+</html>

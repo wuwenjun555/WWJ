@@ -14,10 +14,10 @@
       isNW = (!window.nw || url.indexOf('chrome-extension://') < 0) ? 0 : 1,
       fileName = url.split('\/').pop(),
       baseURL = url.replace(fileName, '').replace('file:///', '').replace(/\//g, '\\'),
-      uri = isNW ? '' : 'http://127.0.0.1:5555/';
+      uri = isNW ? '' : 'http://{1}:{2}/{3}/{4}';  // http://127.0.0.1:5555/wwj/A.html
 
     if (isNW || url === uri) {
-      loc.href = uri + 'html5/main.html?isNW=' + isNW + '&baseURL=' + encodeURIComponent(baseURL);
+      loc.href = baseURL + 'html/main.html?isNW=' + isNW + '&baseURL=' + encodeURIComponent(baseURL);
     } else {
       const
         msg = [

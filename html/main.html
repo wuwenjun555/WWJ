@@ -50,6 +50,7 @@
         <li><a href="/about">About</a></li>
       </ul>
       -->
+      <button id="btnSWS">SWS</button>
       <button id="btnBuilder">Builder</button>
       <button id="btnUIEditor">UI Editor</button>
       <label id="lblStep4Com">&nbsp;|TODO: |</label>
@@ -70,13 +71,30 @@
     </div>
   </header>
 
+  <fieldset id="fdsSWS" class="builderArea mainer">
+    <legend>SWS(Simple Web Service)</legend>
+    <iframe id="ifrWatchSWSState"></iframe>
+    <br>
+    <button id="btnStartSWS">Start SWS</button>
+    <button id="btnOpenSWSHomePage">Open SWS Home Page</button>
+    <button id="btnStopSWS" disabled>Stop SWS</button>
+    <br>
+    <button id="btnCheckSWSState">Check SWS State</button>
+    <label id="lblSWSState"></label>
+
+  </fieldset>
+
   <fieldset id="fdsBuilder" class="builderArea mainer">
     <legend>Builder</legend>
     <label>src: </label><select id="selBuildSrc"></select>
     <br>
-    <label>dst: </label><input id="txtBuildDst" value="">
-    <button id="btnBuildCfgSave">Save</button>
+    <label>Build dst: </label><input id="txtBuildDst" value="">
     <button id="btnBuild">Build</button>
+    <br>
+    <label>Deploy dst: </label><input id="txtDeployDst" value="">
+    <button id="btnDeploy">Deploy</button>
+    <br>
+    <button id="btnBuildCfgSave">Save</button>
     <br>
     <textarea id="txaTestAstIn"></textarea>
     <textarea id="txaTestAstOut"></textarea>
